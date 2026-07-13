@@ -1,0 +1,14 @@
+{
+  "sectionTitle": "联系我们",
+  "sectionTitleEn": "CONTACT",
+  "description": "如果您对我们的解决方案感兴趣，欢迎随时与我们联系。我们期待与您一起探索数据智能的无限可能。",
+  "email": "info@geshu-tech.com",
+  "phone": "",
+  "address": "",
+  "quickLinks": [
+    { "label": "关于我们", "href": "#about" },
+    { "label": "核心业务", "href": "#business" },
+    { "label": "使命愿景", "href": "#mission" },
+    { "label": "新闻动态", "href": "#news" }
+  ]
+}

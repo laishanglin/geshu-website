@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" fill="none">
+  <defs>
+    <linearGradient id="l1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+    <linearGradient id="l2" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Icon mark: minimal "G" from geometric blocks -->
+  <g transform="translate(0, 1)">
+    <!-- Three horizontal bars forming abstract G -->
+    <!-- Top bar -->
+    <rect x="2" y="4" width="24" height="5.5" rx="2.75" fill="url(#l1)"/>
+    <!-- Left bar -->
+    <rect x="2" y="4" width="5.5" height="26" rx="2.75" fill="url(#l1)"/>
+    <!-- Bottom bar -->
+    <rect x="2" y="24.5" width="24" height="5.5" rx="2.75" fill="url(#l1)"/>
+    <!-- Right accent bar (mid) -->
+    <rect x="17" y="14" width="9" height="5.5" rx="2.75" fill="url(#l2)"/>
+
+    <!-- Accent nodes -->
+    <circle cx="31" cy="6.75" r="2.5" fill="url(#l2)" opacity="0.8"/>
+    <circle cx="31" cy="29.5" r="2" fill="url(#l2)" opacity="0.5"/>
+    <circle cx="7" cy="33" r="1.8" fill="url(#l1)" opacity="0.4"/>
+
+    <!-- Subtle connection dot at right bar end -->
+    <circle cx="29" cy="16.75" r="2" fill="url(#l2)" opacity="0.7"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="41" y="23" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="15" font-weight="700" fill="white" letter-spacing="3">格数科技</text>
+  <text x="41" y="33" font-family="Inter, -apple-system, sans-serif" font-size="6.5" font-weight="500" fill="#64748B" letter-spacing="4">GESHU TECHNOLOGY</text>
+</svg>

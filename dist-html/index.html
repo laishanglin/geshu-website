@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>格数科技 | 企业级数据智能解决方案</title>
+<meta name="description" content="让数据成为企业的核心驱动力">
+<style>
+/* ===== Reset & Base ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#060B14;color:#F1F5F9;font-family:'Inter','PingFang SC','Microsoft YaHei',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:#060B14}
+::-webkit-scrollbar-thumb{background:rgba(59,130,246,.3);border-radius:3px}
+::selection{background:rgba(59,130,246,.35);color:#fff}
+
+/* ===== Layout ===== */
+.page{max-width:1700px;margin:0 auto;padding:0 5rem}
+.section{padding:7rem 0}
+.section-alt{background:#0A1628}
+
+/* ===== Navbar ===== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:all .5s;height:5rem;display:flex;align-items:center}
+.nav.scrolled{background:rgba(6,11,20,.88);backdrop-filter:blur(20px);border-bottom:1px solid rgba(59,130,246,.06)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%}
+.nav-links{display:flex;gap:.25rem;list-style:none}
+.nav-links a{color:#94A3B8;text-decoration:none;padding:.5rem 1rem;border-radius:.5rem;font-size:.875rem;font-weight:500;transition:color .3s}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:linear-gradient(135deg,#3B82F6,#06B6D4);color:#fff;padding:.625rem 1.5rem;border-radius:9999px;font-size:.875rem;font-weight:600;text-decoration:none;transition:all .3s}
+.nav-cta:hover{box-shadow:0 0 30px rgba(59,130,246,.4);transform:scale(1.05)}
+
+/* ===== Logo ===== */
+.logo{display:flex;align-items:center;gap:.75rem;text-decoration:none}
+.logo-icon{width:2.25rem;height:2.25rem;border-radius:.5rem;background:linear-gradient(135deg,#3B82F6,#06B6D4);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.875rem}
+.logo-text{color:#fff;font-size:1.125rem;font-weight:600;letter-spacing:.05em}
+
+/* ===== Hero ===== */
+.hero{height:100vh;min-height:700px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.hero-canvas{position:absolute;inset:0;z-index:0}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent,transparent,#060B14);z-index:1;pointer-events:none}
+.hero-content{position:relative;z-index:10;text-align:center}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;line-height:1.1;margin-bottom:1.5rem}
+.hero h1 .hl{background:linear-gradient(135deg,#3B82F6,#06B6D4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:1.25rem;color:rgba(148,163,184,.8);max-width:40rem;margin:0 auto 3rem;font-weight:300}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{padding:.875rem 2rem;border-radius:9999px;font-size:.875rem;font-weight:600;text-decoration:none;transition:all .3s;display:inline-flex;align-items:center}
+.btn-primary{background:linear-gradient(135deg,#3B82F6,#06B6D4);color:#fff}
+.btn-primary:hover{box-shadow:0 0 30px rgba(59,130,246,.4);transform:scale(1.05)}
+.btn-outline{border:1px solid rgba(59,130,246,.4);color:#93C5FD}
+.btn-outline:hover{background:rgba(59,130,246,.1);border-color:#60A5FA}
+.scroll-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:10;display:flex;flex-direction:column;align-items:center;gap:.5rem;cursor:pointer;color:#64748B;font-size:.75rem;letter-spacing:.1em}
+.scroll-mouse{width:1.25rem;height:2rem;border-radius:9999px;border:1px solid #475569;display:flex;justify-content:center;padding-top:.25rem}
+.scroll-dot{width:.25rem;height:.5rem;border-radius:9999px;background:#60A5FA;animation:scrollBounce 2s ease-in-out infinite}
+@keyframes scrollBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+/* ===== Section Title ===== */
+.sec-label{display:inline-block;font-size:.75rem;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:#60A5FA;margin-bottom:1rem}
+.sec-title{font-size:clamp(1.75rem,4vw,3rem);font-weight:700;color:#fff}
+.sec-divider{width:4rem;height:.125rem;border-radius:9999px;background:linear-gradient(to right,#3B82F6,#06B6D4);margin-top:1.25rem}
+.sec-divider.center{margin-left:auto;margin-right:auto}
+.text-center{text-align:center}
+.mb-section{margin-bottom:4rem}
+
+/* ===== Company Overview ===== */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.intro-text{font-size:1.15rem;line-height:1.8;color:rgba(203,213,225,.8);margin-bottom:2.5rem;font-weight:300}
+.highlight-item{display:flex;gap:1rem;padding:1.25rem;border-radius:.75rem;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04);margin-bottom:.75rem;transition:all .3s}
+.highlight-item:hover{background:rgba(255,255,255,.04);border-color:rgba(59,130,246,.1)}
+.hl-icon{width:2.25rem;height:2.25rem;flex-shrink:0}
+.hl-title{font-weight:600;color:#fff;margin-bottom:.25rem}
+.hl-desc{font-size:.875rem;color:#94A3B8;line-height:1.6}
+.visual-card{aspect-ratio:1;border-radius:1rem;background:rgba(10,22,40,.6);border:1px solid rgba(59,130,246,.06);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.visual-core{width:5rem;height:5rem;border-radius:1rem;background:linear-gradient(135deg,#3B82F6,#06B6D4);box-shadow:0 0 60px rgba(59,130,246,.3);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5rem;font-weight:900}
+.visual-ring{position:absolute;border-radius:50%;border:1px solid rgba(59,130,246,.1);top:50%;left:50%;transform:translate(-50%,-50%)}
+.visual-ring.r1{width:10rem;height:10rem;animation:spin 25s linear infinite}
+.visual-ring.r2{width:8rem;height:8rem;animation:spin 18s linear infinite reverse}
+@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.visual-dot{position:absolute;width:.625rem;height:.625rem;border-radius:50%;background:#60A5FA;box-shadow:0 0 15px rgba(59,130,246,.4)}
+.visual-label{position:absolute;bottom:.75rem;left:50%;transform:translateX(-50%);background:#0A1628;border:1px solid rgba(59,130,246,.15);border-radius:9999px;padding:.5rem 1.25rem;font-size:.75rem;color:rgba(147,197,253,.8);white-space:nowrap}
+
+/* ===== Business Cards ===== */
+.biz-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.biz-card{border-radius:1rem;background:rgba(10,22,40,.5);border:1px solid rgba(59,130,246,.06);padding:2.5rem;transition:all .4s}
+.biz-card:hover{border-color:rgba(59,130,246,.2);background:rgba(10,22,40,.7);transform:translateY(-2px);box-shadow:0 8px 40px rgba(59,130,246,.08)}
+.biz-icon{width:3.5rem;height:3.5rem;margin-bottom:1.5rem;transition:transform .5s}
+.biz-card:hover .biz-icon{transform:scale(1.1) rotate(3deg)}
+.biz-title{font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:.75rem}
+.biz-desc{font-size:.9rem;color:#94A3B8;line-height:1.7;margin-bottom:1.5rem;font-weight:300}
+.tag{display:inline-block;padding:.25rem .75rem;font-size:.75rem;font-weight:500;border-radius:9999px;background:rgba(59,130,246,.06);color:rgba(147,197,253,.8);border:1px solid rgba(59,130,246,.08);margin-right:.5rem;margin-bottom:.5rem}
+
+/* ===== Mission ===== */
+.mission-section{position:relative;overflow:hidden;background:#060B14}
+.mission-bg{position:absolute;inset:0}
+.mission-content{position:relative;z-index:10}
+.mission-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:64rem;margin:0 auto}
+.mission-card{text-align:center;padding:2.5rem;border-radius:1rem;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.06);transition:all .5s}
+.mission-card:hover{border-color:rgba(255,255,255,.1);background:rgba(0,0,0,.5)}
+.mission-icon-wrap{width:4rem;height:4rem;border-radius:1rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;transition:all .5s}
+.mission-card:hover .mission-icon-wrap{background:rgba(255,255,255,.08)}
+.mission-icon{width:2rem;height:2rem}
+.mission-card h3{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:.5rem}
+.mission-en{font-size:.7rem;text-transform:uppercase;letter-spacing:.25em;color:rgba(96,165,250,.6);font-weight:500;margin-bottom:1.5rem}
+.mission-divider{width:2.5rem;height:.125rem;border-radius:9999px;background:linear-gradient(to right,#3B82F6,#06B6D4);margin:0 auto 1.5rem}
+.mission-card p{font-size:.9rem;color:#94A3B8;line-height:1.7;font-weight:300}
+
+/* ===== News ===== */
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.news-card{padding:2rem;border-radius:1rem;background:rgba(10,22,40,.4);border:1px solid rgba(59,130,246,.06);text-decoration:none;display:block;transition:all .4s}
+.news-card:hover{background:rgba(10,22,40,.7);border-color:rgba(59,130,246,.1);transform:translateY(-2px)}
+.news-date{font-family:'SF Mono','Fira Code',monospace;font-size:.75rem;color:rgba(96,165,250,.8);margin-bottom:.75rem}
+.news-title{font-size:1.05rem;font-weight:600;color:#fff;margin-bottom:.75rem;line-height:1.5}
+.news-summary{font-size:.875rem;color:#64748B;line-height:1.6;margin-bottom:1rem;font-weight:300;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.news-link{font-size:.875rem;color:rgba(96,165,250,.7);display:inline-flex;align-items:center;gap:.25rem;transition:all .3s}
+.news-card:hover .news-link{gap:.5rem;color:#60A5FA}
+
+/* ===== Contact ===== */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.contact-desc{font-size:1.15rem;color:rgba(203,213,225,.8);line-height:1.8;margin-bottom:2.5rem;font-weight:300}
+.contact-item{display:flex;gap:1rem;padding:1rem;border-radius:.75rem;margin-bottom:.5rem;transition:all .3s}
+.contact-item:hover{background:rgba(255,255,255,.03)}
+.contact-icon-wrap{width:2.5rem;height:2.5rem;border-radius:.5rem;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#60A5FA}
+.contact-label{font-size:.75rem;color:#64748B}
+.contact-value{font-size:.875rem;color:#CBD5E1}
+.quick-links{padding:2.5rem;border-radius:1rem;background:rgba(10,22,40,.6);border:1px solid rgba(59,130,246,.08)}
+.quick-links h3{font-size:1.125rem;font-weight:600;color:#fff;margin-bottom:1.5rem}
+.quick-link{display:flex;justify-content:space-between;align-items:center;padding:.75rem;border-radius:.5rem;color:#94A3B8;text-decoration:none;transition:all .3s}
+.quick-link:hover{color:#fff;background:rgba(255,255,255,.04)}
+
+/* ===== Footer ===== */
+.footer{border-top:1px solid rgba(59,130,246,.04);padding:3rem 0}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
+.footer-links{display:flex;gap:2rem}
+.footer-links a{color:#64748B;text-decoration:none;font-size:.875rem;transition:color .3s}
+.footer-links a:hover{color:#93C5FD}
+.footer-copy{font-size:.875rem;color:#475569}
+
+/* ===== Animations ===== */
+.fade-up{animation:fadeUp .7s ease-out both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.delay-1{animation-delay:.1s}
+.delay-2{animation-delay:.2s}
+.delay-3{animation-delay:.3s}
+.delay-4{animation-delay:.4s}
+
+/* ===== Responsive ===== */
+@media(max-width:1024px){
+  .page{padding:0 2rem}
+  .grid-2,.biz-grid,.contact-grid,.mission-grid{grid-template-columns:1fr;gap:2rem}
+  .news-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+@media(max-width:768px){
+  .section{padding:4rem 0}
+  .hero h1{font-size:2.2rem}
+  .hero-sub{font-size:1rem}
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="nav" id="navbar">
+  <div class="page nav-inner">
+    <a href="#hero" class="logo">
+      <div class="logo-icon">G</div>
+      <span class="logo-text">格数科技</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">关于我们</a></li>
+      <li><a href="#business">核心业务</a></li>
+      <li><a href="#mission">使命愿景</a></li>
+      <li><a href="#news">新闻动态</a></li>
+      <li><a href="#contact">联系我们</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">立即咨询 →</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <canvas class="hero-canvas" id="heroCanvas"></canvas>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="fade-up">让数据成为企业的<br><span class="hl fade-up delay-1">核心驱动力</span></h1>
+    <p class="hero-sub fade-up delay-2">格数科技——企业级数据智能解决方案提供商</p>
+    <div class="hero-btns fade-up delay-3">
+      <a href="#business" class="btn btn-primary">了解核心业务</a>
+      <a href="#contact" class="btn btn-outline">联系我们</a>
+    </div>
+  </div>
+  <div class="scroll-hint fade-up delay-4" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+    <span>SCROLL</span>
+    <div class="scroll-mouse"><div class="scroll-dot"></div></div>
+  </div>
+</section>
+
+<!-- Company Overview -->
+<section class="section" id="about">
+  <div class="page">
+    <div class="mb-section">
+      <span class="sec-label">ABOUT US</span>
+      <h2 class="sec-title">关于格数科技</h2>
+      <div class="sec-divider"></div>
+    </div>
+    <div class="grid-2">
+      <div>
+        <p class="intro-text">格数科技成立于2025年，是一家专注于企业数据智能化的科技公司。我们坚信数据是数字经济时代最核心的生产要素，致力于帮助企业构建数据驱动的决策体系和智能化运营能力。</p>
+        <div class="highlight-item">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233B82F6'/%3E%3Cstop offset='1' stop-color='%23818CF8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M24 5l16 10v18L24 43 8 33V15L24 5z' fill='none' stroke='url(%23a)' stroke-width='2'/%3E%3Cpath d='M18 19l6-4 6 4v10l-6 4-6-4V19z' fill='url(%23a)' opacity='.15'/%3E%3Cpath d='M24 17l-3 9h5l-2 8 7-10h-5l3-7h-5z' fill='url(%23a)'/%3E%3C/svg%3E" class="hl-icon" alt="">
+          <div><h4 class="hl-title">技术驱动</h4><p class="hl-desc">自主研发数据智能平台，融合大数据、AI与行业Know-how</p></div>
+        </div>
+        <div class="highlight-item">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238B5CF6'/%3E%3Cstop offset='1' stop-color='%233B82F6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='24' cy='12' r='6' fill='none' stroke='url(%23a)' stroke-width='1.5'/%3E%3Ccircle cx='24' cy='12' r='2.5' fill='url(%23a)'/%3E%3Ccircle cx='12' cy='34' r='5' fill='none' stroke='url(%23a)' stroke-width='1.5'/%3E%3Ccircle cx='12' cy='34' r='2' fill='url(%23a)'/%3E%3Ccircle cx='36' cy='34' r='5' fill='none' stroke='url(%23a)' stroke-width='1.5'/%3E%3Ccircle cx='36' cy='34' r='2' fill='url(%23a)'/%3E%3Cline x1='21' y1='17' x2='15' y2='30' stroke='url(%23a)' stroke-width='1' opacity='.5'/%3E%3Cline x1='27' y1='17' x2='33' y2='30' stroke='url(%23a)' stroke-width='1' opacity='.5'/%3E%3C/svg%3E" class="hl-icon" alt="">
+          <div><h4 class="hl-title">专家团队</h4><p class="hl-desc">核心团队来自头部科技企业与咨询公司，兼具技术深度与业务洞察</p></div>
+        </div>
+        <div class="highlight-item">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2306B6D4'/%3E%3Cstop offset='1' stop-color='%2310B981'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='4' y='18' width='12' height='12' rx='3' fill='none' stroke='url(%23a)' stroke-width='2'/%3E%3Crect x='18' y='18' width='12' height='12' rx='3' fill='none' stroke='url(%23a)' stroke-width='2'/%3E%3Crect x='32' y='18' width='12' height='12' rx='3' fill='none' stroke='url(%23a)' stroke-width='2'/%3E%3Cpath d='M16 21h2M30 21h2' stroke='url(%23a)' stroke-width='1.5' stroke-linecap='round'/%3E%3Ccircle cx='10' cy='24' r='2.5' fill='url(%23a)'/%3E%3Ccircle cx='24' cy='24' r='2.5' fill='url(%23a)'/%3E%3Ccircle cx='38' cy='24' r='2.5' fill='url(%23a)'/%3E%3C/svg%3E" class="hl-icon" alt="">
+          <div><h4 class="hl-title">端到端服务</h4><p class="hl-desc">从战略规划到落地实施，提供全链路数据解决方案</p></div>
+        </div>
+      </div>
+      <div style="position:relative">
+        <div class="visual-card">
+          <div class="visual-ring r1"></div>
+          <div class="visual-ring r2"></div>
+          <div class="visual-core">G</div>
+          <div class="visual-dot" style="top:calc(50% - 60px);left:50%;transform:translate(-50%,-50%)"></div>
+          <div class="visual-dot" style="top:calc(50% + 60px);left:50%;transform:translate(-50%,-50%)"></div>
+          <div class="visual-dot" style="top:50%;left:calc(50% - 60px);transform:translate(-50%,-50%)"></div>
+          <div class="visual-dot" style="top:50%;left:calc(50% + 60px);transform:translate(-50%,-50%)"></div>
+        </div>
+        <div class="visual-label">数据驱动的企业智能化转型</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Business Areas -->
+<section class="section section-alt" id="business">
+  <div class="page">
+    <div class="mb-section text-center">
+      <span class="sec-label">WHAT WE DO</span>
+      <h2 class="sec-title">核心业务</h2>
+      <div class="sec-divider center"></div>
+      <p style="color:#94A3B8;margin-top:1rem;max-width:36rem;margin-left:auto;margin-right:auto">四大业务方向，构建企业数据智能全链路</p>
+    </div>
+    <div class="biz-grid">
+      <div class="biz-card">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233B82F6'/%3E%3Cstop offset='1' stop-color='%2306B6D4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='24' cy='22' r='14' fill='none' stroke='url(%23a)' stroke-width='1.5'/%3E%3Ccircle cx='24' cy='22' r='2' fill='url(%23a)'/%3E%3Cpath d='M24 9l3 13h-6l3-13z' fill='url(%23a)' opacity='.7'/%3E%3Cpath d='M24 35l3-13h-6l3 13z' fill='url(%23a)' opacity='.3'/%3E%3Crect x='33' y='20' width='4' height='16' rx='1.5' fill='url(%23a)' opacity='.6'/%3E%3Crect x='39' y='12' width='4' height='24' rx='1.5' fill='url(%23a)'/%3E%3Cpath d='M35 18l8-8' stroke='%2322D3EE' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E" class="biz-icon" alt="">
+        <h3 class="biz-title">数据战略咨询</h3>
+        <p class="biz-desc">为企业量身定制数据战略规划与数字化转型路径，从顶层设计到实施路线图，确保每一步都有据可依。</p>
+        <span class="tag">数据成熟度评估</span><span class="tag">转型路线图</span><span class="tag">组织与治理架构</span>
+      </div>
+      <div class="biz-card">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238B5CF6'/%3E%3Cstop offset='1' stop-color='%233B82F6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='6' y='30' width='36' height='12' rx='3' fill='url(%23a)' opacity='.1'/%3E%3Crect x='10' y='32' width='28' height='8' rx='2' fill='url(%23a)' opacity='.15'/%3E%3Crect x='16' y='10' width='16' height='8' rx='2' fill='none' stroke='url(%23a)' stroke-width='1.5'/%3E%3Crect x='20' y='12' width='8' height='4' rx='1' fill='url(%23a)' opacity='.4'/%3E%3Cline x1='20' y1='18' x2='16' y2='30' stroke='url(%23a)' stroke-width='1' opacity='.5'/%3E%3Cline x1='28' y1='18' x2='32' y2='30' stroke='url(%23a)' stroke-width='1' opacity='.5'/%3E%3Ccircle cx='20' cy='14' r='2' fill='%238B5CF6'/%3E%3Ccircle cx='28' cy='14' r='2' fill='%233B82F6'/%3E%3C/svg%3E" class="biz-icon" alt="">
+        <h3 class="biz-title">数据平台建设</h3>
+        <p class="biz-desc">构建企业级数据平台，打通数据采集、存储、计算与分析全链路，让数据资产真正可用、可控、可运营。</p>
+        <span class="tag">数据中台搭建</span><span class="tag">数据仓库建设</span><span class="tag">实时计算引擎</span>
+      </div>
+      <div class="biz-card">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2306B6D4'/%3E%3Cstop offset='1' stop-color='%2310B981'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M24 5l15 7v14c0 9-5.5 15.5-15 17-9.5-1.5-15-8-15-17V12l15-7z' fill='none' stroke='url(%23a)' stroke-width='2'/%3E%3Cpath d='M18 23l5 5 9-10' stroke='url(%23a)' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='20' cy='10' r='2' fill='%2310B981' opacity='.6'/%3E%3Ccircle cx='28' cy='10' r='2' fill='%2306B6D4' opacity='.6'/%3E%3C/svg%3E" class="biz-icon" alt="">
+        <h3 class="biz-title">数据治理服务</h3>
+        <p class="biz-desc">建立完善的数据治理体系，保障数据质量、安全与合规，为企业数据资产保驾护航。</p>
+        <span class="tag">数据标准制定</span><span class="tag">质量管理体系</span><span class="tag">安全合规保障</span>
+      </div>
+      <div class="biz-card">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23F97316'/%3E%3Cstop offset='1' stop-color='%23EC4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='10' y='10' width='28' height='28' rx='5' fill='none' stroke='url(%23a)' stroke-width='1.8'/%3E%3Ccircle cx='24' cy='24' r='3.5' fill='url(%23a)'/%3E%3Ccircle cx='24' cy='12' r='2' fill='%23F97316'/%3E%3Ccircle cx='24' cy='36' r='2' fill='%23EC4899'/%3E%3Ccircle cx='12' cy='24' r='2' fill='%23F97316'/%3E%3Ccircle cx='36' cy='24' r='2' fill='%23EC4899'/%3E%3Cline x1='24' y1='15.5' x2='24' y2='20.5' stroke='url(%23a)' stroke-width='.8'/%3E%3Cline x1='24' y1='27.5' x2='24' y2='32.5' stroke='url(%23a)' stroke-width='.8'/%3E%3Cline x1='15.5' y1='24' x2='20.5' y2='24' stroke='url(%23a)' stroke-width='.8'/%3E%3Cline x1='27.5' y1='24' x2='32.5' y2='24' stroke='url(%23a)' stroke-width='.8'/%3E%3C/svg%3E" class="biz-icon" alt="">
+        <h3 class="biz-title">AI应用落地</h3>
+        <p class="biz-desc">将AI能力与企业场景深度融合，从智能决策到流程自动化，让前沿技术产生实实在在的业务价值。</p>
+        <span class="tag">智能决策引擎</span><span class="tag">流程自动化</span><span class="tag">大模型应用</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mission Vision Values -->
+<section class="section mission-section" id="mission">
+  <canvas class="mission-bg" id="missionCanvas"></canvas>
+  <div class="mission-content page">
+    <div class="mb-section text-center">
+      <span class="sec-label">MISSION &amp; VISION &amp; VALUES</span>
+      <h2 class="sec-title">使命 · 愿景 · 价值观</h2>
+      <div class="sec-divider center"></div>
+    </div>
+    <div class="mission-grid">
+      <div class="mission-card">
+        <div class="mission-icon-wrap">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233B82F6'/%3E%3Cstop offset='1' stop-color='%23818CF8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='24' cy='24' r='16' fill='none' stroke='url(%23a)' stroke-width='1'/%3E%3Ccircle cx='24' cy='24' r='10' fill='none' stroke='url(%23a)' stroke-width='1.5'/%3E%3Ccircle cx='24' cy='24' r='3' fill='url(%23a)'/%3E%3Cline x1='24' y1='4' x2='24' y2='16' stroke='url(%23a)' stroke-width='1.8' stroke-linecap='round'/%3E%3Cline x1='24' y1='32' x2='24' y2='44' stroke='url(%23a)' stroke-width='1.8' stroke-linecap='round'/%3E%3Cline x1='4' y1='24' x2='16' y2='24' stroke='url(%23a)' stroke-width='1.8' stroke-linecap='round'/%3E%3Cline x1='32' y1='24' x2='44' y2='24' stroke='url(%23a)' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E" class="mission-icon" alt="">
+        </div>
+        <h3>使命</h3>
+        <p class="mission-en">MISSION</p>
+        <div class="mission-divider"></div>
+        <p>让每个企业都能用数据驱动增长，释放数据要素的无限潜能，推动中国企业的数字化进程。</p>
+      </div>
+      <div class="mission-card">
+        <div class="mission-icon-wrap">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2306B6D4'/%3E%3Cstop offset='1' stop-color='%233B82F6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='24' cy='24' r='12' fill='none' stroke='url(%23a)' stroke-width='1.5'/%3E%3Ccircle cx='24' cy='24' r='2' fill='url(%23a)'/%3E%3Cpath d='M24 8l1.8 6M24 34l1.8 6M8 24l6 1.8M34 24l6 1.8' stroke='url(%23a)' stroke-width='1' stroke-linecap='round'/%3E%3C/svg%3E" class="mission-icon" alt="">
+        </div>
+        <h3>愿景</h3>
+        <p class="mission-en">VISION</p>
+        <div class="mission-divider"></div>
+        <p>成为数据智能领域最受信赖的合作伙伴，打造中国企业数字化转型的标杆实践。</p>
+      </div>
+      <div class="mission-card">
+        <div class="mission-icon-wrap">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23EC4899'/%3E%3Cstop offset='1' stop-color='%23F97316'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M24 5l10 13-10 25L14 18l10-13z' fill='none' stroke='url(%23a)' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M14 18l10 11M34 18l-10 11' stroke='url(%23a)' stroke-width='1' opacity='.4'/%3E%3Ccircle cx='24' cy='16' r='2.5' fill='url(%23a)'/%3E%3C/svg%3E" class="mission-icon" alt="">
+        </div>
+        <h3>价值观</h3>
+        <p class="mission-en">VALUES</p>
+        <div class="mission-divider"></div>
+        <p>务实求真——用数据说话，以结果为导向。创新进取——拥抱変化，持续探索前沿。协作共赢——与客户共同成长，以信任为基石。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- News -->
+<section class="section" id="news">
+  <div class="page">
+    <div class="mb-section text-center">
+      <span class="sec-label">NEWS</span>
+      <h2 class="sec-title">新闻动态</h2>
+      <div class="sec-divider center"></div>
+    </div>
+    <div class="news-grid">
+      <a href="#" class="news-card">
+        <div class="news-date">2025.06</div>
+        <h4 class="news-title">格数科技正式发布数据治理平台 V1.0</h4>
+        <p class="news-summary">经过团队数月的研发打磨，格数科技首款数据治理产品正式上线，标志着公司在数据智能化领域迈出坚实一步。</p>
+        <span class="news-link">了解更多 →</span>
+      </a>
+      <a href="#" class="news-card">
+        <div class="news-date">2025.05</div>
+        <h4 class="news-title">格数科技与行业伙伴达成战略合作</h4>
+        <p class="news-summary">携手多家行业领先企业，共同探索数据智能在垂直场景中的深度应用，拓展业务生态版图。</p>
+        <span class="news-link">了解更多 →</span>
+      </a>
+      <a href="#" class="news-card">
+        <div class="news-date">2025.04</div>
+        <h4 class="news-title">创始人受邀参加2025数据智能峰会</h4>
+        <p class="news-summary">格数科技创始人在峰会发表主题演讲，分享企业数字化转型的前沿思考与实践经验。</p>
+        <span class="news-link">了解更多 →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section section-alt" id="contact">
+  <div class="page">
+    <div class="mb-section">
+      <span class="sec-label">CONTACT</span>
+      <h2 class="sec-title">联系我们</h2>
+      <div class="sec-divider"></div>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <p class="contact-desc">如果您对我们的解决方案感兴趣，欢迎随时与我们联系。我们期待与您一起探索数据智能的无限可能。</p>
+        <div class="contact-item">
+          <div class="contact-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+          <div><div class="contact-label">电子邮箱</div><div class="contact-value">info@geshu-tech.com</div></div>
+        </div>
+        <a href="mailto:info@geshu-tech.com" class="btn btn-primary" style="margin-top:1rem">发送邮件咨询</a>
+      </div>
+      <div class="quick-links">
+        <h3>快速导航</h3>
+        <a href="#about" class="quick-link">关于我们 <span>→</span></a>
+        <a href="#business" class="quick-link">核心业务 <span>→</span></a>
+        <a href="#mission" class="quick-link">使命愿景 <span>→</span></a>
+        <a href="#news" class="quick-link">新闻动态 <span>→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="page footer-inner">
+    <div style="display:flex;align-items:center;gap:.75rem">
+      <div class="logo-icon" style="width:2rem;height:2rem;font-size:.75rem">G</div>
+      <span class="footer-copy">&copy; 2025 格数科技 版权所有</span>
+    </div>
+    <div class="footer-links">
+      <a href="#about">关于我们</a>
+      <a href="#business">核心业务</a>
+      <a href="#mission">使命愿景</a>
+      <a href="#contact">联系我们</a>
+    </div>
+    <span class="footer-copy">企业级数据智能解决方案提供商</span>
+  </div>
+</footer>
+
+<script>
+// ===== Navbar scroll effect =====
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 80);
+});
+
+// ===== Hero particle background =====
+(function() {
+  const canvas = document.getElementById('heroCanvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, particles = [], mouseX = null, mouseY = null, animId;
+
+  function resize() {
+    const dpr = window.devicePixelRatio || 1;
+    W = canvas.offsetWidth = canvas.parentElement.offsetWidth;
+    H = canvas.offsetHeight = canvas.parentElement.offsetHeight;
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  class Particle {
+    constructor() {
+      this.x = Math.random() * W;
+      this.y = Math.random() * H;
+      this.vx = (Math.random() - 0.5) * 0.3;
+      this.vy = (Math.random() - 0.5) * 0.3;
+      this.r = 1 + Math.random() * 2;
+      this.a = 0.3 + Math.random() * 0.5;
+    }
+    update() {
+      this.x += this.vx; this.y += this.vy;
+      if (this.x < -20) this.x = W + 20;
+      if (this.x > W + 20) this.x = -20;
+      if (this.y < -20) this.y = H + 20;
+      if (this.y > H + 20) this.y = -20;
+      if (mouseX != null && mouseY != null) {
+        const dx = mouseX - this.x, dy = mouseY - this.y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < 150) {
+          const f = (1 - dist/150) * 0.02;
+          this.vx += dx * f; this.vy += dy * f;
+          const s = Math.sqrt(this.vx*this.vx + this.vy*this.vy);
+          if (s > 1) { this.vx = this.vx/s; this.vy = this.vy/s; }
+        }
+      }
+    }
+    draw() {
+      ctx.save();
+      ctx.globalAlpha = this.a;
+      ctx.fillStyle = '#60A5FA';
+      ctx.shadowColor = 'rgba(96,165,250,0.5)';
+      ctx.shadowBlur = this.r * 2;
+      ctx.beginPath(); ctx.arc(this.x, this.y, this.r, 0, Math.PI*2); ctx.fill();
+      ctx.restore();
+    }
+  }
+
+  function init() {
+    resize();
+    particles = Array.from({length: 80}, () => new Particle());
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach(p => { p.update(); p.draw(); });
+    // connections
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i+1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x, dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < 120) {
+          ctx.save();
+          ctx.globalAlpha = (1 - dist/120) * 0.08;
+          ctx.strokeStyle = '#60A5FA'; ctx.lineWidth = 0.4;
+          ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y); ctx.stroke();
+          ctx.restore();
+        }
+      }
+    }
+    animId = requestAnimationFrame(animate);
+  }
+
+  canvas.addEventListener('mousemove', e => { const r = canvas.getBoundingClientRect(); mouseX = e.clientX - r.left; mouseY = e.clientY - r.top; });
+  canvas.addEventListener('mouseleave', () => { mouseX = null; mouseY = null; });
+  window.addEventListener('resize', resize);
+
+  init(); animate();
+
+  // ===== Mission starfield (simplified) =====
+  const mCanvas = document.getElementById('missionCanvas');
+  if (mCanvas) {
+    const mCtx = mCanvas.getContext('2d');
+    let mW, mH, stars = [], mAnimId;
+
+    function mResize() {
+      mW = mCanvas.offsetWidth = mCanvas.parentElement.offsetWidth;
+      mH = mCanvas.offsetHeight = mCanvas.parentElement.offsetHeight;
+      mCanvas.width = mW;
+      mCanvas.height = mH;
+    }
+
+    stars = Array.from({length: 120}, () => ({
+      x: Math.random() * mW, y: Math.random() * mH,
+      r: 0.5 + Math.random() * 1.5,
+      a: 0.3 + Math.random() * 0.7,
+      speed: 0.001 + Math.random() * 0.003,
+      phase: Math.random() * Math.PI * 2
+    }));
+
+    function mAnimate(time) {
+      mCtx.clearRect(0, 0, mW, mH);
+      stars.forEach(s => {
+        const twinkle = Math.sin(time * s.speed + s.phase) * 0.5 + 0.5;
+        mCtx.save();
+        mCtx.globalAlpha = s.a * (0.4 + twinkle * 0.6);
+        mCtx.fillStyle = '#fff';
+        mCtx.shadowColor = 'rgba(255,255,255,0.4)';
+        mCtx.shadowBlur = s.r * 2;
+        mCtx.beginPath(); mCtx.arc(s.x, s.y, s.r, 0, Math.PI*2); mCtx.fill();
+        mCtx.restore();
+      });
+      mAnimId = requestAnimationFrame(mAnimate);
+    }
+
+    mResize();
+    mAnimate(0);
+    window.addEventListener('resize', mResize);
+  }
+})();
+
+// ===== Smooth scroll for nav links =====
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const id = a.getAttribute('href').substring(1);
+    document.getElementById(id)?.scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
