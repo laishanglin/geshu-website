@@ -4,17 +4,17 @@
   "intro": "格数科技成立于2025年，是一家专注于企业数据智能化的科技公司。我们坚信数据是数字经济时代最核心的生产要素，致力于帮助企业构建数据驱动的决策体系和智能化运营能力。",
   "highlights": [
     {
-      "icon": "/images/icon-tech.svg",
+      "icon": "images/icon-tech.svg",
       "title": "技术驱动",
       "desc": "自主研发数据智能平台，融合大数据、AI与行业Know-how"
     },
     {
-      "icon": "/images/icon-team.svg",
+      "icon": "images/icon-team.svg",
       "title": "专家团队",
       "desc": "核心团队来自头部科技企业与咨询公司，兼具技术深度与业务洞察"
     },
     {
-      "icon": "/images/icon-e2e.svg",
+      "icon": "images/icon-e2e.svg",
       "title": "端到端服务",
       "desc": "从战略规划到落地实施，提供全链路数据解决方案"
     }

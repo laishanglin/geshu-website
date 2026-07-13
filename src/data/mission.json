@@ -3,19 +3,19 @@
   "sectionTitleEn": "MISSION & VISION & VALUES",
   "items": [
     {
-      "icon": "/images/icon-mission.svg",
+      "icon": "images/icon-mission.svg",
       "title": "使命",
       "titleEn": "MISSION",
       "content": "让每个企业都能用数据驱动增长，释放数据要素的无限潜能，推动中国企业的数字化进程。"
     },
     {
-      "icon": "/images/icon-vision.svg",
+      "icon": "images/icon-vision.svg",
       "title": "愿景",
       "titleEn": "VISION",
       "content": "成为数据智能领域最受信赖的合作伙伴，打造中国企业数字化转型的标杆实践。"
     },
     {
-      "icon": "/images/icon-values.svg",
+      "icon": "images/icon-values.svg",
       "title": "价值观",
       "titleEn": "VALUES",
       "content": "务实求真——用数据说话，以结果为导向。创新进取——拥抱变化，持续探索前沿。协作共赢——与客户共同成长，以信任为基石。"

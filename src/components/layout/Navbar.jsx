@@ -48,7 +48,7 @@ export default function Navbar() {
       <div className="page-container flex items-center justify-between h-20">
         {/* Logo */}
         <a href="#hero" onClick={(e) => handleClick(e, '#hero')} className="flex items-center gap-3 group">
-          <img src="/images/logo.svg" alt={siteData.companyName} className="h-9 w-auto" />
+          <img src="images/logo.svg" alt={siteData.companyName} className="h-9 w-auto" />
         </a>
 
         {/* Nav Links */}

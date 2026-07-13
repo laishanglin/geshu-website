@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
           {/* Left - Logo + Copyright */}
           <div className="flex items-center gap-3 opacity-60">
-            <img src="/images/logo.svg" alt={siteData.companyName} className="h-7 w-auto" />
+            <img src="images/logo.svg" alt={siteData.companyName} className="h-7 w-auto" />
           </div>
 
           {/* Center - Quick Links */}

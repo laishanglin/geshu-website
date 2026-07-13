@@ -5,7 +5,7 @@
   "areas": [
     {
       "id": "strategy",
-      "icon": "/images/icon-strategy.svg",
+      "icon": "images/icon-strategy.svg",
       "title": "数据战略咨询",
       "shortDesc": "为企业量身定制数据战略规划与数字化转型路径，从顶层设计到实施路线图，确保每一步都有据可依。",
       "highlights": ["数据成熟度评估", "转型路线图", "组织与治理架构"],
@@ -13,7 +13,7 @@
     },
     {
       "id": "platform",
-      "icon": "/images/icon-platform.svg",
+      "icon": "images/icon-platform.svg",
       "title": "数据平台建设",
       "shortDesc": "构建企业级数据平台，打通数据采集、存储、计算与分析全链路，让数据资产真正可用、可控、可运营。",
       "highlights": ["数据中台搭建", "数据仓库建设", "实时计算引擎"],
@@ -21,7 +21,7 @@
     },
     {
       "id": "governance",
-      "icon": "/images/icon-governance.svg",
+      "icon": "images/icon-governance.svg",
       "title": "数据治理服务",
       "shortDesc": "建立完善的数据治理体系，保障数据质量、安全与合规，为企业数据资产保驾护航。",
       "highlights": ["数据标准制定", "质量管理体系", "安全合规保障"],
@@ -29,7 +29,7 @@
     },
     {
       "id": "ai",
-      "icon": "/images/icon-ai.svg",
+      "icon": "images/icon-ai.svg",
       "title": "AI应用落地",
       "shortDesc": "将AI能力与企业场景深度融合，从智能决策到流程自动化，让前沿技术产生实实在在的业务价值。",
       "highlights": ["智能决策引擎", "流程自动化", "大模型应用"],
