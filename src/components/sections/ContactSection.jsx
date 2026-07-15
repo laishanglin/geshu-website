@@ -1,22 +1,21 @@
 import { motion } from 'framer-motion'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { Mail, Phone, MapPin, ChevronRight } from 'lucide-react'
-import SectionContainer from '@/components/ui/SectionContainer'
 import SectionTitle from '@/components/ui/SectionTitle'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import PrimaryButton from '@/components/ui/PrimaryButton'
 import contactData from '@/data/contact.json'
-import siteData from '@/data/site.json'
 
 export default function ContactSection() {
   const reduceMotion = useReducedMotion()
 
   return (
-    <SectionContainer id="contact">
-      <SectionTitle
-        title={contactData.sectionTitle}
-        titleEn={contactData.sectionTitleEn}
-      />
+    <section id="contact" className="relative section-padding bg-[#060B14]">
+      <div className="page-container">
+        <SectionTitle
+          title={contactData.sectionTitle}
+          titleEn={contactData.sectionTitleEn}
+        />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
         {/* Left - Contact Info */}
@@ -82,7 +81,8 @@ export default function ContactSection() {
           </div>
         </ScrollReveal>
       </div>
-    </SectionContainer>
+      </div>
+    </section>
   )
 }
 

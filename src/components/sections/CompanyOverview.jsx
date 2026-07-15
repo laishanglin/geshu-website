@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { Server, Lightbulb, TrendingUp, Cpu, Users, Globe } from 'lucide-react'
-import SectionContainer from '@/components/ui/SectionContainer'
 import SectionTitle from '@/components/ui/SectionTitle'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import ScrollStack, { ScrollStackItem } from '@/components/ui/ScrollStack'
@@ -12,8 +11,9 @@ export default function CompanyOverview() {
   const highlightIcons = [Cpu, Users, Globe]
 
   return (
-    <SectionContainer id="about">
-      <SectionTitle title={companyData.sectionTitle} titleEn={companyData.sectionTitleEn} align="left" />
+    <section id="about" className="relative section-padding bg-[#060B14]">
+      <div className="page-container">
+        <SectionTitle title={companyData.sectionTitle} titleEn={companyData.sectionTitleEn} align="left" />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
         {/* Left - Text Content */}
@@ -97,6 +97,7 @@ export default function CompanyOverview() {
           </p>
         </ScrollReveal>
       </div>
-    </SectionContainer>
+      </div>
+    </section>
   )
 }
