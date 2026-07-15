@@ -1,8 +1,8 @@
 [
   { "label": "首页", "href": "#hero" },
-  { "label": "关于我们", "href": "#about" },
-  { "label": "核心业务", "href": "#business" },
-  { "label": "使命愿景", "href": "#mission" },
-  { "label": "新闻动态", "href": "#news" },
+  { "label": "公司简介", "href": "#about" },
+  { "label": "业务与产品", "href": "#business" },
+  { "label": "企业文化", "href": "#mission" },
+  { "label": "新闻与案例", "href": "#news" },
   { "label": "联系我们", "href": "#contact" }
 ]

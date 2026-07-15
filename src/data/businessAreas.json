@@ -1,38 +1,38 @@
 {
-  "sectionTitle": "核心业务",
-  "sectionTitleEn": "WHAT WE DO",
-  "subtitle": "四大业务方向，构建企业数据智能全链路",
+  "sectionTitle": "五大业务板块",
+  "sectionTitleEn": "OUR BUSINESS",
+  "subtitle": "集团数字化·数字产业金融·文商旅展数字化·AI自研·跨境数据服务",
   "areas": [
     {
       "id": "strategy",
       "icon": "images/icon-strategy.svg",
-      "title": "数据战略咨询",
-      "shortDesc": "为企业量身定制数据战略规划与数字化转型路径，从顶层设计到实施路线图，确保每一步都有据可依。",
-      "highlights": ["数据成熟度评估", "转型路线图", "组织与治理架构"],
+      "title": "集团数字化建设",
+      "shortDesc": "统筹格力集团全域数字化转型，落地司库、财务、人力、固投、资产管理全系列自研/共建系统，搭建统一基础设施与运维合规体系，建立项目全生命周期管控机制，实现集团从分散建设到全域统筹管控转型。",
+      "highlights": ["集团全域数字化", "财务司库系统", "固定资产管理", "项目全流程管控", "等保合规运维"],
       "color": "from-blue-500 to-cyan-400"
     },
     {
       "id": "platform",
       "icon": "images/icon-platform.svg",
-      "title": "数据平台建设",
-      "shortDesc": "构建企业级数据平台，打通数据采集、存储、计算与分析全链路，让数据资产真正可用、可控、可运营。",
-      "highlights": ["数据中台搭建", "数据仓库建设", "实时计算引擎"],
+      "title": "数字产业金融·「百千万工程」金融服务平台",
+      "shortDesc": "运营珠海市「百千万工程」金融服务平台，上线知识产权融资、农业金融、保险服务三大特色专区；搭建智能数字风控平台、光伏资产动态监控系统，迭代租赁、保理供应链金融系统，联动政企、金融机构赋能中小微企业融资。",
+      "highlights": ["百千万工程", "知识产权质押融资", "供应链金融", "智能风控", "产业金融生态"],
       "color": "from-purple-500 to-blue-400"
     },
     {
       "id": "governance",
       "icon": "images/icon-governance.svg",
-      "title": "数据治理服务",
-      "shortDesc": "建立完善的数据治理体系，保障数据质量、安全与合规，为企业数据资产保驾护航。",
-      "highlights": ["数据标准制定", "质量管理体系", "安全合规保障"],
+      "title": "文商旅展数字化",
+      "shortDesc": "覆盖集团文旅、酒店、港航、航展全场景数字化，统一搭建酒店PMS、票务管理系统；承担中国航展全流程数字化保障，研发AI伴游、会员数据沉淀、客流监测产品，依托文旅数据实验室实现文旅场景数据决策。",
+      "highlights": ["航展数字化", "智慧酒店", "文旅AI服务", "客流大数据", "会展系统保障"],
       "color": "from-cyan-500 to-emerald-400"
     },
     {
       "id": "ai",
       "icon": "images/icon-ai.svg",
-      "title": "AI应用落地",
-      "shortDesc": "将AI能力与企业场景深度融合，从智能决策到流程自动化，让前沿技术产生实实在在的业务价值。",
-      "highlights": ["智能决策引擎", "流程自动化", "大模型应用"],
+      "title": "AI研发创新平台",
+      "shortDesc": "自研Supa企业AI原生平台，内置AI协作工作台、多智能Agent、DAG工作流、企业知识大脑、安全管控底座；落地Ontology认知平台、UniAPI大模型调度平台，开放MCP适配器对接财务、法务、文旅业务系统，三大市级数据实验室持续孵化数据产品。",
+      "highlights": ["企业AI平台", "多Agent智能体", "数据实验室", "大模型调度", "行业AI场景落地"],
       "color": "from-orange-500 to-pink-400"
     }
   ]

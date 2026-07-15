@@ -1,14 +1,14 @@
 {
   "sectionTitle": "联系我们",
   "sectionTitleEn": "CONTACT",
-  "description": "如果您对我们的解决方案感兴趣，欢迎随时与我们联系。我们期待与您一起探索数据智能的无限可能。",
-  "email": "info@geshu-tech.com",
-  "phone": "",
-  "address": "",
+  "description": "格数科技立足珠海横琴，面向集团内部、政企、金融、文旅行业提供数字化、AI平台、数据服务全流程解决方案。欢迎业务合作、项目咨询、实验室共建洽谈。",
+  "email": "geshu@gree.com",
+  "phone": "待补充",
+  "address": "珠海横琴粤澳深度合作区",
   "quickLinks": [
     { "label": "关于我们", "href": "#about" },
     { "label": "核心业务", "href": "#business" },
-    { "label": "使命愿景", "href": "#mission" },
+    { "label": "企业文化", "href": "#mission" },
     { "label": "新闻动态", "href": "#news" }
   ]
 }

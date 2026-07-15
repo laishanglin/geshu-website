@@ -63,8 +63,8 @@ export default function CompanyOverview() {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-white mb-2">数据资产</h4>
-                    <p className="text-sm text-slate-400 leading-relaxed">打通数据孤岛，构建企业级数据底座，让数据真正可用、可控、可运营。</p>
+                    <h4 className="text-xl font-bold text-white mb-2">数据底座</h4>
+                    <p className="text-sm text-slate-400 leading-relaxed">打通企业内部数据孤岛，搭建集团统一数据中台与治理标准，实现数据可管、可用、可运营，支撑国资数字化转型战略。</p>
                   </div>
                 </div>
               </ScrollStackItem>
@@ -76,8 +76,8 @@ export default function CompanyOverview() {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-white mb-2">智能分析</h4>
-                    <p className="text-sm text-slate-400 leading-relaxed">融合AI与行业Know-how，让数据洞察驱动精准决策，释放企业增长潜能。</p>
+                    <h4 className="text-xl font-bold text-white mb-2">AI场景落地</h4>
+                    <p className="text-sm text-slate-400 leading-relaxed">以法务风控、文旅智能客服、金融授信为核心场景，落地多Agent智能协作，将大模型能力转化为业务降本增效工具。</p>
                   </div>
                 </div>
               </ScrollStackItem>
@@ -89,8 +89,8 @@ export default function CompanyOverview() {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-white mb-2">业务增长</h4>
-                    <p className="text-sm text-slate-400 leading-relaxed">从数据到洞察，从洞察到行动，从行动到增长——完成智能化的完整闭环。</p>
+                    <h4 className="text-xl font-bold text-white mb-2">产业生态共建</h4>
+                    <p className="text-sm text-slate-400 leading-relaxed">联动政府委办、银行保险、头部互联网、高校实验室，打造金融、知识产权、文旅数据融合创新平台。</p>
                   </div>
                 </div>
               </ScrollStackItem>

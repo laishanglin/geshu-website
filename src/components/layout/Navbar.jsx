@@ -48,7 +48,7 @@ export default function Navbar() {
       <div className="page-container flex items-center justify-between h-20">
         {/* Logo */}
         <a href="#hero" onClick={(e) => handleClick(e, '#hero')} className="flex items-center gap-3 group">
-          <img src="images/logo.svg" alt={siteData.companyName} className="h-9 w-auto" />
+          <img src="images/logo.png" alt={siteData.companyName} className="h-20 w-auto -translate-y-1 -translate-x-2" />
         </a>
 
         {/* Nav Links */}
@@ -83,7 +83,7 @@ export default function Navbar() {
           onClick={(e) => handleClick(e, '#contact')}
           className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-brand-500 to-accent-500 text-white text-sm font-semibold hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] transition-all duration-300 hover:scale-105"
         >
-          立即咨询
+          项目咨询
           <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>

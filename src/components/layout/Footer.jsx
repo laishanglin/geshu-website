@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
           {/* Left - Logo + Copyright */}
           <div className="flex items-center gap-3 opacity-60">
-            <img src="images/logo.svg" alt={siteData.companyName} className="h-7 w-auto" />
+            <img src="images/logo.png" alt={siteData.companyName} className="h-14 w-auto -translate-y-1 -translate-x-2" />
           </div>
 
           {/* Center - Quick Links */}
@@ -32,7 +32,7 @@ export default function Footer() {
 
           {/* Right */}
           <p className="text-sm text-slate-600">
-            &copy; {currentYear} {siteData.companyNameEn}. {siteData.description}
+            &copy; {currentYear} {siteData.companyNameEn} 珠海横琴格数科技有限公司｜格力集团全资数字化AI平台
           </p>
         </div>
       </div>
