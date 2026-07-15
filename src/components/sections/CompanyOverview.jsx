@@ -32,6 +32,7 @@ export default function CompanyOverview() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 + i * 0.1, duration: 0.5 }}
+                className="flex items-start gap-4 p-5 rounded-xl bg-white/[0.02] border border-white/[0.04] hover:bg-white/[0.04] hover:border-brand-500/10 transition-all duration-300"
               >
                 <div className="w-9 h-9 rounded-lg bg-brand-500/10 border border-brand-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <Icon className={`w-5 h-5 ${i === 0 ? 'text-blue-400' : i === 1 ? 'text-purple-400' : 'text-cyan-400'}`} strokeWidth={1.5} />
