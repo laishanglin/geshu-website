@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <title>格数科技 - Cube Grid</title>
+  <desc>Isometric cube mark for Geshu Tech</desc>
+  <polygon points="80,28 126,52 80,76 34,52" fill="#1A5FDC"/>
+  <polygon points="34,52 80,76 80,116 34,92" fill="#1A5FDC" opacity="0.45"/>
+  <polygon points="80,76 126,52 126,92 80,116" fill="#1A5FDC" opacity="0.7"/>
+</svg>

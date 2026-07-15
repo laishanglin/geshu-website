@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>格数科技 · 极简Logo方案</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: #F5F5F5;
+    color: #1A1A1A;
+    line-height: 1.6;
+  }
+  .page { max-width: 1100px; margin: 0 auto; padding: 60px 32px; }
+
+  /* Header */
+  .header {
+    text-align: center;
+    padding: 60px 0 40px;
+  }
+  .header .label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #999;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #111;
+  }
+  .header .brief {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #888;
+  }
+
+  /* Cards */
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #FFF;
+  }
+  .card {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    border-bottom: 1px solid #EEE;
+  }
+  .card:last-child { border-bottom: none; }
+  @media (max-width: 800px) { .card { grid-template-columns: 1fr; } }
+
+  /* Preview area */
+  .preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 56px 32px;
+    background: #FAFAFA;
+    position: relative;
+    border-right: 1px solid #EEE;
+    min-height: 320px;
+  }
+  .preview .num {
+    position: absolute;
+    top: 20px;
+    left: 24px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #CCC;
+    letter-spacing: 1px;
+  }
+  .preview svg { max-width: 100%; }
+
+  /* Favicon preview */
+  .favicon-row {
+    position: absolute;
+    bottom: 20px;
+    right: 24px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .favicon-row span { font-size: 10px; color: #BBB; letter-spacing: 1px; }
+  .favicon-dot {
+    width: 16px; height: 16px;
+    border-radius: 3px;
+    background: #1A5FDC;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .favicon-dot svg { width: 10px; height: 10px; }
+
+  /* Info area */
+  .info {
+    padding: 40px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .info .name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+  }
+  .info .en-name {
+    font-size: 11px;
+    color: #AAA;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .info .meaning {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 14px;
+    padding-left: 16px;
+    border-left: 2px solid #1A5FDC;
+  }
+  .info .scene-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: #999;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .info .scenes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .info .scene-tag {
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 100px;
+    background: #F0F4FF;
+    color: #1A5FDC;
+    font-weight: 500;
+  }
+
+  /* Specs table */
+  .specs-section {
+    margin-top: 48px;
+  }
+  .specs-section h2 {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #111;
+    margin-bottom: 20px;
+  }
+  .specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #FFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .specs-table th {
+    text-align: left;
+    padding: 14px 20px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #999;
+    text-transform: uppercase;
+    background: #FAFAFA;
+    border-bottom: 1px solid #E0E0E0;
+  }
+  .specs-table td {
+    padding: 14px 20px;
+    font-size: 13px;
+    color: #444;
+    border-bottom: 1px solid #F0F0F0;
+  }
+  .specs-table tr:last-child td { border-bottom: none; }
+  .specs-table .rec { color: #1A5FDC; font-weight: 600; }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    margin-top: 48px;
+    font-size: 11px;
+    color: #CCC;
+    letter-spacing: 2px;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="label">Brand Identity Proposal</div>
+    <h1>格数科技 · Logo 方案</h1>
+    <p class="brief">3 套极简扁平矢量方案 · 纯色蓝标 · 适合印刷 / 网站 / Favicon</p>
+  </div>
+
+  <div class="cards">
+
+    <!-- ====== SCHEME 1: FRAME CORE ====== -->
+    <div class="card">
+      <div class="preview">
+        <span class="num">01</span>
+        <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <!-- Outer frame -->
+          <rect x="45" y="35" width="110" height="130" rx="8"
+                fill="none" stroke="#1A5FDC" stroke-width="7"/>
+          <!-- Inner core -->
+          <rect x="72" y="62" width="56" height="76" rx="4"
+                fill="#1A5FDC"/>
+          <!-- Negative space cut -->
+          <rect x="82" y="72" width="36" height="56" rx="2"
+                fill="#FAFAFA"/>
+          <!-- Small accent dot -->
+          <circle cx="100" cy="100" r="6" fill="#1A5FDC"/>
+        </svg>
+        <div class="favicon-row">
+          <span>favicon</span>
+          <div class="favicon-dot">
+            <svg viewBox="0 0 200 200"><rect x="45" y="35" width="110" height="130" rx="8" fill="none" stroke="#FFF" stroke-width="14"/><rect x="78" y="68" width="44" height="64" rx="3" fill="#FFF"/><rect x="88" y="78" width="24" height="44" rx="1" fill="#1A5FDC"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="info">
+        <div class="name">方案一：框架核心</div>
+        <div class="en-name">Frame Core</div>
+        <div class="meaning">
+          <strong>寓意：</strong>外框取自"格"的偏旁，代表框架、标准、结构化思维。内嵌实心方块与负空间形成嵌套层次，中央圆点如数据核心——<em>数据在框架中流动，在规则中生长</em>。简洁的矩形几何传达软件的严谨与秩序感。
+        </div>
+        <div class="scene-label">适用场景</div>
+        <div class="scenes">
+          <span class="scene-tag">Favicon 图标</span>
+          <span class="scene-tag">App 启动图标</span>
+          <span class="scene-tag">名片 / 信纸</span>
+          <span class="scene-tag">技术文档封面</span>
+          <span class="scene-tag">官网 Header</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== SCHEME 2: NODE LINK ====== -->
+    <div class="card">
+      <div class="preview">
+        <span class="num">02</span>
+        <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <!-- Vertical spine -->
+          <line x1="100" y1="38" x2="100" y2="162" stroke="#1A5FDC" stroke-width="6" stroke-linecap="round"/>
+          <!-- Left branch -->
+          <line x1="100" y1="72" x2="52" y2="72" stroke="#1A5FDC" stroke-width="5" stroke-linecap="round"/>
+          <!-- Right branch upper -->
+          <line x1="100" y1="110" x2="148" y2="110" stroke="#1A5FDC" stroke-width="5" stroke-linecap="round"/>
+          <!-- Right branch lower -->
+          <line x1="100" y1="140" x2="132" y2="140" stroke="#1A5FDC" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+          <!-- Nodes -->
+          <circle cx="100" cy="38" r="9" fill="#1A5FDC"/>
+          <circle cx="52" cy="72" r="7" fill="#1A5FDC"/>
+          <circle cx="148" cy="110" r="7" fill="#1A5FDC"/>
+          <circle cx="132" cy="140" r="5" fill="#1A5FDC" opacity="0.6"/>
+          <circle cx="100" cy="162" r="6" fill="#1A5FDC" opacity="0.4"/>
+        </svg>
+        <div class="favicon-row">
+          <span>favicon</span>
+          <div class="favicon-dot">
+            <svg viewBox="0 0 200 200"><circle cx="100" cy="50" r="20" fill="#FFF"/><line x1="100" y1="70" x2="100" y2="150" stroke="#FFF" stroke-width="12" stroke-linecap="round"/><line x1="100" y1="100" x2="60" y2="100" stroke="#FFF" stroke-width="10" stroke-linecap="round"/><line x1="100" y1="130" x2="140" y2="130" stroke="#FFF" stroke-width="8" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="info">
+        <div class="name">方案二：数据节点</div>
+        <div class="en-name">Data Node</div>
+        <div class="meaning">
+          <strong>寓意：</strong>中央主干贯穿上下，横向分支连接不同数据节点——<em>一个数据中枢，多个服务分支</em>。圆点大小渐变暗示数据流量的层级，主干粗而分支细，传达平台型技术企业的架构观。极简的树形结构适配 AI 软件的模块化特征。
+        </div>
+        <div class="scene-label">适用场景</div>
+        <div class="scenes">
+          <span class="scene-tag">官网导航图标</span>
+          <span class="scene-tag">API 文档标识</span>
+          <span class="scene-tag">SDK 品牌标识</span>
+          <span class="scene-tag">产品架构图</span>
+          <span class="scene-tag">PPT 模板水印</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== SCHEME 3: NEGATIVE G ====== -->
+    <div class="card">
+      <div class="preview">
+        <span class="num">03</span>
+        <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <!-- Solid square base -->
+          <rect x="46" y="36" width="108" height="128" rx="10"
+                fill="#1A5FDC"/>
+          <!-- Negative space 'g' shape -->
+          <!-- The letter 'g' cut from the solid block -->
+          <circle cx="100" cy="88" r="30" fill="#FAFAFA"/>
+          <rect x="70" y="88" width="60" height="46" fill="#FAFAFA"/>
+          <!-- Inner counter of 'g' -->
+          <circle cx="100" cy="82" r="14" fill="#1A5FDC"/>
+          <!-- Descender of 'g' -->
+          <rect x="70" y="118" width="20" height="22" fill="#FAFAFA"/>
+          <!-- Cleanup: recut the right side -->
+          <rect x="130" y="60" width="24" height="80" fill="#1A5FDC"/>
+          <rect x="144" y="96" width="10" height="44" fill="#FAFAFA"/>
+        </svg>
+        <div class="favicon-row">
+          <span>favicon</span>
+          <div class="favicon-dot">
+            <svg viewBox="0 0 200 200"><rect x="40" y="30" width="120" height="140" rx="12" fill="#FFF"/><circle cx="100" cy="90" r="35" fill="#1A5FDC"/><rect x="65" y="90" width="70" height="50" fill="#1A5FDC"/><circle cx="100" cy="82" r="16" fill="#FFF"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="info">
+        <div class="name">方案三：负空间 G</div>
+        <div class="en-name">Negative Space G</div>
+        <div class="meaning">
+          <strong>寓意：</strong>实心圆角矩形中挖出小写 g 的轮廓——<em>在完整中留白，在确定中留余地</em>。负空间手法是设计中最精妙的语言：g 既是"格"的拼音首字母，也是"graph / grid / growth"的国际通识符号。圆角传递友好，实色块确保小尺寸辨识度。
+        </div>
+        <div class="scene-label">适用场景</div>
+        <div class="scenes">
+          <span class="scene-tag">Favicon（最佳）</span>
+          <span class="scene-tag">社交媒体头像</span>
+          <span class="scene-tag">产品图标</span>
+          <span class="scene-tag">浏览器标签页</span>
+          <span class="scene-tag">移动端启动屏</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /cards -->
+
+  <!-- SPECS TABLE -->
+  <div class="specs-section">
+    <h2>方案对比</h2>
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>维度</th>
+          <th>方案一 · 框架核心</th>
+          <th>方案二 · 数据节点</th>
+          <th>方案三 · 负空间 G</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>设计语言</strong></td>
+          <td>嵌套矩形，正负形</td>
+          <td>线性节点，树形结构</td>
+          <td>负空间字母，实色块</td>
+        </tr>
+        <tr>
+          <td><strong>文化关联</strong></td>
+          <td>「格」字偏旁——框架</td>
+          <td>「数」字意象——节点/分支</td>
+          <td>「G」拼音+国际通识</td>
+        </tr>
+        <tr>
+          <td><strong>最小尺寸辨识</strong></td>
+          <td class="rec">★★★★★ 极佳</td>
+          <td>★★★★ 良好</td>
+          <td class="rec">★★★★★ 极佳</td>
+        </tr>
+        <tr>
+          <td><strong>国际化程度</strong></td>
+          <td>★★★★ 高</td>
+          <td>★★★★ 高</td>
+          <td class="rec">★★★★★ 极高</td>
+        </tr>
+        <tr>
+          <td><strong>印刷适应性</strong></td>
+          <td class="rec">★★★★★ 单色印刷完美</td>
+          <td>★★★★ 良好</td>
+          <td class="rec">★★★★★ 单色印刷完美</td>
+        </tr>
+        <tr>
+          <td><strong>推荐场景</strong></td>
+          <td>主打品牌标识，全场景</td>
+          <td>技术产品线，开发者社区</td>
+          <td>Favicon、社媒、国际推广</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    格数科技 GESHU TECH · BRAND IDENTITY · 2026
+  </div>
+
+</div>
+</body>
+</html>

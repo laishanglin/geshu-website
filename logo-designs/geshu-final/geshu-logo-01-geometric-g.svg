@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <title>格数科技 - Geometric G</title>
+  <desc>Geometric G mark for Geshu Tech</desc>
+  <circle cx="78" cy="78" r="56" fill="none" stroke="#1A5FDC" stroke-width="10"/>
+  <path d="M 78 134 C 108 134, 134 108, 134 78 C 134 58, 124 38, 108 26" fill="none" stroke="#1A5FDC" stroke-width="10" stroke-linecap="round"/>
+  <line x1="78" y1="78" x2="134" y2="78" stroke="#1A5FDC" stroke-width="10" stroke-linecap="round"/>
+</svg>

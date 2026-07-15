@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>格数科技 · 飘带模板衍生</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family: 'Inter','PingFang SC','Microsoft YaHei',sans-serif;
+    background:#F5F5F7;
+    color:#1A1A1A;
+    line-height:1.6;
+  }
+
+  .hero{
+    text-align:center;
+    padding:72px 32px 40px;
+    background:#FFF;
+    border-bottom:1px solid #E8E8EC;
+  }
+  .hero .badge{
+    display:inline-block;
+    padding:5px 16px;
+    border-radius:100px;
+    background:#EBF3FF;
+    color:#2563EB;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:2px;
+    margin-bottom:16px;
+  }
+  .hero h1{font-size:28px;font-weight:700;letter-spacing:3px;color:#0A0D14;margin-bottom:6px;}
+  .hero .sub{font-size:13px;color:#9CA3AF;letter-spacing:2px;}
+
+  .container{max-width:1300px;margin:0 auto;padding:40px 24px 80px;}
+
+  /* Template reference */
+  .ref{
+    background:#FFF;
+    border:1px solid #E8E8EC;
+    border-radius:16px;
+    padding:36px;
+    margin-bottom:48px;
+    display:flex;
+    align-items:center;
+    gap:36px;
+    flex-wrap:wrap;
+  }
+  .ref .ref-label{
+    font-size:10px;
+    letter-spacing:4px;
+    color:#9CA3AF;
+    text-transform:uppercase;
+    writing-mode:vertical-lr;
+  }
+  .ref .ref-preview{
+    flex:1;min-width:260px;
+    display:flex;align-items:center;justify-content:center;
+    padding:20px;
+  }
+  .ref .ref-dna{
+    flex:1;min-width:220px;
+  }
+  .ref .ref-dna h3{font-size:13px;color:#2563EB;letter-spacing:2px;margin-bottom:10px;}
+  .ref .ref-dna li{
+    font-size:12px;color:#6B7280;
+    padding:3px 0 3px 16px;
+    position:relative;list-style:none;
+  }
+  .ref .ref-dna li::before{content:'→';position:absolute;left:0;color:#3B82F6;}
+
+  .section-title{
+    font-size:10px;letter-spacing:5px;color:#9CA3AF;
+    text-transform:uppercase;text-align:center;
+    margin:56px 0 24px;
+  }
+
+  .var-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+  }
+  @media(max-width:1000px){.var-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:640px){.var-grid{grid-template-columns:1fr;}}
+
+  .var-card{
+    background:#FFF;
+    border:1px solid #EBECF0;
+    border-radius:12px;
+    overflow:hidden;
+    transition:all 0.2s;
+  }
+  .var-card:hover{
+    border-color:#93C5FD;
+    box-shadow:0 4px 20px rgba(0,0,0,0.06);
+  }
+  .var-preview{
+    padding:48px 28px;
+    display:flex;align-items:center;justify-content:center;
+    min-height:200px;
+    position:relative;
+  }
+  .var-preview .num{
+    position:absolute;top:14px;left:18px;
+    font-size:11px;font-weight:700;color:#D1D5DB;letter-spacing:2px;
+  }
+  .var-info{
+    padding:18px 24px 22px;
+    border-top:1px solid #F3F4F6;
+  }
+  .var-info .name{
+    font-size:15px;font-weight:600;color:#111827;margin-bottom:4px;
+  }
+  .var-info .desc{
+    font-size:11px;color:#9CA3AF;line-height:1.6;
+  }
+
+  .star{
+    position:absolute;top:12px;right:16px;
+    font-size:10px;padding:3px 10px;border-radius:100px;
+    background:#EBF3FF;color:#2563EB;font-weight:700;letter-spacing:1px;
+  }
+
+  .footer{
+    text-align:center;padding:60px;
+    font-size:11px;color:#D1D5DB;letter-spacing:3px;
+  }
+
+  /* Focus card */
+  .card-focus{
+    background:#FFF;
+    border:1px solid #EBECF0;
+    border-radius:12px;
+    padding:48px;
+    margin-bottom:14px;
+    display:flex;
+    align-items:center;
+    gap:40px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">TEMPLATE VARIATIONS</div>
+  <h1>格数科技 · 飘带模板衍生</h1>
+  <p class="sub">学习模板 DNA → 12 种方向探索</p>
+</div>
+
+<div class="container">
+
+  <!-- ===== REFERENCE: Template DNA ===== -->
+  <div class="ref">
+    <span class="ref-label">模板</span>
+    <div class="ref-preview">
+      <svg width="280" height="160" viewBox="0 0 315 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="tplGrad" x1="0" y1="0" x2="0.4" y2="1">
+            <stop offset="0%" stop-color="#1E5DCC"/>
+            <stop offset="40%" stop-color="#3B82F6"/>
+            <stop offset="70%" stop-color="#7CBDFC"/>
+            <stop offset="100%" stop-color="#BFE0FE"/>
+          </linearGradient>
+        </defs>
+        <!-- Swoosh ribbon: dark core + light feather -->
+        <path d="M 210 30 C 210 30, 200 40, 190 55 C 175 75, 155 95, 135 110 C 115 125, 100 130, 90 135 C 80 140, 75 148, 75 148"
+              fill="none" stroke="url(#tplGrad)" stroke-width="48" stroke-linecap="round" opacity="0.2"/>
+        <path d="M 210 30 C 210 30, 200 40, 190 55 C 175 75, 155 95, 135 110 C 115 125, 100 130, 90 135 C 80 140, 75 148, 75 148"
+              fill="none" stroke="url(#tplGrad)" stroke-width="32" stroke-linecap="round" opacity="0.4"/>
+        <path d="M 210 30 C 210 30, 200 40, 190 55 C 175 75, 155 95, 135 110 C 115 125, 100 130, 90 135 C 80 140, 75 148, 75 148"
+              fill="none" stroke="url(#tplGrad)" stroke-width="16" stroke-linecap="round" opacity="0.7"/>
+        <path d="M 210 30 C 210 30, 200 40, 190 55 C 175 75, 155 95, 135 110 C 115 125, 100 130, 90 135 C 80 140, 75 148, 75 148"
+              fill="none" stroke="#1E5DCC" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="ref-dna">
+      <h3>模板设计 DNA</h3>
+      <ul>
+        <li>深色核心 + 多层浅色羽化 → 飘带立体感</li>
+        <li>贝塞尔曲线控制流动方向</li>
+        <li>对角线上方细 → 下方粗</li>
+        <li>空白背景承载全部视觉重量</li>
+        <li>下方文字区补充品牌信息</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== 12 VARIATIONS ===== -->
+  <div class="section-title">━━━ 12 种变体探索 ━━━</div>
+  <div class="var-grid">
+
+    <!-- V1: G Curve -->
+    <div class="var-card">
+      <div class="var-preview">
+        <span class="num">V1</span><span class="star">★</span>
+        <svg width="200" height="160" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="c1g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1D4ED8"/><stop offset="100%" stop-color="#7CBDFC"/>
+            </linearGradient>
+          </defs>
+          <!-- G shape ribbon -->
+          <path d="M 130 28 C 130 28, 150 40, 155 65 C 160 90, 145 115, 120 130 C 95 142, 70 140, 55 125 C 40 108, 42 88, 55 75 C 62 68, 72 65, 80 68 C 88 71, 92 78, 90 85" fill="none" stroke="url(#c1g)" stroke-width="38" stroke-linecap="round" opacity="0.25"/>
+          <path d="M 130 28 C 130 28, 150 40, 155 65 C 160 90, 145 115, 120 130 C 95 142, 70 140, 55 125 C 40 108, 42 88, 55 75 C 62 68, 72 65, 80 68 C 88 71, 92 78, 90 85" fill="none" stroke="url(#c1g)" stroke-width="18" stroke-linecap="round" opacity="0.55"/>
+          <path d="M 130 28 C 130 28, 150 40, 155 65 C 160 90, 145 115, 120 130 C 95 142, 70 140, 55 125 C 40 108, 42 88, 55 75 C 62 68, 72 65, 80 68 C 88 71, 92 78, 90 85" fill="none" stroke="#1D4ED8" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="90" cy="85" r="4" fill="#3B82F6"/>
+        </svg>
+      </div>
+      <div class="var-info">
+        <div class="name">V1 · G 字飘带</div>
+        <div class="desc">模板的飘带曲线转化为完整 G 字母。顶部起笔→环绕→折回收尾，一气呵成。暗蓝色核心+浅蓝羽化。</div>
+      </div>
+    </div>
+
+    <!-- V2: Split Dual Ribbon -->
+    <div class="var-card">
+      <div class="var-preview">
+        <span class="num">V2</span><span class="star">★</span>
+        <svg width="200" height="160" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="c2a" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1D4ED8"/><stop offset="100%" stop-color="#7CBDFC"/>
+            </linearGradient>
+            <linearGradient id="c2b" x1="1" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#93C5FD"/>
+            </linearGradient>
+          </defs>
+          <!-- Left ribbon -->
+          <path d="M 120 30 C 110 45, 90 70, 70 95 C 50 118, 48 135, 48 135" fill="none" stroke="url(#c2a)" stroke-width="32" stroke-linecap="round" opacity="0.2"/>
+          <path d="M 120 30 C 110 45, 90 70, 70 95 C 50 118, 48 135, 48 135" fill="none" stroke="url(#c2a)" stroke-width="14" stroke-linecap="round" opacity="0.5"/>
+          <path d="M 120 30 C 110 45, 90 70, 70 95 C 50 118, 48 135, 48 135" fill="none" stroke="#1D4ED8" stroke-width="4" stroke-linecap="round"/>
+          <!-- Right ribbon -->
+          <path d="M 120 30 C 135 55, 155 80, 160 105 C 162 120, 155 135, 155 135" fill="none" stroke="url(#c2b)" stroke-width="32" stroke-linecap="round" opacity="0.2"/>
+          <path d="M 120 30 C 135 55, 155 80, 160 105 C 162 120, 155 135, 155 135" fill="none" stroke="url(#c2b)" stroke-width="14" stroke-linecap="round" opacity="0.5"/>
+          <path d="M 120 30 C 135 55, 155 80, 160 105 C 162 120, 155 135, 155 135" fill="none" stroke="#2563EB" stroke-width="4" stroke-linecap="round"/>
+          <!-- Origin dot -->
+          <circle cx="120" cy="30" r="5" fill="#1D4ED8"/>
+        </svg>
+      </div>
+      <div class="var-info">
+        <div class="name">V2 · 双翼分叉</div>
+        <div class="desc">同源双飘带分叉展开。左翼深蓝、右翼亮蓝，底部端点呼应。象征数据分流与多维度处理。</div>
+      </div>
+    </div>
+
+    <!-- V3: Circle Wrap -->
+    <div class="var-card">
+      <div class="var-preview">
+        <span class="num">V3</span>
+        <svg width="200" height="160" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="c3g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1E40AF"/><stop offset="50%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#BFE0FE"/>
+            </linearGradient>
+          </defs>
+          <!-- Near-complete circle with ribbon trail -->
+          <path d="M 140 40 C 160 60, 165 100, 140 125 C 115 148, 75 148, 52 125 C 32 105, 33 65, 55 45 C 65 35, 78 30, 90 32" fill="none" stroke="url(#c3g)" stroke-width="36" stroke-linecap="round" opacity="0.2"/>
+          <path d="M 140 40 C 160 60, 165 100, 140 125 C 115 148, 75 148, 52 125 C 32 105, 33 65, 55 45 C 65 35, 78 30, 90 32" fill="none" stroke="url(#c3g)" stroke-width="16" stroke-linecap="round" opacity="0.5"/>
+          <path d="M 140 40 C 160 60, 165 100, 140 125 C 115 148, 75 148, 52 125 C 32 105, 33 65, 55 45 C 65 35, 78 30, 90 32" fill="none" stroke="#1E40AF" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="90" cy="32" r="3.5" fill="#3B82F6"/>
+        </svg>
+      </div>
+      <div class="var-info">
+        <div class="name">V3 · 环绕轨道</div>
+        <div class="desc">飘带环绕成近圆轨迹，首尾留白。数据在闭环中流转，端点暗示持续迭代。适合平台型产品。</div>
+      </div>
+    </div>
+
+    <!-- V4: S-Curve Wave -->
+    <div class="var-card">
+      <div class="var-preview">
+        <span class="num">V4</span><span class="star">★</span>
+        <svg width="200" height="160" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="c4g" x1="0" y1="1" x2="0" y2="0">
+              <stop offset="0%" stop-color="#1D4ED8"/><stop offset="100%" stop-color="#93C5FD"/>
+            </linearGradient>
+          </defs>
+          <!-- S-curve -->
+          <path d="M 160 130 C 140 130, 125 120, 115 100 C 105 80, 105 60, 115 45 C 120 38, 128 35, 135 35" fill="none" stroke="url(#c4g)" stroke-width="36" stroke-linecap="round" opacity="0.2"/>
+          <path d="M 160 130 C 140 130, 125 120, 115 100 C 105 80, 105 60, 115 45 C 120 38, 128 35, 135 35" fill="none" stroke="url(#c4g)" stroke-width="16" stroke-linecap="round" opacity="0.5"/>
+          <path d="M 160 130 C 140 130, 125 120, 115 100 C 105 80, 105 60, 115 45 C 120 38, 128 35, 135 35" fill="none" stroke="#1D4ED8" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="135" cy="35" r="3" fill="#3B82F6"/>
+        </svg>
+      </div>
+      <div class="var-info">
+        <div class="name">V4 · S 形正弦波</div>
+        <div class="desc">从底部到顶部的 S 曲线，模拟数据信号波动。由粗渐细、由暗渐亮，上升态势强烈。</div>
+      </div>
+    </div>
+
+    <!-- V5: Angular Facet -->
+    <div class="var-card">
+      <div class="var-preview">
+        <span class="num">V5</span>
+        <svg width="200" height="160" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="c5g" x1="0" y1="0" x2="0.5" y2="1">
+              <stop offset="0%" stop-color="#1E5DCC"/><stop offset="100%" stop-color="#BFE0FE"/>
+            </linearGradient>
+          </defs>
+          <!-- Angular faceted ribbon -->
+          <path d="M 155 35 L 140 55 L 115 75 L 90 95 L 75 108 L 70 120 L 66 138" fill="none" stroke="url(#c5g)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" opacity="0.2"/>
+          <path d="M 155 35 L 140 55 L 115 75 L 90 95 L 75 108 L 70 120 L 66 138" fill="none" stroke="url(#c5g)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+          <path d="M 155 35 L 140 55 L 115 75 L 90 95 L 75 108 L 70 120 L 66 138" fill="none" stroke="#1E5DCC" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="var-info">
+        <div class="name">V5 · 折线棱面</div>
+        <div class="desc">飘带的曲线替换为折线面。弧形变棱角，保留羽化渐变。更刚硬、更精确，适合数据基础设施品牌。</div>
+      </div>
+    </div>
+
+    <!-- V6: Multi Stream -->
+    <div class="var-card">
+      <div class="var-preview">
+        <span class="num">V6</span>
+        <svg width="200" height="160" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="c6a" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#1D4ED8"/><stop offset="100%" stop-color="#93C5FD"/>
+            </linearGradient>
+          </defs>
+          <!-- Three parallel streams -->
+          <g opacity="0.3"><path d="M 100 28 C 98 55, 85 90, 60 130" fill="none" stroke="url(#c6a)" stroke-width="28" stroke-linecap="round"/></g>
+          <g opacity="0.5"><path d="M 115 25 C 113 55, 105 95, 85 135" fill="none" stroke="url(#c6a)" stroke-width="16" stroke-linecap="round"/></g>
+          <g><path d="M 130 28 C 128 58, 125 98, 110 138" fill="none" stroke="#1D4ED8" stroke-width="4" stroke-linecap="round"/></g>
+          <circle cx="130" cy="28" r="3" fill="#1D4ED8"/>
+        </svg>
+      </div>
+      <div class="var-info">
+        <div class="name">V6 · 并行数据流</div>
+        <div class="desc">三条飘带并行，间距从窄到宽。数据管道从汇聚到分发，适合云服务/数据中台品牌。</div>
+      </div>
+    </div>
+
+    <!-- V7: Spiral Core -->
+    <div class="var-card">
+      <div class="var-preview">
+        <span class="num">V7</span>
+        <svg width="200" height="160" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="c7g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1E40AF"/><stop offset="100%" stop-color="#7CBDFC"/>
+            </linearGradient>
+          </defs>
+          <!-- Spiral -->
+          <path d="M 100 55 C 130 55, 150 75, 150 100 C 150 130, 125 150, 95 145 C 65 140, 50 115, 60 90 C 68 72, 85 62, 100 65 C 110 67, 118 75, 118 85 C 118 95, 110 102, 102 100" fill="none" stroke="url(#c7g)" stroke-width="30" stroke-linecap="round" opacity="0.22"/>
+          <path d="M 100 55 C 130 55, 150 75, 150 100 C 150 130, 125 150, 95 145 C 65 140, 50 115, 60 90 C 68 72, 85 62, 100 65 C 110 67, 118 75, 118 85 C 118 95, 110 102, 102 100" fill="none" stroke="url(#c7g)" stroke-width="12" stroke-linecap="round" opacity="0.55"/>
+          <path d="M 100 55 C 130 55, 150 75, 150 100 C 150 130, 125 150, 95 145 C 65 140, 50 115, 60 90 C 68 72, 85 62, 100 65 C 110 67, 118 75, 118 85 C 118 95, 110 102, 102 100" fill="none" stroke="#1E40AF" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="var-info">
+        <div class="name">V7 · 螺旋卷曲</div>
+        <div class="desc">飘带卷成螺旋线，从外向内逐圈收紧。数据提炼浓缩的过程可视化，适合AI/算法公司。</div>
+      </div>
+    </div>
+
+    <!-- V8: Mirror Symmetry -->
+    <div class="var-card">
+      <div class="var-preview">
+        <span class="num">V8</span>
+        <svg width="200" height="160" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="c8g" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#93C5FD"/>
+            </linearGradient>
+          </defs>
+          <!-- Left mirror -->
+          <path d="M 100 25 C 80 40, 55 70, 48 100 C 42 125, 52 138, 52 138" fill="none" stroke="url(#c8g)" stroke-width="24" stroke-linecap="round" opacity="0.25"/>
+          <path d="M 100 25 C 80 40, 55 70, 48 100 C 42 125, 52 138, 52 138" fill="none" stroke="url(#c8g)" stroke-width="10" stroke-linecap="round" opacity="0.55"/>
+          <path d="M 100 25 C 80 40, 55 70, 48 100 C 42 125, 52 138, 52 138" fill="none" stroke="#2563EB" stroke-width="3.5" stroke-linecap="round"/>
+          <!-- Right mirror -->
+          <path d="M 100 25 C 120 40, 145 70, 152 100 C 158 125, 148 138, 148 138" fill="none" stroke="url(#c8g)" stroke-width="24" stroke-linecap="round" opacity="0.25"/>
+          <path d="M 100 25 C 120 40, 145 70, 152 100 C 158 125, 148 138, 148 138" fill="none" stroke="url(#c8g)" stroke-width="10" stroke-linecap="round" opacity="0.55"/>
+          <path d="M 100 25 C 120 40, 145 70, 152 100 C 158 125, 148 138, 148 138" fill="none" stroke="#2563EB" stroke-width="3.5" stroke-linecap="round"/>
+          <circle cx="100" cy="25" r="4" fill="#1D4ED8"/>
+        </svg>
+      </div>
+      <div class="var-info">
+        <div class="name">V8 · 镜像双翼</div>
+        <div class="desc">同源对称展开的双飘带。平衡的构图适合稳重场景，镜像结构隐喻数据同步与双活架构。</div>
+      </div>
+    </div>
+
+    <!-- V9: Upward Arrow -->
+    <div class="var-card">
+      <div class="var-preview">
+        <span class="num">V9</span>
+        <svg width="200" height="160" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="c9g" x1="0" y1="1" x2="0" y2="0">
+              <stop offset="0%" stop-color="#1D4ED8"/><stop offset="100%" stop-color="#BFE0FE"/>
+            </linearGradient>
+          </defs>
+          <!-- Upward thrust -->
+          <path d="M 60 140 C 65 120, 80 100, 100 80 C 110 68, 120 55, 130 38" fill="none" stroke="url(#c9g)" stroke-width="40" stroke-linecap="round" opacity="0.18"/>
+          <path d="M 60 140 C 65 120, 80 100, 100 80 C 110 68, 120 55, 130 38" fill="none" stroke="url(#c9g)" stroke-width="18" stroke-linecap="round" opacity="0.45"/>
+          <path d="M 60 140 C 65 120, 80 100, 100 80 C 110 68, 120 55, 130 38" fill="none" stroke="#1D4ED8" stroke-width="4" stroke-linecap="round"/>
+          <!-- Arrow head accent -->
+          <polygon points="130,28 142,10 138,30 150,28 138,26" fill="#3B82F6" opacity="0.7"/>
+        </svg>
+      </div>
+      <div class="var-info">
+        <div class="name">V9 · 上升推进</div>
+        <div class="desc">飘带化身上升轨迹，从底部厚重到顶部轻盈。箭头收尾直接点题"增长/突破"，适合增长型业务。</div>
+      </div>
+    </div>
+
+    <!-- V10: Infinity Loop -->
+    <div class="var-card">
+      <div class="var-preview">
+        <span class="num">V10</span><span class="star">★</span>
+        <svg width="200" height="160" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="c10g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1D4ED8"/><stop offset="50%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#BFE0FE"/>
+            </linearGradient>
+          </defs>
+          <!-- Infinity / figure-8 -->
+          <path d="M 100 30 C 130 30, 155 50, 155 78 C 155 105, 130 120, 100 120 C 70 120, 45 105, 45 78 C 45 50, 70 30, 100 30" fill="none" stroke="url(#c10g)" stroke-width="32" stroke-linecap="round" opacity="0.2"/>
+          <path d="M 100 30 C 130 30, 155 50, 155 78 C 155 105, 130 120, 100 120 C 70 120, 45 105, 45 78 C 45 50, 70 30, 100 30" fill="none" stroke="url(#c10g)" stroke-width="12" stroke-linecap="round" opacity="0.5"/>
+          <path d="M 100 30 C 130 30, 155 50, 155 78 C 155 105, 130 120, 100 120 C 70 120, 45 105, 45 78 C 45 50, 70 30, 100 30" fill="none" stroke="#1D4ED8" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="var-info">
+        <div class="name">V10 · 无限循环</div>
+        <div class="desc">飘带首尾相接成无穷符号。循环中既有流动感又有完整性，适合强调可持续/持续迭代的品牌。</div>
+      </div>
+    </div>
+
+    <!-- V11: Dot Gradient -->
+    <div class="var-card">
+      <div class="var-preview">
+        <span class="num">V11</span>
+        <svg width="200" height="160" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+          <!-- Same ribbon path, rendered in dot matrix -->
+          <g>
+            <!-- Path definition for dots -->
+            <path id="v11path" d="M 150 32 C 145 55, 130 85, 105 112 C 85 132, 70 140, 70 140" fill="none"/>
+          </g>
+          <!-- Dense dark dots along core -->
+          <circle cx="150" cy="32" r="2.5" fill="#1D4ED8"/>
+          <circle cx="147" cy="38" r="2.5" fill="#1D4ED8"/>
+          <circle cx="143" cy="45" r="2.5" fill="#1E5DCC"/>
+          <circle cx="139" cy="52" r="2.5" fill="#2563EB"/>
+          <circle cx="134" cy="60" r="2.5" fill="#1E5DCC"/>
+          <circle cx="128" cy="68" r="2.8" fill="#1D4ED8"/>
+          <circle cx="122" cy="76" r="2.8" fill="#1E5DCC"/>
+          <circle cx="116" cy="84" r="3" fill="#1D4ED8"/>
+          <circle cx="110" cy="92" r="2.8" fill="#1E5DCC"/>
+          <circle cx="104" cy="100" r="2.8" fill="#2563EB"/>
+          <circle cx="97" cy="108" r="2.5" fill="#1D4ED8"/>
+          <circle cx="90" cy="116" r="2.5" fill="#1E5DCC"/>
+          <circle cx="83" cy="124" r="2.5" fill="#1D4ED8"/>
+          <circle cx="77" cy="132" r="2.5" fill="#2563EB"/>
+          <circle cx="73" cy="138" r="2.5" fill="#1D4ED8"/>
+          <!-- Lighter scatter around core -->
+          <circle cx="155" cy="40" r="1.8" fill="#93C5FD" opacity="0.5"/>
+          <circle cx="152" cy="48" r="2" fill="#93C5FD" opacity="0.4"/>
+          <circle cx="140" cy="70" r="2.5" fill="#7CBDFC" opacity="0.35"/>
+          <circle cx="132" cy="78" r="2.5" fill="#7CBDFC" opacity="0.3"/>
+          <circle cx="120" cy="92" r="2.5" fill="#93C5FD" opacity="0.3"/>
+          <circle cx="108" cy="108" r="2.5" fill="#93C5FD" opacity="0.25"/>
+          <circle cx="95" cy="120" r="2" fill="#BFE0FE" opacity="0.3"/>
+          <circle cx="85" cy="130" r="2" fill="#BFE0FE" opacity="0.3"/>
+          <!-- Extra light halo -->
+          <circle cx="145" cy="62" r="2.5" fill="#BFE0FE" opacity="0.2"/>
+          <circle cx="136" cy="74" r="3" fill="#BFE0FE" opacity="0.18"/>
+          <circle cx="125" cy="86" r="3" fill="#BFE0FE" opacity="0.15"/>
+          <circle cx="112" cy="104" r="3" fill="#BFE0FE" opacity="0.15"/>
+          <circle cx="100" cy="114" r="2.5" fill="#BFE0FE" opacity="0.2"/>
+        </svg>
+      </div>
+      <div class="var-info">
+        <div class="name">V11 · 粒子点阵</div>
+        <div class="desc">飘带的连续渐变用离散圆点替代。像素化渲染数据本质——比特的流动。适合技术博客/开源社区。</div>
+      </div>
+    </div>
+
+    <!-- V12: Phoenix / Flame -->
+    <div class="var-card">
+      <div class="var-preview">
+        <span class="num">V12</span>
+        <svg width="200" height="160" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="c12g" x1="0" y1="1" x2="0" y2="0">
+              <stop offset="0%" stop-color="#1D4ED8"/><stop offset="60%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#BFE0FE"/>
+            </linearGradient>
+          </defs>
+          <!-- Flame-like ribbon -->
+          <path d="M 100 140 C 100 130, 95 110, 90 95 C 80 70, 70 55, 65 40 C 62 30, 65 22, 70 20 C 75 22, 78 30, 80 40 C 85 55, 95 70, 105 95 C 110 110, 105 130, 100 140" fill="url(#c12g)" opacity="0.15"/>
+          <path d="M 100 140 C 100 130, 95 110, 90 95 C 80 70, 70 55, 65 40 C 62 30, 65 22, 70 20 C 75 22, 78 30, 80 40 C 85 55, 95 70, 105 95 C 110 110, 105 130, 100 140" fill="none" stroke="url(#c12g)" stroke-width="20" stroke-linecap="round" opacity="0.35"/>
+          <path d="M 100 140 C 100 130, 95 110, 90 95 C 80 70, 70 55, 65 40 C 62 30, 65 22, 70 20 C 75 22, 78 30, 80 40 C 85 55, 95 70, 105 95 C 110 110, 105 130, 100 140" fill="none" stroke="#1D4ED8" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="var-info">
+        <div class="name">V12 · 火苗羽翼</div>
+        <div class="desc">飘带闭合为火焰/羽翼形态。底部收拢、顶部展开，动态对称。象征数据点燃洞察，适合AI平台。</div>
+      </div>
+    </div>
+
+  </div><!-- /var-grid -->
+
+  <!-- ===== BEST WITH TEXT ===== -->
+  <div class="section-title">━━━ 推荐组合 · 图标 + 文字 ━━━</div>
+
+  <div class="card-focus">
+    <svg width="280" height="70" viewBox="0 0 300 70" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="fg1" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#1D4ED8"/><stop offset="100%" stop-color="#7CBDFC"/>
+        </linearGradient>
+      </defs>
+      <!-- G ribbon icon -->
+      <path d="M 38 48 C 38 48, 52 52, 55 60 C 58 72, 52 82, 38 84 C 24 82, 18 72, 22 60 C 26 52, 32 48, 38 48" fill="none" stroke="url(#fg1)" stroke-width="16" stroke-linecap="round" opacity="0.3"/>
+      <path d="M 38 48 C 38 48, 52 52, 55 60 C 58 72, 52 82, 38 84 C 24 82, 18 72, 22 60 C 26 52, 32 48, 38 48" fill="none" stroke="url(#fg1)" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+      <path d="M 38 48 C 38 48, 52 52, 55 60 C 58 72, 52 82, 38 84 C 24 82, 18 72, 22 60 C 26 52, 32 48, 38 48" fill="none" stroke="#1D4ED8" stroke-width="2.5" stroke-linecap="round"/>
+      <text x="72" y="56" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" font-weight="700" fill="#0A0D14" letter-spacing="5">格数科技</text>
+      <text x="72" y="68" font-family="Inter,sans-serif" font-size="8" font-weight="500" fill="#9CA3AF" letter-spacing="5">GESHU TECHNOLOGY</text>
+    </svg>
+  </div>
+
+  <div class="card-focus">
+    <svg width="280" height="70" viewBox="0 0 300 70" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="fg2" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1E40AF"/><stop offset="100%" stop-color="#93C5FD"/>
+        </linearGradient>
+      </defs>
+      <!-- S-wave icon -->
+      <path d="M 55 14 C 50 14, 44 20, 40 30 C 36 42, 36 52, 40 58 C 42 62, 48 64, 52 64" fill="none" stroke="url(#fg2)" stroke-width="14" stroke-linecap="round" opacity="0.28"/>
+      <path d="M 55 14 C 50 14, 44 20, 40 30 C 36 42, 36 52, 40 58 C 42 62, 48 64, 52 64" fill="none" stroke="url(#fg2)" stroke-width="5" stroke-linecap="round" opacity="0.6"/>
+      <path d="M 55 14 C 50 14, 44 20, 40 30 C 36 42, 36 52, 40 58 C 42 62, 48 64, 52 64" fill="none" stroke="#1E40AF" stroke-width="2" stroke-linecap="round"/>
+      <text x="72" y="56" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" font-weight="700" fill="#0A0D14" letter-spacing="5">格数科技</text>
+      <text x="72" y="68" font-family="Inter,sans-serif" font-size="8" font-weight="500" fill="#9CA3AF" letter-spacing="5">GESHU TECHNOLOGY</text>
+    </svg>
+  </div>
+
+</div>
+
+<div class="footer">
+  GESHU TECH · RIBBON TEMPLATE VARIATIONS · 2026
+</div>
+
+</body>
+</html>

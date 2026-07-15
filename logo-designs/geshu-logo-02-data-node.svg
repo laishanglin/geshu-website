@@ -1,0 +1,17 @@
+<svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Data Node — 数据节点 -->
+  <!-- Vertical spine -->
+  <line x1="100" y1="38" x2="100" y2="162" stroke="#1A5FDC" stroke-width="6" stroke-linecap="round"/>
+  <!-- Left branch -->
+  <line x1="100" y1="72" x2="52" y2="72" stroke="#1A5FDC" stroke-width="5" stroke-linecap="round"/>
+  <!-- Right branch upper -->
+  <line x1="100" y1="110" x2="148" y2="110" stroke="#1A5FDC" stroke-width="5" stroke-linecap="round"/>
+  <!-- Right branch lower -->
+  <line x1="100" y1="140" x2="132" y2="140" stroke="#1A5FDC" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+  <!-- Nodes -->
+  <circle cx="100" cy="38" r="9" fill="#1A5FDC"/>
+  <circle cx="52" cy="72" r="7" fill="#1A5FDC"/>
+  <circle cx="148" cy="110" r="7" fill="#1A5FDC"/>
+  <circle cx="132" cy="140" r="5" fill="#1A5FDC" opacity="0.6"/>
+  <circle cx="100" cy="162" r="6" fill="#1A5FDC" opacity="0.4"/>
+</svg>

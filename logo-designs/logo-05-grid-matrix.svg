@@ -1,0 +1,27 @@
+<svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow5">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="200" height="200" fill="#060B14" rx="12"/>
+  <!-- Grid dots matrix -->
+  <g fill="rgba(255,255,255,0.08)">
+    <circle cx="45" cy="50" r="2"/><circle cx="65" cy="50" r="2"/><circle cx="85" cy="50" r="2"/><circle cx="105" cy="50" r="2"/><circle cx="125" cy="50" r="2"/><circle cx="145" cy="50" r="2"/>
+    <circle cx="45" cy="70" r="2"/><circle cx="65" cy="70" r="2"/><circle cx="85" cy="70" r="2"/><circle cx="105" cy="70" r="2"/><circle cx="125" cy="70" r="2"/><circle cx="145" cy="70" r="2"/>
+    <circle cx="45" cy="90" r="2"/><circle cx="65" cy="90" r="2"/><circle cx="85" cy="90" r="2"/><circle cx="105" cy="90" r="2"/><circle cx="125" cy="90" r="2"/><circle cx="145" cy="90" r="2"/>
+    <circle cx="45" cy="110" r="2"/><circle cx="65" cy="110" r="2"/><circle cx="85" cy="110" r="2"/><circle cx="105" cy="110" r="2"/><circle cx="125" cy="110" r="2"/><circle cx="145" cy="110" r="2"/>
+    <circle cx="45" cy="130" r="2"/><circle cx="65" cy="130" r="2"/><circle cx="85" cy="130" r="2"/><circle cx="105" cy="130" r="2"/><circle cx="125" cy="130" r="2"/><circle cx="145" cy="130" r="2"/>
+    <circle cx="45" cy="150" r="2"/><circle cx="65" cy="150" r="2"/><circle cx="85" cy="150" r="2"/><circle cx="105" cy="150" r="2"/><circle cx="125" cy="150" r="2"/><circle cx="145" cy="150" r="2"/>
+  </g>
+  <!-- Highlight diagonal active nodes -->
+  <g filter="url(#glow5)">
+    <circle cx="45" cy="50" r="3.5" fill="#00E5FF" opacity="0.9"/>
+    <circle cx="65" cy="70" r="3" fill="#00B8D4" opacity="0.7"/>
+    <circle cx="85" cy="90" r="4" fill="#2979FF" opacity="0.9"/>
+    <circle cx="105" cy="110" r="3.5" fill="#448AFF" opacity="0.8"/>
+    <circle cx="125" cy="130" r="3" fill="#1565C0" opacity="0.7"/>
+    <circle cx="145" cy="150" r="2.5" fill="#0D47A1" opacity="0.5"/>
+  </g>
+</svg>

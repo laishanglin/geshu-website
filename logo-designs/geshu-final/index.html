@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>格数 · Logo 最终方案</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Inter','PingFang SC','Microsoft YaHei',sans-serif;
+    background: #F8F9FB;
+    color: #1A1A1A;
+    line-height: 1.6;
+  }
+
+  .hero {
+    text-align: center;
+    padding: 80px 32px 48px;
+    background: #FFF;
+    border-bottom: 1px solid #EBECEF;
+  }
+  .hero .tag {
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: #B0B8C1;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #0A0D14;
+  }
+  .hero .sub {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #99A0AA;
+  }
+  .hero .specs {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+  .hero .spec {
+    font-size: 11px;
+    color: #B0B8C1;
+    letter-spacing: 1px;
+  }
+  .hero .spec span { color: #1A5FDC; font-weight: 600; }
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  .section-title {
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: #B0B8C1;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 56px 0 32px;
+  }
+
+  /* Concept Block */
+  .concept {
+    background: #FFF;
+    border: 1px solid #EBECEF;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    overflow: hidden;
+  }
+  .concept-header {
+    padding: 28px 32px 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .concept-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #0A0D14;
+  }
+  .concept-header .tagline {
+    font-size: 12px;
+    color: #99A0AA;
+    letter-spacing: 2px;
+  }
+
+  .variants {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+  @media (max-width: 768px) { .variants { grid-template-columns: 1fr; } }
+
+  .variant {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 24px;
+    border-right: 1px solid #F0F1F4;
+    position: relative;
+  }
+  .variant:last-child { border-right: none; }
+  .variant-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #B0B8C1;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .variant-preview {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 160px;
+    width: 100%;
+  }
+  .variant-preview svg { max-width: 100%; }
+
+  /* Favicon preview circle */
+  .favicon-ring {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    background: #1A5FDC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+  }
+  .favicon-ring svg { width: 18px; height: 18px; }
+
+  /* Analysis */
+  .analysis {
+    padding: 28px 32px 32px;
+    border-top: 1px solid #F0F1F4;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  @media (max-width: 768px) { .analysis { grid-template-columns: 1fr; } }
+  .analysis h4 {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #B0B8C1;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .analysis .meaning {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.8;
+  }
+  .analysis .scenes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .analysis .scene {
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 100px;
+    background: #EEF2FF;
+    color: #1A5FDC;
+    font-weight: 500;
+  }
+
+  /* Compare Table */
+  .compare {
+    width: 100%;
+    border-collapse: collapse;
+    background: #FFF;
+    border: 1px solid #EBECEF;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .compare th {
+    text-align: left;
+    padding: 16px 24px;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #B0B8C1;
+    text-transform: uppercase;
+    background: #FAFBFC;
+    border-bottom: 1px solid #EBECEF;
+  }
+  .compare td {
+    padding: 16px 24px;
+    font-size: 13px;
+    color: #444;
+    border-bottom: 1px solid #F5F6F8;
+  }
+  .compare tr:last-child td { border-bottom: none; }
+  .compare .star { color: #1A5FDC; }
+  .compare .best { background: #FAFBFF; }
+
+  .footer {
+    text-align: center;
+    padding: 48px;
+    font-size: 11px;
+    color: #CCC;
+    letter-spacing: 3px;
+  }
+
+  /* large preview on dark for website mock */
+  .dark-preview {
+    background: #0A0D14;
+    border-radius: 16px;
+    padding: 60px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="tag">Brand Identity · Final</div>
+  <h1>格 数 科 技</h1>
+  <p class="sub">GESHU TECH · AI Software Company</p>
+  <div class="specs">
+    <div class="spec">主色 <span>#1A5FDC</span></div>
+    <div class="spec">风格 <span>极简几何</span></div>
+    <div class="spec">格式 <span>SVG 矢量</span></div>
+    <div class="spec">背景 <span>透明</span></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ================================================ -->
+  <!-- CONCEPT 1: GEOMETRIC G -->
+  <!-- ================================================ -->
+  <div class="concept">
+    <div class="concept-header">
+      <h2>方案一 · 几何 G</h2>
+      <span class="tagline">Geometric G Mark</span>
+    </div>
+
+    <div class="variants">
+      <!-- Icon Only -->
+      <div class="variant">
+        <span class="variant-label">Icon Mark</span>
+        <div class="variant-preview">
+          <svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="78" cy="78" r="56" fill="none" stroke="#1A5FDC" stroke-width="10"/>
+            <path d="M 78 134 C 108 134, 134 108, 134 78 C 134 58, 124 38, 108 26"
+                  fill="none" stroke="#1A5FDC" stroke-width="10" stroke-linecap="round"/>
+            <line x1="78" y1="78" x2="134" y2="78" stroke="#1A5FDC" stroke-width="10" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="favicon-ring">
+          <svg viewBox="0 0 160 160"><circle cx="78" cy="78" r="56" fill="none" stroke="#FFF" stroke-width="16"/><path d="M78,134 C108,134 134,108 134,78 C134,58 124,38 108,26" fill="none" stroke="#FFF" stroke-width="16" stroke-linecap="round"/><line x1="78" y1="78" x2="134" y2="78" stroke="#FFF" stroke-width="16" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+
+      <!-- Vertical -->
+      <div class="variant">
+        <span class="variant-label">Vertical Lockup</span>
+        <div class="variant-preview">
+          <svg width="160" height="200" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="80" cy="70" r="40" fill="none" stroke="#1A5FDC" stroke-width="8"/>
+            <path d="M 80 110 C 105 110, 120 95, 120 70 C 120 52, 110 36, 96 27"
+                  fill="none" stroke="#1A5FDC" stroke-width="8" stroke-linecap="round"/>
+            <line x1="80" y1="70" x2="120" y2="70" stroke="#1A5FDC" stroke-width="8" stroke-linecap="round"/>
+            <text x="80" y="148" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" font-weight="600" fill="#0A0D14" letter-spacing="6">格数科技</text>
+            <text x="80" y="168" text-anchor="middle" font-family="'Inter',sans-serif" font-size="10" font-weight="400" fill="#B0B8C1" letter-spacing="5">GESHU TECH</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Horizontal -->
+      <div class="variant">
+        <span class="variant-label">Horizontal Lockup</span>
+        <div class="variant-preview">
+          <svg width="280" height="100" viewBox="0 0 280 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="42" cy="50" r="32" fill="none" stroke="#1A5FDC" stroke-width="7"/>
+            <path d="M 42 74 C 62 74, 74 62, 74 50 C 74 38, 68 28, 58 21"
+                  fill="none" stroke="#1A5FDC" stroke-width="7" stroke-linecap="round"/>
+            <line x1="42" y1="50" x2="74" y2="50" stroke="#1A5FDC" stroke-width="7" stroke-linecap="round"/>
+            <text x="92" y="55" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="26" font-weight="600" fill="#0A0D14" letter-spacing="6">格数科技</text>
+            <text x="92" y="72" font-family="'Inter',sans-serif" font-size="10" font-weight="400" fill="#B0B8C1" letter-spacing="5">GESHU TECH</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="analysis">
+      <div>
+        <h4>设计寓意</h4>
+        <p class="meaning">以字母 G 为原型的几何重构——圆形代表数据闭环，开口弧线如代码打破边界，水平短线取"格"字的框架感。一笔弧形切割形成负空间张力，简约但有辨识度。</p>
+      </div>
+      <div>
+        <h4>适用场景</h4>
+        <div class="scenes">
+          <span class="scene">Favicon</span>
+          <span class="scene">App Icon</span>
+          <span class="scene">官网 Header</span>
+          <span class="scene">名片</span>
+          <span class="scene">社交媒体头像</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================ -->
+  <!-- CONCEPT 2: CUBE GRID -->
+  <!-- ================================================ -->
+  <div class="concept">
+    <div class="concept-header">
+      <h2>方案二 · 立方格</h2>
+      <span class="tagline">Cube Grid</span>
+    </div>
+
+    <div class="variants">
+      <!-- Icon Only -->
+      <div class="variant">
+        <span class="variant-label">Icon Mark</span>
+        <div class="variant-preview">
+          <svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+            <!-- Isometric cube top face -->
+            <polygon points="80,28 126,52 80,76 34,52" fill="#1A5FDC"/>
+            <!-- Left face -->
+            <polygon points="34,52 80,76 80,116 34,92" fill="#1A5FDC" opacity="0.45"/>
+            <!-- Right face -->
+            <polygon points="80,76 126,52 126,92 80,116" fill="#1A5FDC" opacity="0.7"/>
+          </svg>
+        </div>
+        <div class="favicon-ring">
+          <svg viewBox="0 0 160 160"><polygon points="80,20 134,52 80,84 26,52" fill="#FFF"/><polygon points="26,52 80,84 80,130 26,98" fill="#FFF" opacity="0.45"/><polygon points="80,84 134,52 134,98 80,130" fill="#FFF" opacity="0.7"/></svg>
+        </div>
+      </div>
+
+      <!-- Vertical -->
+      <div class="variant">
+        <span class="variant-label">Vertical Lockup</span>
+        <div class="variant-preview">
+          <svg width="160" height="200" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="80,30 118,50 80,70 42,50" fill="#1A5FDC"/>
+            <polygon points="42,50 80,70 80,100 42,80" fill="#1A5FDC" opacity="0.45"/>
+            <polygon points="80,70 118,50 118,80 80,100" fill="#1A5FDC" opacity="0.7"/>
+            <text x="80" y="140" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" font-weight="600" fill="#0A0D14" letter-spacing="6">格数科技</text>
+            <text x="80" y="160" text-anchor="middle" font-family="'Inter',sans-serif" font-size="10" font-weight="400" fill="#B0B8C1" letter-spacing="5">GESHU TECH</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Horizontal -->
+      <div class="variant">
+        <span class="variant-label">Horizontal Lockup</span>
+        <div class="variant-preview">
+          <svg width="280" height="80" viewBox="0 0 280 80" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="36,16 62,30 36,44 10,30" fill="#1A5FDC"/>
+            <polygon points="10,30 36,44 36,64 10,50" fill="#1A5FDC" opacity="0.45"/>
+            <polygon points="36,44 62,30 62,50 36,64" fill="#1A5FDC" opacity="0.7"/>
+            <text x="80" y="46" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="26" font-weight="600" fill="#0A0D14" letter-spacing="6">格数科技</text>
+            <text x="80" y="62" font-family="'Inter',sans-serif" font-size="10" font-weight="400" fill="#B0B8C1" letter-spacing="5">GESHU TECH</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="analysis">
+      <div>
+        <h4>设计寓意</h4>
+        <p class="meaning">等距立方体直接呼应"格"字——三维网格是数据的容器。三面不同明度形成层次，象征数据在结构化空间中分层存储与计算。简洁、严谨、无多余元素。</p>
+      </div>
+      <div>
+        <h4>适用场景</h4>
+        <div class="scenes">
+          <span class="scene">产品图标</span>
+          <span class="scene">技术文档</span>
+          <span class="scene">PPT 模板</span>
+          <span class="scene">工牌</span>
+          <span class="scene">印刷物料</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================ -->
+  <!-- CONCEPT 3: NEGATIVE G -->
+  <!-- ================================================ -->
+  <div class="concept">
+    <div class="concept-header">
+      <h2>方案三 · 负空间 G</h2>
+      <span class="tagline">Negative Space G</span>
+    </div>
+
+    <div class="variants">
+      <!-- Icon Only -->
+      <div class="variant">
+        <span class="variant-label">Icon Mark</span>
+        <div class="variant-preview">
+          <svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+            <rect x="30" y="24" width="100" height="112" rx="14" fill="#1A5FDC"/>
+            <!-- Negative g shape -->
+            <circle cx="80" cy="70" r="26" fill="#FFF"/>
+            <rect x="54" y="70" width="52" height="40" fill="#FFF"/>
+            <circle cx="80" cy="67" r="12" fill="#1A5FDC"/>
+            <rect x="54" y="98" width="18" height="22" fill="#FFF"/>
+            <rect x="112" y="52" width="18" height="70" fill="#1A5FDC"/>
+            <rect x="120" y="82" width="10" height="38" fill="#FFF"/>
+          </svg>
+        </div>
+        <div class="favicon-ring">
+          <svg viewBox="0 0 160 160"><rect x="28" y="20" width="104" height="120" rx="16" fill="#FFF"/><circle cx="80" cy="72" r="30" fill="#1A5FDC"/><rect x="50" y="72" width="60" height="44" fill="#1A5FDC"/><circle cx="80" cy="68" r="14" fill="#FFF"/></svg>
+        </div>
+      </div>
+
+      <!-- Vertical -->
+      <div class="variant">
+        <span class="variant-label">Vertical Lockup</span>
+        <div class="variant-preview">
+          <svg width="160" height="200" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="42" y="30" width="76" height="86" rx="12" fill="#1A5FDC"/>
+            <circle cx="80" cy="62" r="20" fill="#FFF"/>
+            <rect x="60" y="62" width="40" height="32" fill="#FFF"/>
+            <circle cx="80" cy="60" r="9" fill="#1A5FDC"/>
+            <rect x="60" y="80" width="14" height="18" fill="#FFF"/>
+            <rect x="104" y="46" width="14" height="56" fill="#1A5FDC"/>
+            <rect x="112" y="68" width="6" height="30" fill="#FFF"/>
+            <text x="80" y="150" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" font-weight="600" fill="#0A0D14" letter-spacing="6">格数科技</text>
+            <text x="80" y="170" text-anchor="middle" font-family="'Inter',sans-serif" font-size="10" font-weight="400" fill="#B0B8C1" letter-spacing="5">GESHU TECH</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Horizontal -->
+      <div class="variant">
+        <span class="variant-label">Horizontal Lockup</span>
+        <div class="variant-preview">
+          <svg width="280" height="80" viewBox="0 0 280 80" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="12" width="56" height="56" rx="8" fill="#1A5FDC"/>
+            <circle cx="36" cy="36" r="14" fill="#FFF"/>
+            <rect x="22" y="36" width="28" height="22" fill="#FFF"/>
+            <circle cx="36" cy="34" r="6" fill="#1A5FDC"/>
+            <rect x="22" y="50" width="10" height="12" fill="#FFF"/>
+            <rect x="56" y="22" width="10" height="38" fill="#1A5FDC"/>
+            <rect x="60" y="38" width="6" height="20" fill="#FFF"/>
+            <text x="82" y="45" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="26" font-weight="600" fill="#0A0D14" letter-spacing="6">格数科技</text>
+            <text x="82" y="62" font-family="'Inter',sans-serif" font-size="10" font-weight="400" fill="#B0B8C1" letter-spacing="5">GESHU TECH</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="analysis">
+      <div>
+        <h4>设计寓意</h4>
+        <p class="meaning">实色圆角块中挖出小写 g 的负空间轮廓。g = 格 / Graph / Grid / Growth。妙处在于正形与负形同时成立——看蓝色是块，看白色是字母。favicon 辨识度极高。</p>
+      </div>
+      <div>
+        <h4>适用场景</h4>
+        <div class="scenes">
+          <span class="scene">Favicon ★★★</span>
+          <span class="scene">社媒头像</span>
+          <span class="scene">浏览器标签</span>
+          <span class="scene">App 启动图标</span>
+          <span class="scene">水印</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================ -->
+  <!-- CONCEPT 4: CORE DOT -->
+  <!-- ================================================ -->
+  <div class="concept">
+    <div class="concept-header">
+      <h2>方案四 · 框内原点</h2>
+      <span class="tagline">Frame &amp; Core</span>
+    </div>
+
+    <div class="variants">
+      <!-- Icon Only -->
+      <div class="variant">
+        <span class="variant-label">Icon Mark</span>
+        <div class="variant-preview">
+          <svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+            <!-- Outer frame (格) -->
+            <rect x="34" y="30" width="92" height="100" rx="4" fill="none" stroke="#1A5FDC" stroke-width="8"/>
+            <!-- Gap cut (open break) -->
+            <rect x="118" y="68" width="10" height="14" fill="#FFF"/>
+            <!-- Core dot (数) -->
+            <circle cx="80" cy="80" r="22" fill="#1A5FDC"/>
+          </svg>
+        </div>
+        <div class="favicon-ring">
+          <svg viewBox="0 0 160 160"><rect x="30" y="26" width="100" height="108" rx="6" fill="none" stroke="#FFF" stroke-width="14"/><rect x="124" y="68" width="8" height="16" fill="#1A5FDC"/><circle cx="80" cy="80" r="26" fill="#FFF"/></svg>
+        </div>
+      </div>
+
+      <!-- Vertical -->
+      <div class="variant">
+        <span class="variant-label">Vertical Lockup</span>
+        <div class="variant-preview">
+          <svg width="160" height="200" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="42" y="28" width="76" height="84" rx="4" fill="none" stroke="#1A5FDC" stroke-width="7"/>
+            <rect x="112" y="58" width="8" height="12" fill="#FFF"/>
+            <circle cx="80" cy="70" r="18" fill="#1A5FDC"/>
+            <text x="80" y="148" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" font-weight="600" fill="#0A0D14" letter-spacing="6">格数科技</text>
+            <text x="80" y="168" text-anchor="middle" font-family="'Inter',sans-serif" font-size="10" font-weight="400" fill="#B0B8C1" letter-spacing="5">GESHU TECH</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Horizontal -->
+      <div class="variant">
+        <span class="variant-label">Horizontal Lockup</span>
+        <div class="variant-preview">
+          <svg width="280" height="80" viewBox="0 0 280 80" xmlns="http://www.w3.org/2000/svg">
+            <rect x="12" y="14" width="52" height="52" rx="3" fill="none" stroke="#1A5FDC" stroke-width="6"/>
+            <rect x="58" y="34" width="6" height="10" fill="#FFF"/>
+            <circle cx="38" cy="40" r="13" fill="#1A5FDC"/>
+            <text x="80" y="44" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="26" font-weight="600" fill="#0A0D14" letter-spacing="6">格数科技</text>
+            <text x="80" y="62" font-family="'Inter',sans-serif" font-size="10" font-weight="400" fill="#B0B8C1" letter-spacing="5">GESHU TECH</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="analysis">
+      <div>
+        <h4>设计寓意</h4>
+        <p class="meaning">方框取自"格"的偏旁——边界与标准；中心圆点代表数据核心。框的底部留了一道缺口，寓意不自我设限、技术突破边界。最简单的元素、最清晰的信息。</p>
+      </div>
+      <div>
+        <h4>适用场景</h4>
+        <div class="scenes">
+          <span class="scene">品牌主标</span>
+          <span class="scene">印刷品</span>
+          <span class="scene">官网</span>
+          <span class="scene">名片</span>
+          <span class="scene">合同/信纸</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================ -->
+  <!-- COMPARISON TABLE -->
+  <!-- ================================================ -->
+  <div class="section-title">方案对比 · 一目了然</div>
+  <table class="compare">
+    <thead>
+      <tr>
+        <th>维度</th>
+        <th>方案一 · 几何 G</th>
+        <th>方案二 · 立方格</th>
+        <th>方案三 · 负空间 G</th>
+        <th>方案四 · 框内原点</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>设计语言</strong></td>
+        <td>弧形切割 + 直线</td>
+        <td>等距立方体</td>
+        <td>正负形反转</td>
+        <td>外框 + 内点</td>
+      </tr>
+      <tr>
+        <td><strong>文化契合</strong></td>
+        <td>G = 格/Graph</td>
+        <td class="best">"格"字直译 ★★★</td>
+        <td>g = 格拼音</td>
+        <td class="best">框+核心 ★★★</td>
+      </tr>
+      <tr>
+        <td><strong>favicon 辨识</strong></td>
+        <td class="best">★★★★★</td>
+        <td>★★★★</td>
+        <td class="best">★★★★★</td>
+        <td>★★★★</td>
+      </tr>
+      <tr>
+        <td><strong>国际化</strong></td>
+        <td class="best">★★★★★</td>
+        <td>★★★★</td>
+        <td class="best">★★★★★</td>
+        <td>★★★</td>
+      </tr>
+      <tr>
+        <td><strong>印刷适应性</strong></td>
+        <td>★★★★</td>
+        <td class="best">★★★★★</td>
+        <td class="best">★★★★★</td>
+        <td class="best">★★★★★</td>
+      </tr>
+      <tr>
+        <td><strong>独特程度</strong></td>
+        <td>★★★</td>
+        <td>★★★★</td>
+        <td class="best">★★★★★</td>
+        <td>★★★★</td>
+      </tr>
+      <tr>
+        <td><strong>综合推荐</strong></td>
+        <td>国际化通用</td>
+        <td>品牌深度</td>
+        <td class="best">★ 最佳平衡</td>
+        <td>最简方案</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Dark mode preview -->
+  <div class="section-title">深色背景效果</div>
+  <div class="dark-preview">
+    <div style="display:flex; gap:60px; align-items:center; flex-wrap:wrap; justify-content:center;">
+      <svg width="100" height="100" viewBox="0 0 160 160"><circle cx="78" cy="78" r="56" fill="none" stroke="#FFFFFF" stroke-width="10"/><path d="M78,134 C108,134 134,108 134,78 C134,58 124,38 108,26" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/><line x1="78" y1="78" x2="134" y2="78" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/></svg>
+      <svg width="100" height="100" viewBox="0 0 160 160"><polygon points="80,28 126,52 80,76 34,52" fill="#FFFFFF"/><polygon points="34,52 80,76 80,116 34,92" fill="#FFFFFF" opacity="0.45"/><polygon points="80,76 126,52 126,92 80,116" fill="#FFFFFF" opacity="0.7"/></svg>
+      <svg width="100" height="100" viewBox="0 0 160 160"><rect x="30" y="24" width="100" height="112" rx="14" fill="#FFFFFF"/><circle cx="80" cy="70" r="26" fill="#0A0D14"/><rect x="54" y="70" width="52" height="40" fill="#0A0D14"/><circle cx="80" cy="67" r="12" fill="#FFFFFF"/><rect x="54" y="98" width="18" height="22" fill="#0A0D14"/><rect x="112" y="52" width="18" height="70" fill="#FFFFFF"/><rect x="120" y="82" width="10" height="38" fill="#0A0D14"/></svg>
+      <svg width="100" height="100" viewBox="0 0 160 160"><rect x="34" y="30" width="92" height="100" rx="4" fill="none" stroke="#FFFFFF" stroke-width="8"/><rect x="118" y="68" width="10" height="14" fill="#0A0D14"/><circle cx="80" cy="80" r="22" fill="#FFFFFF"/></svg>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  GESHU TECH · BRAND IDENTITY · FINAL · 2026
+</div>
+
+</body>
+</html>

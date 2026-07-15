@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>格数集团 Logo 设计 · 第二辑</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    background: #08090C;
+    color: #E8EAED;
+    min-height: 100vh;
+  }
+
+  .header {
+    padding: 100px 40px 80px;
+    text-align: center;
+  }
+  .header .numeral {
+    font-family: 'Playfair Display', serif;
+    font-size: 120px;
+    line-height: 1;
+    background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.01) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: -20px;
+  }
+  .header h1 {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+  }
+  .header .sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  .container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 40px 100px;
+  }
+
+  /* Two-column alternating layout */
+  .logo-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    margin-bottom: 1px;
+  }
+  @media (max-width: 900px) { .logo-row { grid-template-columns: 1fr; } }
+
+  .logo-panel {
+    background: #0C0E14;
+    padding: 70px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 450px;
+    position: relative;
+    transition: background 0.3s;
+  }
+  .logo-panel:hover { background: #101319; }
+  .logo-panel.light { background: #F4F4F5; }
+  .logo-panel.light:hover { background: #ECECEE; }
+  .logo-panel.warm { background: #1A1410; }
+  .logo-panel.warm:hover { background: #201910; }
+
+  .panel-num {
+    position: absolute;
+    top: 28px;
+    left: 32px;
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.15);
+    letter-spacing: 2px;
+  }
+  .logo-panel.light .panel-num { color: rgba(0,0,0,0.15); }
+
+  .panel-svg {
+    max-width: 100%;
+    margin-bottom: 24px;
+  }
+
+  .panel-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .logo-panel.light .panel-name { color: #1A1A1A; }
+
+  .panel-desc {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    text-align: center;
+    max-width: 320px;
+    line-height: 1.7;
+  }
+  .logo-panel.light .panel-desc { color: rgba(0,0,0,0.4); }
+
+  .panel-tags {
+    display: flex;
+    gap: 8px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .panel-tag {
+    font-size: 10px;
+    padding: 3px 10px;
+    border-radius: 100px;
+    background: rgba(255,255,255,0.04);
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.5px;
+  }
+  .logo-panel.light .panel-tag { background: rgba(0,0,0,0.04); color: rgba(0,0,0,0.35); }
+
+  .badge-recommend {
+    position: absolute;
+    top: 26px;
+    right: 30px;
+    font-size: 10px;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .badge-recommend.gold {
+    background: rgba(212,175,55,0.15);
+    border: 1px solid rgba(212,175,55,0.3);
+    color: #D4AF37;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 60px;
+    color: rgba(255,255,255,0.12);
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  /* Full-width banner row */
+  .banner-row {
+    grid-column: 1 / -1;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="numeral">II</div>
+  <h1>格 数 集 团</h1>
+  <p class="sub">Logo Design Collection · Vol.2 — 破格 · 重塑</p>
+</div>
+
+<div class="container">
+
+  <!-- ============ ROW 1 ============ -->
+  <div class="logo-row">
+
+    <!-- 01: Golden Ratio -->
+    <div class="logo-panel warm">
+      <span class="panel-num">01</span>
+      <span class="badge-recommend gold">✦ GOLD</span>
+      <svg width="240" height="240" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gold1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#D4AF37"/>
+            <stop offset="40%" stop-color="#F5E6A3"/>
+            <stop offset="100%" stop-color="#8B6914"/>
+          </linearGradient>
+        </defs>
+        <!-- Golden spiral -->
+        <path d="M120,60 C120,60 140,60 150,70 C160,80 170,90 170,110 C170,130 160,150 140,160 C120,170 100,170 85,155 C70,140 65,115 72,95 C79,75 95,62 120,60Z"
+              fill="none" stroke="url(#gold1)" stroke-width="2.5" opacity="0.9"/>
+        <!-- Spiral inner -->
+        <path d="M120,72 C120,72 132,72 140,80 C148,88 154,96 154,108 C154,120 148,134 134,140 C120,146 106,146 94,136 C82,126 80,108 84,94"
+              fill="none" stroke="url(#gold1)" stroke-width="1.8" opacity="0.5"/>
+        <!-- Center pearl -->
+        <circle cx="120" cy="115" r="3" fill="#F5E6A3" opacity="0.8"/>
+      </svg>
+      <div class="panel-name">黄金螺旋 · 数理之韵</div>
+      <div class="panel-desc">黄金比例螺旋，数理与美学的终极交汇。暖金配色告别冰冷科技蓝，传递时间淬炼后的从容。</div>
+      <div class="panel-tags">
+        <span class="panel-tag">黄金比例</span><span class="panel-tag">暖金奢华</span><span class="panel-tag">数学美学</span>
+      </div>
+    </div>
+
+    <!-- 02: Negative Space -->
+    <div class="logo-panel light">
+      <span class="panel-num">02</span>
+      <svg width="240" height="240" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="nsClip">
+            <rect x="60" y="60" width="120" height="120" rx="24"/>
+          </clipPath>
+        </defs>
+        <!-- Outer frame (格 = grid/frame) -->
+        <rect x="60" y="60" width="120" height="120" rx="24" fill="#0A0A0A"/>
+        <!-- Negative space G cutout -->
+        <circle cx="120" cy="108" r="32" fill="#F4F4F5"/>
+        <rect x="88" y="76" width="32" height="64" rx="0" fill="#F4F4F5"/>
+        <!-- Bridging the G -->
+        <rect x="104" y="76" width="24" height="12" fill="#0A0A0A"/>
+        <rect x="120" y="124" width="12" height="8" fill="#F4F4F5"/>
+        <!-- Small accent dot -->
+        <circle cx="100" cy="105" r="3" fill="#D4AF37"/>
+      </svg>
+      <div class="panel-name" style="color:#1A1A1A;">负空间 · 框中生字</div>
+      <div class="panel-desc" style="color:rgba(0,0,0,0.4);">以"格"字的方框为形，负空间切割出字母 G。黑与白、框与空、中与西的完美元语言。</div>
+      <div class="panel-tags">
+        <span class="panel-tag">负空间</span><span class="panel-tag">黑白极简</span><span class="panel-tag">中西融合</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============ ROW 2 ============ -->
+  <div class="logo-row">
+
+    <!-- 03: Typographic Luxury -->
+    <div class="logo-panel light" style="background:#F9F9F6;">
+      <span class="panel-num">03</span>
+      <svg width="340" height="200" viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- Huge thin 格 character -->
+        <text x="170" y="85" text-anchor="middle" font-family="'Noto Sans SC',serif" font-size="64" font-weight="300" fill="#1A1A1A" letter-spacing="8" opacity="0.9">格数</text>
+        <!-- Delicate line -->
+        <line x1="80" y1="102" x2="260" y2="102" stroke="#D4AF37" stroke-width="0.5" opacity="0.6"/>
+        <!-- Subtitle -->
+        <text x="170" y="128" text-anchor="middle" font-family="'Inter',sans-serif" font-size="10" font-weight="400" fill="rgba(0,0,0,0.35)" letter-spacing="8">GESHU GROUP</text>
+        <!-- Small square accent -->
+        <rect x="162" y="72" width="3" height="3" fill="#D4AF37" opacity="0.8"/>
+        <rect x="176" y="72" width="3" height="3" fill="#D4AF37" opacity="0.5"/>
+      </svg>
+      <div class="panel-name" style="color:#1A1A1A;">奢侈排版 · 文字即标识</div>
+      <div class="panel-desc" style="color:rgba(0,0,0,0.4);">极细字重+超大间距，对标奢侈品品牌的美学。不需要图形，中文本身就是符号。</div>
+      <div class="panel-tags">
+        <span class="panel-tag">字标</span><span class="panel-tag">奢侈感</span><span class="panel-tag">东方极简</span>
+      </div>
+    </div>
+
+    <!-- 04: Data Waterfall -->
+    <div class="logo-panel">
+      <span class="panel-num">04</span>
+      <span class="badge-recommend gold">✦ GOLD</span>
+      <svg width="240" height="240" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="wf1" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#00E5FF" stop-opacity="0"/>
+            <stop offset="30%" stop-color="#00E5FF" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#0D47A1" stop-opacity="0.1"/>
+          </linearGradient>
+          <linearGradient id="wf2" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="rgba(0,229,255,0)"/>
+            <stop offset="50%" stop-color="rgba(0,229,255,0.6)"/>
+            <stop offset="100%" stop-color="rgba(13,71,161,0)"/>
+          </linearGradient>
+        </defs>
+        <!-- Structured cascade -->
+        <line x1="60" y1="40" x2="60" y2="200" stroke="url(#wf1)" stroke-width="2"/>
+        <line x1="90" y1="40" x2="90" y2="200" stroke="url(#wf1)" stroke-width="1.5"/>
+        <line x1="120" y1="40" x2="120" y2="200" stroke="url(#wf1)" stroke-width="2.5"/>
+        <line x1="150" y1="40" x2="150" y2="200" stroke="url(#wf1)" stroke-width="1.5"/>
+        <line x1="180" y1="40" x2="180" y2="200" stroke="url(#wf1)" stroke-width="1"/>
+        <!-- Floating nodes -->
+        <circle cx="60" cy="70" r="3" fill="#00E5FF" opacity="0.9"/>
+        <circle cx="90" cy="85" r="2.5" fill="#00D4FF" opacity="0.7"/>
+        <circle cx="120" cy="65" r="4" fill="#00E5FF" opacity="0.8"/>
+        <circle cx="150" cy="78" r="2" fill="#40C8FF" opacity="0.6"/>
+        <circle cx="60" cy="120" r="2.5" fill="#00D4FF" opacity="0.5"/>
+        <circle cx="120" cy="110" r="3.5" fill="#00E5FF" opacity="0.6"/>
+        <circle cx="180" cy="105" r="2" fill="#40C8FF" opacity="0.4"/>
+        <circle cx="90" cy="150" r="2" fill="#2979FF" opacity="0.4"/>
+        <circle cx="150" cy="140" r="2.5" fill="#00D4FF" opacity="0.35"/>
+        <circle cx="120" cy="1
+
+60" r="3" fill="#00E5FF" opacity="0.3"/>
+        <!-- Horizontal connector -->
+        <line x1="55" y1="110" x2="185" y2="110" stroke="rgba(0,229,255,0.08)" stroke-width="1"/>
+      </svg>
+      <div class="panel-name">数据瀑布 · 流淌</div>
+      <div class="panel-desc">垂直数据流从无到有、从亮到暗，如瀑布倾泻。结构化竖线+随机节点，秩序与灵动并存。</div>
+      <div class="panel-tags">
+        <span class="panel-tag">数据瀑布</span><span class="panel-tag">流动感</span><span class="panel-tag">粒子节点</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============ ROW 3 ============ -->
+  <div class="logo-row">
+
+    <!-- 05: Impossible Architecture -->
+    <div class="logo-panel">
+      <span class="panel-num">05</span>
+      <svg width="240" height="240" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="ia1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#CFD8DC"/>
+            <stop offset="100%" stop-color="#455A64"/>
+          </linearGradient>
+          <linearGradient id="ia2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#90A4AE"/>
+            <stop offset="100%" stop-color="#263238"/>
+          </linearGradient>
+        </defs>
+        <!-- Impossible geometry - Penrose-like -->
+        <!-- Top plane -->
+        <polygon points="120,45 180,80 120,115 60,80" fill="url(#ia1)" opacity="0.9"/>
+        <!-- Left plane -->
+        <polygon points="60,80 120,115 120,175 60,140" fill="url(#ia2)" opacity="0.7"/>
+        <!-- Right plane (impossible connection) -->
+        <polygon points="120,115 180,80 180,140 120,175" fill="#37474F" opacity="0.5"/>
+        <!-- Highlight edge -->
+        <line x1="120" y1="45" x2="120" y2="175" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <!-- Floating accent -->
+        <rect x="115" y="100" width="10" height="30" rx="2" fill="rgba(255,255,255,0.2)"/>
+      </svg>
+      <div class="panel-name">不可能几何 · 维度的游戏</div>
+      <div class="panel-desc">致敬彭罗斯三角的不可能结构，灰色调传递建筑感。挑战常规视角，暗喻打破数据维度的边界。</div>
+      <div class="panel-tags">
+        <span class="panel-tag">不可能图形</span><span class="panel-tag">建筑结构</span><span class="panel-tag">灰调高级</span>
+      </div>
+    </div>
+
+    <!-- 06: Calligraphy × Code -->
+    <div class="logo-panel light" style="background:#FAFAF8;">
+      <span class="panel-num">06</span>
+      <svg width="280" height="200" viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- Brush stroke "格" abstract -->
+        <path d="M 60 50 C 80 48, 100 55, 95 80 C 90 105, 70 110, 50 108 C 30 106, 20 95, 22 80 C 24 65, 40 55, 60 50Z"
+              fill="#1A1A1A" opacity="0.85"/>
+        <!-- Digital glitch rectangles beside the brush stroke -->
+        <rect x="110" y="52" width="30" height="2" fill="#1A1A1A" opacity="0.3"/>
+        <rect x="115" y="60" width="40" height="1.5" fill="#1A1A1A" opacity="0.2"/>
+        <rect x="108" y="68" width="25" height="2" fill="#1A1A1A" opacity="0.35"/>
+        <rect x="120" y="76" width="35" height="1" fill="#1A1A1A" opacity="0.15"/>
+        <rect x="105" y="84" width="45" height="2" fill="#1A1A1A" opacity="0.25"/>
+        <rect x="118" y="92" width="28" height="1.5" fill="#1A1A1A" opacity="0.2"/>
+        <!-- Red seal -->
+        <rect x="155" y="48" width="16" height="16" rx="1" fill="#C62828" opacity="0.8"/>
+        <text x="163" y="60" text-anchor="middle" font-family="serif" font-size="10" fill="#FAFAF8" font-weight="700">格</text>
+        <!-- Subtle grid background -->
+        <g opacity="0.03">
+          <line x1="200" y1="40" x2="200" y2="120" stroke="#1A1A1A" stroke-width="0.5"/>
+          <line x1="220" y1="40" x2="220" y2="120" stroke="#1A1A1A" stroke-width="0.5"/>
+          <line x1="240" y1="40" x2="240" y2="120" stroke="#1A1A1A" stroke-width="0.5"/>
+          <line x1="180" y1="60" x2="260" y2="60" stroke="#1A1A1A" stroke-width="0.5"/>
+          <line x1="180" y1="80" x2="260" y2="80" stroke="#1A1A1A" stroke-width="0.5"/>
+          <line x1="180" y1="100" x2="260" y2="100" stroke="#1A1A1A" stroke-width="0.5"/>
+        </g>
+      </svg>
+      <div class="panel-name" style="color:#1A1A1A;">笔墨 × 代码</div>
+      <div class="panel-desc" style="color:rgba(0,0,0,0.4);">水墨笔触与像素线条同框，传统书法+数字条码。朱砂印章点睛，东方美学在数字时代的解法。</div>
+      <div class="panel-tags">
+        <span class="panel-tag">书法融合</span><span class="panel-tag">东方韵味</span><span class="panel-tag">朱砂印</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============ ROW 4 ============ -->
+  <div class="logo-row">
+
+    <!-- 07: Glass Morphism Layers -->
+    <div class="logo-panel">
+      <span class="panel-num">07</span>
+      <span class="badge-recommend gold">✦ GOLD</span>
+      <svg width="240" height="240" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gm1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="rgba(0,229,255,0.4)"/>
+            <stop offset="50%" stop-color="rgba(41,121,255,0.25)"/>
+            <stop offset="100%" stop-color="rgba(101,31,255,0.15)"/>
+          </linearGradient>
+          <linearGradient id="gm2" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="rgba(0,184,212,0.35)"/>
+            <stop offset="100%" stop-color="rgba(21,101,192,0.2)"/>
+          </linearGradient>
+          <filter id="glassBlur">
+            <feGaussianBlur stdDeviation="1.5"/>
+          </filter>
+        </defs>
+        <!-- Layered transparent planes -->
+        <rect x="50" y="55" width="110" height="110" rx="16" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)" stroke-width="1" transform="rotate(-8,105,110)"/>
+        <rect x="70" y="65" width="100" height="100" rx="14" fill="rgba(0,229,255,0.04)" stroke="rgba(0,229,255,0.15)" stroke-width="1" transform="rotate(3,120,115)"/>
+        <rect x="60" y="75" width="120" height="90" rx="12" fill="url(#gm1)" stroke="rgba(0,200,255,0.2)" stroke-width="1.5" transform="rotate(-2,120,120)"/>
+        <!-- G symbol on top layer -->
+        <text x="120" y="135" text-anchor="middle" font-family="'Inter',sans-serif" font-size="40" font-weight="600" fill="rgba(255,255,255,0.8)" letter-spacing="-1">G</text>
+        <!-- Small highlight -->
+        <circle cx="85" cy="88" r="2" fill="#00E5FF" opacity="0.6"/>
+      </svg>
+      <div class="panel-name">毛玻璃 · 多维叠加</div>
+      <div class="panel-desc">多重透明矩形交错叠加，每层代表一个数据维度。毛玻璃质感轻盈通透，层次感让扁平设计拥有纵深。</div>
+      <div class="panel-tags">
+        <span class="panel-tag">毛玻璃</span><span class="panel-tag">多层次</span><span class="panel-tag">透明叠加</span>
+      </div>
+    </div>
+
+    <!-- 08: Sound Wave / Pulse -->
+    <div class="logo-panel">
+      <span class="panel-num">08</span>
+      <svg width="240" height="240" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="pl1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#00E5FF" stop-opacity="1"/>
+            <stop offset="50%" stop-color="#2979FF" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#651FFF" stop-opacity="0.1"/>
+          </linearGradient>
+        </defs>
+        <!-- Pulse rings -->
+        <circle cx="120" cy="120" r="90" fill="none" stroke="url(#pl1)" stroke-width="1" opacity="0.15"/>
+        <circle cx="120" cy="120" r="70" fill="none" stroke="url(#pl1)" stroke-width="1.5" opacity="0.25"/>
+        <circle cx="120" cy="120" r="50" fill="none" stroke="url(#pl1)" stroke-width="2" opacity="0.4"/>
+        <circle cx="120" cy="120" r="30" fill="none" stroke="url(#pl1)" stroke-width="2.5" opacity="0.6"/>
+        <!-- Core -->
+        <circle cx="120" cy="120" r="12" fill="url(#pl1)" opacity="0.9"/>
+        <circle cx="120" cy="120" r="5" fill="#FFFFFF" opacity="0.5"/>
+        <!-- Asymmetric accent lines -->
+        <line x1="120" y1="30" x2="120" y2="65" stroke="rgba(0,229,255,0.4)" stroke-width="2"/>
+        <line x1="120" y1="175" x2="120" y2="210" stroke="rgba(101,31,255,0.15)" stroke-width="1.5"/>
+        <line x1="30" y1="120" x2="65" y2="120" stroke="rgba(0,229,255,0.25)" stroke-width="1.5"/>
+        <line x1="175" y1="120" x2="210" y2="120" stroke="rgba(101,31,255,0.1)" stroke-width="1"/>
+      </svg>
+      <div class="panel-name">脉冲 · 数据之声</div>
+      <div class="panel-desc">同心脉冲从核心向外扩散，如声波、如心跳、如数据每秒百万次的传输。极简圆环中蕴含能量。</div>
+      <div class="panel-tags">
+        <span class="panel-tag">脉冲声波</span><span class="panel-tag">同心圆</span><span class="panel-tag">能量感</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============ HORIZONTAL LOCKUPS ============ -->
+  <div class="logo-row">
+    <div class="logo-panel banner-row" style="min-height:200px; padding:50px;">
+      <span class="panel-num">LOCKUPS</span>
+      <div style="display:flex; flex-direction:column; gap:40px; margin-top:16px;">
+        <!-- Lockup A: Typographic -->
+        <svg width="500" height="48" viewBox="0 0 500 48" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="34" font-family="'Noto Sans SC',serif" font-size="28" font-weight="300" fill="#FFFFFF" letter-spacing="8">格 数 集 团</text>
+          <line x1="0" y1="42" x2="240" y2="42" stroke="#D4AF37" stroke-width="0.5" opacity="0.5"/>
+          <text x="0" y="55" font-family="'Inter',sans-serif" font-size="9" font-weight="400" fill="rgba(255,255,255,0.3)" letter-spacing="6">GESHU GROUP</text>
+        </svg>
+        <!-- Lockup B: Mark + Text -->
+        <svg width="500" height="48" viewBox="0 0 500 48" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="18" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"/>
+          <circle cx="24" cy="24" r="8" fill="rgba(255,255,255,0.8)"/>
+          <text x="56" y="30" font-family="'Noto Sans SC',serif" font-size="22" font-weight="600" fill="#FFFFFF" letter-spacing="6">格数集团</text>
+          <text x="56" y="44" font-family="'Inter',sans-serif" font-size="9" font-weight="400" fill="rgba(255,255,255,0.3)" letter-spacing="4">GESHU GROUP</text>
+        </svg>
+        <!-- Lockup C: Calligraphy + minimal -->
+        <svg width="500" height="48" viewBox="0 0 500 48" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="6" width="36" height="36" rx="2" fill="#1A1A1A"/>
+          <rect x="12" y="12" width="24" height="2" fill="white" opacity="0.3"/>
+          <rect x="12" y="18" width="24" height="2" fill="white" opacity="0.6"/>
+          <rect x="12" y="24" width="16" height="2" fill="white" opacity="0.8"/>
+          <rect x="12" y="30" width="24" height="2" fill="white" opacity="0.4"/>
+          <text x="56" y="30" font-family="'Noto Sans SC',serif" font-size="22" font-weight="500" fill="#FFFFFF" letter-spacing="6">格数集团</text>
+          <text x="56" y="44" font-family="'Inter',sans-serif" font-size="9" font-weight="400" fill="rgba(255,255,255,0.3)" letter-spacing="4">GESHU GROUP</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  GESHU GROUP · BRAND IDENTITY · VOL.2 · 2026
+</div>
+
+</body>
+</html>

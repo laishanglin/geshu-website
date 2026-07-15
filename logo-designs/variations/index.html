@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>格数科技 · Logo 变体设计</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family: 'Inter','PingFang SC','Microsoft YaHei',sans-serif;
+    background:#0A0D14;
+    color:#E8EAED;
+  }
+  .hero{
+    text-align:center;
+    padding:80px 32px 48px;
+    background: linear-gradient(180deg, #111827 0%, #0A0D14 100%);
+    border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+  .hero .badge{
+    display:inline-block;
+    padding:5px 14px;
+    border-radius:100px;
+    background:rgba(59,130,246,0.15);
+    border:1px solid rgba(59,130,246,0.25);
+    color:#60A5FA;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:2px;
+    margin-bottom:20px;
+  }
+  .hero h1{font-size:32px;font-weight:700;letter-spacing:4px;color:#FFF;margin-bottom:8px;}
+  .hero .sub{font-size:13px;color:rgba(255,255,255,0.35);letter-spacing:3px;}
+
+  .container{max-width:1300px;margin:0 auto;padding:48px 24px 80px;}
+
+  .ref-section{
+    background:#111827;
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:16px;
+    padding:40px;
+    margin-bottom:48px;
+    display:flex;
+    align-items:center;
+    gap:40px;
+    flex-wrap:wrap;
+  }
+  .ref-section .label{
+    font-size:9px;
+    letter-spacing:4px;
+    color:rgba(255,255,255,0.3);
+    text-transform:uppercase;
+    writing-mode:vertical-lr;
+  }
+  .ref-section .ref-preview{
+    flex:1;
+    min-width:280px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+  }
+  .ref-section .ref-notes{
+    flex:1;
+    min-width:240px;
+  }
+  .ref-notes h3{font-size:14px;color:#60A5FA;letter-spacing:2px;margin-bottom:12px;}
+  .ref-notes ul{list-style:none;}
+  .ref-notes li{
+    font-size:12px;
+    color:rgba(255,255,255,0.5);
+    padding:4px 0;
+    padding-left:16px;
+    position:relative;
+  }
+  .ref-notes li::before{
+    content:'→';
+    position:absolute;
+    left:0;
+    color:#3B82F6;
+  }
+
+  .section-title{
+    font-size:10px;
+    letter-spacing:5px;
+    color:rgba(255,255,255,0.2);
+    text-transform:uppercase;
+    text-align:center;
+    margin:56px 0 28px;
+  }
+
+  .var-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:16px;
+  }
+  @media(max-width:1000px){.var-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:640px){.var-grid{grid-template-columns:1fr;}}
+
+  .var-card{
+    background:#111827;
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:14px;
+    overflow:hidden;
+    transition: all 0.25s;
+  }
+  .var-card:hover{
+    border-color: rgba(59,130,246,0.3);
+    transform: translateY(-2px);
+  }
+  .var-preview{
+    padding:44px 28px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:180px;
+    background:radial-gradient(ellipse at center, rgba(59,130,246,0.04) 0%, transparent 70%);
+  }
+  .var-info{
+    padding:20px 24px 24px;
+    border-top:1px solid rgba(255,255,255,0.05);
+  }
+  .var-info .num{
+    font-size:10px;
+    font-weight:700;
+    color:rgba(59,130,246,0.5);
+    letter-spacing:3px;
+    margin-bottom:6px;
+  }
+  .var-info .name{
+    font-size:16px;
+    font-weight:600;
+    color:#FFF;
+    margin-bottom:4px;
+  }
+  .var-info .technique{
+    font-size:11px;
+    color:rgba(255,255,255,0.35);
+    line-height:1.6;
+  }
+  .var-info .tag-row{
+    display:flex;
+    gap:6px;
+    margin-top:10px;
+    flex-wrap:wrap;
+  }
+  .var-info .tag{
+    font-size:10px;
+    padding:3px 10px;
+    border-radius:100px;
+    background:rgba(59,130,246,0.1);
+    color:#60A5FA;
+  }
+  .star-badge{
+    position:absolute;
+    top:14px;
+    right:14px;
+    font-size:10px;
+    padding:3px 10px;
+    border-radius:100px;
+    background:rgba(34,211,238,0.12);
+    border:1px solid rgba(34,211,238,0.25);
+    color:#22D3EE;
+    font-weight:600;
+    letter-spacing:1px;
+  }
+  .footer{
+    text-align:center;
+    padding:60px;
+    font-size:11px;
+    color:rgba(255,255,255,0.1);
+    letter-spacing:3px;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">DESIGN VARIATIONS</div>
+  <h1>格数科技 · Logo 变体</h1>
+  <p class="sub">基于块状几何设计语言 · 12 种方向探索</p>
+</div>
+
+<div class="container">
+
+  <!-- ===== REFERENCE: Original Design ===== -->
+  <div class="ref-section">
+    <span class="label">原版</span>
+    <div class="ref-preview">
+      <svg width="280" height="80" viewBox="0 0 140 40" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="r1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#06B6D4"/>
+          </linearGradient>
+          <linearGradient id="r2" x1="1" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#60A5FA"/><stop offset="100%" stop-color="#22D3EE"/>
+          </linearGradient>
+        </defs>
+        <rect x="2" y="4" width="24" height="5.5" rx="2.75" fill="url(#r1)"/>
+        <rect x="2" y="4" width="5.5" height="26" rx="2.75" fill="url(#r1)"/>
+        <rect x="2" y="24.5" width="24" height="5.5" rx="2.75" fill="url(#r1)"/>
+        <rect x="17" y="14" width="9" height="5.5" rx="2.75" fill="url(#r2)"/>
+        <circle cx="31" cy="6.75" r="2.5" fill="url(#r2)" opacity="0.8"/>
+        <circle cx="31" cy="29.5" r="2" fill="url(#r2)" opacity="0.5"/>
+        <circle cx="7" cy="33" r="1.8" fill="url(#r1)" opacity="0.4"/>
+        <circle cx="29" cy="16.75" r="2" fill="url(#r2)" opacity="0.7"/>
+      </svg>
+    </div>
+    <div class="ref-notes">
+      <h3>设计 DNA 拆解</h3>
+      <ul>
+        <li>圆角矩形拼块构建抽象字母</li>
+        <li>蓝→青双色渐变，左低右高</li>
+        <li>负空间（块与块之间的空隙）形成字母轮廓</li>
+        <li>圆点节点作为视觉调味剂</li>
+        <li>左上角重、右下角轻的视觉节奏</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== VARIATIONS ===== -->
+  <div class="section-title">━━━ 12 种变体探索 ━━━</div>
+  <div class="var-grid">
+
+    <!-- V1: Pure G Blocks -->
+    <div class="var-card">
+      <div class="var-preview" style="position:relative;">
+        <span class="star-badge">★</span>
+        <svg width="200" height="100" viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="v1a" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/>
+            </linearGradient>
+          </defs>
+          <!-- G formed by 5 blocks with cleaner cuts -->
+          <rect x="6" y="6" width="28" height="6" rx="3" fill="url(#v1a)"/>
+          <rect x="6" y="6" width="6" height="32" rx="3" fill="url(#v1a)"/>
+          <rect x="6" y="32" width="28" height="6" rx="3" fill="url(#v1a)"/>
+          <rect x="22" y="18" width="12" height="6" rx="3" fill="url(#v1a)"/>
+          <!-- G crossbar -->
+          <rect x="22" y="12" width="6" height="6" rx="3" fill="url(#v1a)" opacity="0.7"/>
+          <!-- Accent -->
+          <circle cx="38" cy="9" r="2.5" fill="#22D3EE" opacity="0.7"/>
+          <circle cx="38" cy="35" r="2" fill="#22D3EE" opacity="0.4"/>
+        </svg>
+      </div>
+      <div class="var-info">
+        <div class="num">V1</div>
+        <div class="name">纯 G 拼块</div>
+        <div class="technique">还原原版结构，增加 G 的横杠闭合，让字母辨识度更高。右上方增加短块补全 G 的顶部横线。</div>
+        <div class="tag-row"><span class="tag">经典重构</span><span class="tag">字母辨识</span></div>
+      </div>
+    </div>
+
+    <!-- V2: Grid Matrix G -->
+    <div class="var-card">
+      <div class="var-preview" style="position:relative;">
+        <svg width="200" height="100" viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="v2a" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#1D4ED8"/><stop offset="100%" stop-color="#06B6D4"/>
+            </linearGradient>
+          </defs>
+          <g fill="url(#v2a)">
+            <!-- 4x5 grid, filled cells form G -->
+            <!-- Row 1 -->
+            <rect x="6" y="6" width="7" height="7" rx="1.5"/><rect x="15" y="6" width="7" height="7" rx="1.5"/><rect x="24" y="6" width="7" height="7" rx="1.5"/><rect x="33" y="6" width="7" height="7" rx="1.5"/>
+            <!-- Row 2 -->
+            <rect x="6" y="15" width="7" height="7" rx="1.5"/>
+            <!-- Row 3 -->
+            <rect x="6" y="24" width="7" height="7" rx="1.5"/><rect x="15" y="24" width="7" height="7" rx="1.5"/><rect x="24" y="24" width="7" height="7" rx="1.5"/>
+            <!-- Row 4 -->
+            <rect x="6" y="33" width="7" height="7" rx="1.5"/><rect x="33" y="33" width="7" height="7" rx="1.5"/>
+            <!-- Row 5 -->
+            <rect x="6" y="42" width="7" height="7" rx="1.5"/><rect x="15" y="42" width="7" height="7" rx="1.5"/><rect x="24" y="42" width="7" height="7" rx="1.5"/><rect x="33" y="42" width="7" height="7" rx="1.5"/>
+          </g>
+        </svg>
+      </div>
+      <div class="var-info">
+        <div class="num">V2</div>
+        <div class="name">点阵 G</div>
+        <div class="technique">5×4 网格点阵，填充/留白形成 G。像素化语言呼应数据与软件工程，适合技术子品牌。</div>
+        <div class="tag-row"><span class="tag">点阵矩阵</span><span class="tag">像素风格</span></div>
+      </div>
+    </div>
+
+    <!-- V3: Window Cut G -->
+    <div class="var-card">
+      <div class="var-preview" style="position:relative;">
+        <span class="star-badge">★</span>
+        <svg width="200" height="100" viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="v3a" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#0EA5E9"/>
+            </linearGradient>
+          </defs>
+          <!-- Solid rounded block -->
+          <rect x="6" y="6" width="36" height="42" rx="8" fill="url(#v3a)"/>
+          <!-- G window cut through -->
+          <rect x="14" y="24" width="28" height="6" rx="3" fill="#0A0D14"/>
+          <rect x="14" y="14" width="28" height="6" rx="3" fill="#0A0D14"/>
+          <rect x="14" y="14" width="6" height="16" rx="3" fill="#0A0D14"/>
+          <rect x="14" y="34" width="28" height="6" rx="3" fill="#0A0D14"/>
+          <rect x="30" y="24" width="8" height="6" rx="3" fill="#0A0D14"/>
+          <!-- Accent -->
+          <circle cx="46" cy="9" r="2" fill="#22D3EE" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="var-info">
+        <div class="num">V3</div>
+        <div class="name">镂空窗口 G</div>
+        <div class="technique">实色圆角块中挖出 G 形窗口。负空间手法让一个面承载双层信息。暗底上更出彩。</div>
+        <div class="tag-row"><span class="tag">镂空负形</span><span class="tag">极简高级</span></div>
+      </div>
+    </div>
+
+    <!-- V4: Cascade Blocks -->
+    <div class="var-card">
+      <div class="var-preview" style="position:relative;">
+        <svg width="200" height="100" viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="v4a" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#1E3A5F"/><stop offset="100%" stop-color="#0EA5E9"/>
+            </linearGradient>
+          </defs>
+          <!-- Cascading blocks -->
+          <rect x="4" y="38" width="10" height="10" rx="3" fill="url(#v4a)" opacity="0.4"/>
+          <rect x="16" y="30" width="12" height="18" rx="3" fill="url(#v4a)" opacity="0.55"/>
+          <rect x="30" y="20" width="14" height="28" rx="3" fill="url(#v4a)" opacity="0.7"/>
+          <rect x="46" y="8" width="16" height="40" rx="3" fill="url(#v4a)" opacity="0.85"/>
+          <rect x="64" y="16" width="14" height="32" rx="3" fill="url(#v4a)" opacity="0.7"/>
+          <!-- Nodes on tall block -->
+          <circle cx="54" cy="14" r="2" fill="#22D3EE" opacity="0.8"/>
+          <circle cx="54" cy="42" r="2" fill="#22D3EE" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="var-info">
+        <div class="num">V4</div>
+        <div class="name">阶梯跃进</div>
+        <div class="technique">五列矩形从矮到高再到低的抛物线排布。数据可视化隐喻——增长曲线。节点标记顶点。</div>
+        <div class="tag-row"><span class="tag">数据曲线</span><span class="tag">增长隐喻</span></div>
+      </div>
+    </div>
+
+    <!-- V5: Split Frame Interlock -->
+    <div class="var-card">
+      <div class="var-preview" style="position:relative;">
+        <svg width="200" height="100" viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="v5a" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#06B6D4"/>
+            </linearGradient>
+          </defs>
+          <!-- Left L-block -->
+          <rect x="4" y="6" width="20" height="6" rx="3" fill="url(#v5a)"/>
+          <rect x="4" y="6" width="6" height="26" rx="3" fill="url(#v5a)"/>
+          <rect x="4" y="26" width="20" height="6" rx="3" fill="url(#v5a)"/>
+          <!-- Right C-block -->
+          <rect x="26" y="14" width="6" height="24" rx="3" fill="url(#v5a)" opacity="0.6"/>
+          <rect x="26" y="14" width="14" height="6" rx="3" fill="url(#v5a)" opacity="0.6"/>
+          <rect x="26" y="36" width="14" height="6" rx="3" fill="url(#v5a)" opacity="0.6"/>
+          <!-- Connect dot -->
+          <circle cx="24" cy="18" r="2" fill="#22D3EE" opacity="0.8"/>
+        </svg>
+      </div>
+      <div class="var-info">
+        <div class="num">V5</div>
+        <div class="name">分框扣合</div>
+        <div class="technique">左 L 形 + 右 C 形，两个独立部件拼合成完整 G。分离的部件暗示模块化架构，扣合则代表系统集成。</div>
+        <div class="tag-row"><span class="tag">模块化</span><span class="tag">扣合结构</span></div>
+      </div>
+    </div>
+
+    <!-- V6: Code Bracket G -->
+    <div class="var-card">
+      <div class="var-preview" style="position:relative;">
+        <svg width="200" height="100" viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="v6a" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#1E40AF"/><stop offset="100%" stop-color="#06B6D4"/>
+            </linearGradient>
+          </defs>
+          <!-- Code-like bracket shapes -->
+          <rect x="4" y="6" width="6" height="38" rx="3" fill="url(#v6a)"/>
+          <rect x="4" y="6" width="22" height="6" rx="3" fill="url(#v6a)"/>
+          <rect x="4" y="38" width="22" height="6" rx="3" fill="url(#v6a)"/>
+          <!-- Inner blocks (like code indentation) -->
+          <rect x="18" y="18" width="10" height="5" rx="2.5" fill="url(#v6a)" opacity="0.5"/>
+          <rect x="18" y="27" width="10" height="5" rx="2.5" fill="url(#v6a)" opacity="0.5"/>
+          <!-- Semicolon accent -->
+          <circle cx="36" cy="30" r="2" fill="#22D3EE" opacity="0.6"/>
+          <rect x="34" y="35" width="4" height="6" rx="2" fill="#22D3EE" opacity="0.4"/>
+        </svg>
+      </div>
+      <div class="var-info">
+        <div class="num">V6</div>
+        <div class="name">代码括号</div>
+        <div class="technique">取代码缩进和括号的视觉语言——左竖条为边界，内部缩进块为逻辑层级。分号点缀增加开发者亲和。</div>
+        <div class="tag-row"><span class="tag">代码语言</span><span class="tag">开发者</span></div>
+      </div>
+    </div>
+
+    <!-- V7: Node Network -->
+    <div class="var-card">
+      <div class="var-preview" style="position:relative;">
+        <span class="star-badge">★</span>
+        <svg width="200" height="100" viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="v7a" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/>
+            </linearGradient>
+          </defs>
+          <!-- Central block -->
+          <rect x="16" y="12" width="14" height="28" rx="4" fill="url(#v7a)"/>
+          <!-- Connection lines -->
+          <line x1="6" y1="16" x2="16" y2="18" stroke="url(#v7a)" stroke-width="2" stroke-linecap="round"/>
+          <line x1="6" y1="36" x2="16" y2="34" stroke="url(#v7a)" stroke-width="2" stroke-linecap="round"/>
+          <line x1="30" y1="18" x2="42" y2="12" stroke="url(#v7a)" stroke-width="2" stroke-linecap="round"/>
+          <line x1="30" y1="34" x2="42" y2="40" stroke="url(#v7a)" stroke-width="2" stroke-linecap="round"/>
+          <!-- Nodes -->
+          <circle cx="6" cy="16" r="3" fill="#3B82F6"/>
+          <circle cx="6" cy="36" r="3" fill="#3B82F6" opacity="0.6"/>
+          <circle cx="42" cy="12" r="3.5" fill="#06B6D4"/>
+          <circle cx="42" cy="40" r="2.5" fill="#06B6D4" opacity="0.6"/>
+          <!-- Center node -->
+          <circle cx="23" cy="26" r="2" fill="#FFF" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="var-info">
+        <div class="num">V7</div>
+        <div class="name">节点网络</div>
+        <div class="technique">中央矩形为 Hub，四向连线+终点节点构成星形拓扑。AI 软件的网络架构隐喻，比原版更丰富的视觉层次。</div>
+        <div class="tag-row"><span class="tag">网络拓扑</span><span class="tag">AI 架构</span></div>
+      </div>
+    </div>
+
+    <!-- V8: Bar Chart G -->
+    <div class="var-card">
+      <div class="var-preview" style="position:relative;">
+        <svg width="200" height="100" viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="v8a" x1="0" y1="1" x2="0" y2="0">
+              <stop offset="0%" stop-color="#1D4ED8"/><stop offset="100%" stop-color="#06B6D4"/>
+            </linearGradient>
+          </defs>
+          <!-- Vertical bars forming abstract G silhouette -->
+          <rect x="4" y="16" width="6" height="28" rx="3" fill="url(#v8a)"/>
+          <rect x="14" y="12" width="6" height="32" rx="3" fill="url(#v8a)"/>
+          <rect x="24" y="20" width="6" height="24" rx="3" fill="url(#v8a)"/>
+          <rect x="34" y="14" width="6" height="30" rx="3" fill="url(#v8a)"/>
+          <!-- Gaps create negative space reading -->
+          <!-- Top accent bar -->
+          <rect x="4" y="8" width="36" height="3" rx="1.5" fill="url(#v8a)"/>
+          <rect x="30" y="36" width="10" height="3" rx="1.5" fill="url(#v8a)"/>
+          <!-- Data accent dots -->
+          <circle cx="7" cy="10" r="1.5" fill="#22D3EE"/>
+          <circle cx="27" cy="10" r="1.5" fill="#22D3EE" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="var-info">
+        <div class="num">V8</div>
+        <div class="name">数据柱图</div>
+        <div class="technique">竖条模拟数据柱状图，高低错落间负空间隐约形成 G 的轮廓。横向连接条作收束。数据可视化即品牌标识。</div>
+        <div class="tag-row"><span class="tag">柱状图</span><span class="tag">数据可视化</span></div>
+      </div>
+    </div>
+
+    <!-- V9: Diagonal Energy -->
+    <div class="var-card">
+      <div class="var-preview" style="position:relative;">
+        <svg width="200" height="100" viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="v9a" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/>
+            </linearGradient>
+          </defs>
+          <!-- Three diagonal bars like speed lines -->
+          <rect x="4" y="26" width="38" height="6" rx="3" fill="url(#v9a)" transform="rotate(-12, 23, 29)" opacity="0.9"/>
+          <rect x="18" y="8" width="24" height="6" rx="3" fill="url(#v9a)" transform="rotate(-12, 30, 11)" opacity="0.5"/>
+          <rect x="24" y="40" width="20" height="6" rx="3" fill="url(#v9a)" transform="rotate(-12, 34, 43)" opacity="0.35"/>
+          <!-- Precision dot -->
+          <circle cx="40" cy="20" r="3" fill="#22D3EE" opacity="0.8"/>
+        </svg>
+      </div>
+      <div class="var-info">
+        <div class="num">V9</div>
+        <div class="name">斜切速度线</div>
+        <div class="technique">三根同角度倾斜的圆角条，由粗到细、由亮到暗。速度感+精密感，打破水平构图，适合运动/快节奏场景。</div>
+        <div class="tag-row"><span class="tag">斜切</span><span class="tag">速度感</span></div>
+      </div>
+    </div>
+
+    <!-- V10: Nested Squares -->
+    <div class="var-card">
+      <div class="var-preview" style="position:relative;">
+        <svg width="200" height="100" viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="v10a" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1E3A5F"/><stop offset="100%" stop-color="#0EA5E9"/>
+            </linearGradient>
+          </defs>
+          <!-- Concentric rounded squares with gap -->
+          <rect x="2" y="2" width="40" height="40" rx="6" fill="none" stroke="url(#v10a)" stroke-width="4" opacity="0.35"/>
+          <rect x="8" y="8" width="28" height="28" rx="4" fill="none" stroke="url(#v10a)" stroke-width="4" opacity="0.6"/>
+          <rect x="14" y="14" width="16" height="16" rx="3" fill="url(#v10a)"/>
+          <!-- Gap cut in outer ring (top-right) -->
+          <rect x="34" y="0" width="10" height="8" fill="#0A0D14"/>
+          <!-- Node on inner square -->
+          <circle cx="22" cy="22" r="2" fill="#FFF" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="var-info">
+        <div class="num">V10</div>
+        <div class="name">嵌套方框</div>
+        <div class="technique">三层同心圆角方框+缺口切割，由外向内逐层加粗，中心为实心。层次递进暗喻数据→信息→知识。</div>
+        <div class="tag-row"><span class="tag">嵌套</span><span class="tag">层级递进</span></div>
+      </div>
+    </div>
+
+    <!-- V11: Circuit Trace -->
+    <div class="var-card">
+      <div class="var-preview" style="position:relative;">
+        <svg width="200" height="100" viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="v11a" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/>
+            </linearGradient>
+          </defs>
+          <!-- Main block body -->
+          <rect x="6" y="12" width="16" height="28" rx="4" fill="url(#v11a)"/>
+          <!-- Circuit traces extending -->
+          <path d="M 22 18 L 38 18 L 38 28" fill="none" stroke="url(#v11a)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M 22 36 L 32 36 L 32 44 L 44 44" fill="none" stroke="url(#v11a)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+          <path d="M 14 6 L 14 0 L 42 0 L 42 8" fill="none" stroke="url(#v11a)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+          <!-- Terminal nodes -->
+          <circle cx="38" cy="28" r="3" fill="#06B6D4"/>
+          <circle cx="44" cy="44" r="2.5" fill="#06B6D4" opacity="0.6"/>
+          <circle cx="42" cy="8" r="2" fill="#06B6D4" opacity="0.5"/>
+          <circle cx="6" cy="26" r="2" fill="#22D3EE" opacity="0.7"/>
+        </svg>
+      </div>
+      <div class="var-info">
+        <div class="num">V11</div>
+        <div class="name">电路走线</div>
+        <div class="technique">主体块+三向电路走线延伸，90°转角走线是电路板的经典语言。终端节点标记信号输出点。</div>
+        <div class="tag-row"><span class="tag">电路板</span><span class="tag">硬件感</span></div>
+      </div>
+    </div>
+
+    <!-- V12: Dual Tone Split -->
+    <div class="var-card">
+      <div class="var-preview" style="position:relative;">
+        <span class="star-badge">★</span>
+        <svg width="200" height="100" viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="v12a" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#2563EB"/>
+            </linearGradient>
+            <linearGradient id="v12b" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#06B6D4"/><stop offset="100%" stop-color="#0891B2"/>
+            </linearGradient>
+          </defs>
+          <!-- Left half: Blue blocks -->
+          <rect x="4" y="4" width="6" height="42" rx="3" fill="url(#v12a)"/>
+          <rect x="4" y="4" width="26" height="6" rx="3" fill="url(#v12a)"/>
+          <rect x="4" y="40" width="26" height="6" rx="3" fill="url(#v12a)"/>
+          <!-- Right half: Cyan accent -->
+          <rect x="26" y="22" width="18" height="6" rx="3" fill="url(#v12b)"/>
+          <rect x="26" y="12" width="6" height="6" rx="3" fill="url(#v12b)" opacity="0.7"/>
+          <rect x="26" y="32" width="6" height="6" rx="3" fill="url(#v12b)" opacity="0.5"/>
+          <!-- Center divider accent -->
+          <circle cx="26" cy="26" r="2" fill="#FFF" opacity="0.4"/>
+          <!-- End node -->
+          <circle cx="46" cy="25" r="2.5" fill="#22D3EE" opacity="0.7"/>
+        </svg>
+      </div>
+      <div class="var-info">
+        <div class="num">V12</div>
+        <div class="name">双色分区</div>
+        <div class="technique">左蓝右青明确分区，左右块通过中间节点桥接。双色语言可延展为双产品线/双平台策略。</div>
+        <div class="tag-row"><span class="tag">双色系统</span><span class="tag">产品线</span></div>
+      </div>
+    </div>
+
+  </div><!-- /var-grid -->
+
+  <!-- Summary -->
+  <div class="section-title">━━━ 横版组合示例 ━━━</div>
+  <div class="ref-section" style="flex-direction:column;align-items:stretch;gap:24px;">
+    <div style="display:flex;align-items:center;gap:32px;flex-wrap:wrap;justify-content:center;">
+      <!-- Best with text: V3 -->
+      <svg width="300" height="52" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="h1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#0EA5E9"/>
+          </linearGradient>
+        </defs>
+        <rect x="2" y="2" width="28" height="32" rx="6" fill="url(#h1)"/>
+        <rect x="8" y="16" width="22" height="5" rx="2.5" fill="#0A0D14"/>
+        <rect x="8" y="9" width="22" height="5" rx="2.5" fill="#0A0D14"/>
+        <rect x="8" y="9" width="5" height="12" rx="2.5" fill="#0A0D14"/>
+        <rect x="8" y="24" width="22" height="5" rx="2.5" fill="#0A0D14"/>
+        <rect x="20" y="16" width="6" height="5" rx="2.5" fill="#0A0D14"/>
+        <text x="40" y="24" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="15" font-weight="700" fill="#FFFFFF" letter-spacing="4">格数科技</text>
+        <text x="40" y="34" font-family="Inter,sans-serif" font-size="7" font-weight="500" fill="rgba(255,255,255,0.3)" letter-spacing="4">GESHU TECH</text>
+      </svg>
+
+      <!-- Best with text: V7 -->
+      <svg width="300" height="52" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="h2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/>
+          </linearGradient>
+        </defs>
+        <g transform="translate(0,1)">
+          <rect x="12" y="8" width="10" height="22" rx="3" fill="url(#h2)"/>
+          <line x1="4" y1="10" x2="12" y2="12" stroke="url(#h2)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="4" y1="28" x2="12" y2="26" stroke="url(#h2)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="22" y1="12" x2="32" y2="8" stroke="url(#h2)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="22" y1="26" x2="32" y2="30" stroke="url(#h2)" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="4" cy="10" r="2.5" fill="#3B82F6"/>
+          <circle cx="4" cy="28" r="2" fill="#3B82F6" opacity="0.6"/>
+          <circle cx="32" cy="8" r="3" fill="#06B6D4"/>
+          <circle cx="32" cy="30" r="2" fill="#06B6D4" opacity="0.6"/>
+        </g>
+        <text x="44" y="25" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="15" font-weight="700" fill="#FFFFFF" letter-spacing="4">格数科技</text>
+        <text x="44" y="35" font-family="Inter,sans-serif" font-size="7" font-weight="500" fill="rgba(255,255,255,0.3)" letter-spacing="4">GESHU TECH</text>
+      </svg>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  GESHU TECH · LOGO VARIATIONS · 2026
+</div>
+
+</body>
+</html>

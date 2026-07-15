@@ -1,0 +1,23 @@
+<svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1a" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D4FF"/>
+      <stop offset="100%" stop-color="#1565C0"/>
+    </linearGradient>
+    <linearGradient id="g1b" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#40C8FF"/>
+      <stop offset="100%" stop-color="#0D47A1"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" fill="#060B14" rx="12"/>
+  <!-- Top face -->
+  <polygon points="100,32 155,62 100,92 45,62" fill="url(#g1a)" opacity="0.9"/>
+  <!-- Left face -->
+  <polygon points="45,62 100,92 100,148 45,118" fill="url(#g1b)" opacity="0.7"/>
+  <!-- Right face -->
+  <polygon points="100,92 155,62 155,118 100,148" fill="#0D47A1" opacity="0.5"/>
+  <!-- Inner grid lines -->
+  <line x1="72" y1="77" x2="72" y2="133" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <line x1="100" y1="62" x2="100" y2="92" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <line x1="128" y1="77" x2="128" y2="133" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+</svg>

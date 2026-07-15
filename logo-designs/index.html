@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>格数集团 Logo 设计方案对比</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    background: #060B14;
+    color: #E8EAED;
+    min-height: 100vh;
+  }
+
+  /* ========== HEADER ========== */
+  .header {
+    background: linear-gradient(180deg, #0A1628 0%, #060B14 100%);
+    padding: 80px 40px 60px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .header .badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 100px;
+    background: rgba(0, 180, 255, 0.1);
+    border: 1px solid rgba(0, 180, 255, 0.25);
+    color: #40C8FF;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+  }
+  .header h1 {
+    font-size: 48px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #FFFFFF 0%, #90CAF9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+  }
+  .header .subtitle {
+    font-size: 16px;
+    color: rgba(255,255,255,0.45);
+    font-weight: 300;
+  }
+
+  /* ========== GRID ========== */
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 40px;
+  }
+  .section-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  @media (max-width: 1100px) { .logo-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 700px)  { .logo-grid { grid-template-columns: 1fr; } }
+
+  /* ========== LOGO CARD ========== */
+  .logo-card {
+    background: #0D1525;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  .logo-card:hover {
+    border-color: rgba(0, 180, 255, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(0, 180, 255, 0.15);
+  }
+  .logo-card:hover .card-number {
+    background: rgba(0, 180, 255, 0.15);
+    color: #40C8FF;
+  }
+
+  .logo-preview {
+    padding: 60px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 320px;
+    position: relative;
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.02) 0%, transparent 70%);
+  }
+  .logo-preview.dark  { background: #060B14; }
+  .logo-preview.light { background: #F8F9FA; }
+  .logo-preview.mid   { background: #0D1525; }
+
+  .logo-preview svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .card-number {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.3);
+    transition: all 0.3s ease;
+  }
+
+  .card-info {
+    padding: 24px 28px 28px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .card-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 6px;
+  }
+  .card-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.6;
+  }
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .card-tag {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 100px;
+    background: rgba(255,255,255,0.04);
+    color: rgba(255,255,255,0.35);
+    font-weight: 500;
+  }
+
+  /* ========== COLOR PALETTE SECTION ========== */
+  .palette-section {
+    margin-top: 80px;
+  }
+  .palette-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  .palette-swatch {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+    position: relative;
+  }
+  .palette-swatch::after {
+    content: attr(data-hex);
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    color: rgba(255,255,255,0.35);
+    font-family: 'Inter', monospace;
+    white-space: nowrap;
+  }
+
+  /* ========== MODAL ========== */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+  }
+  .modal-overlay.active { display: flex; }
+  .modal-content {
+    background: #0D1525;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 60px;
+    max-width: 700px;
+    width: 90%;
+    text-align: center;
+  }
+  .modal-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-content h3 {
+    margin-top: 20px;
+    font-size: 22px;
+    color: #fff;
+  }
+  .modal-content p {
+    margin-top: 8px;
+    color: rgba(255,255,255,0.4);
+    font-size: 14px;
+  }
+
+  /* ========== FOOTER ========== */
+  .footer {
+    text-align: center;
+    padding: 60px 40px;
+    color: rgba(255,255,255,0.2);
+    font-size: 13px;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+
+  /* ========== RECOMMENDATION BADGE ========== */
+  .recommend {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 4px 12px;
+    border-radius: 100px;
+    background: linear-gradient(135deg, rgba(0,200,255,0.2), rgba(100,120,255,0.2));
+    border: 1px solid rgba(0,200,255,0.3);
+    color: #40C8FF;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="badge">BRAND IDENTITY DESIGN</div>
+  <h1>格数集团</h1>
+  <p class="subtitle">Logo 设计方案对比 · 10 款不同风格 · 科技感 · 高级感</p>
+</div>
+
+<!-- MAIN GRID -->
+<div class="container">
+
+  <div class="section-title">━━━━ 设计方案 ━━━━</div>
+
+  <div class="logo-grid">
+
+    <!-- ====== LOGO 1: 几何立方 ====== -->
+    <div class="logo-card" onclick="openModal(this)">
+      <div class="logo-preview dark">
+        <span class="card-number">01</span>
+        <span class="recommend">★ 推荐</span>
+        <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g1a" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00D4FF"/>
+              <stop offset="100%" stop-color="#1565C0"/>
+            </linearGradient>
+            <linearGradient id="g1b" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#40C8FF"/>
+              <stop offset="100%" stop-color="#0D47A1"/>
+            </linearGradient>
+          </defs>
+          <!-- Top face -->
+          <polygon points="100,32 155,62 100,92 45,62" fill="url(#g1a)" opacity="0.9"/>
+          <!-- Left face -->
+          <polygon points="45,62 100,92 100,148 45,118" fill="url(#g1b)" opacity="0.7"/>
+          <!-- Right face -->
+          <polygon points="100,92 155,62 155,118 100,148" fill="#0D47A1" opacity="0.5"/>
+          <!-- Inner grid lines -->
+          <line x1="72" y1="77" x2="72" y2="133" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+          <line x1="100" y1="62" x2="100" y2="92" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+          <line x1="128" y1="77" x2="128" y2="133" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="card-info">
+        <div class="card-name">几何立方 · 格</div>
+        <div class="card-desc">灵感来自"格"字——以 3D 立方体诠释网格与结构化思维。渐变蓝色象征数据在空间中流动，传递精准、稳固、前瞻的品牌气质。</div>
+        <div class="card-tags">
+          <span class="card-tag">3D 几何</span><span class="card-tag">渐变科技</span><span class="card-tag">沉稳高级</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== LOGO 2: 数据流动 ====== -->
+    <div class="logo-card" onclick="openModal(this)">
+      <div class="logo-preview dark">
+        <span class="card-number">02</span>
+        <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00E5FF"/>
+              <stop offset="50%" stop-color="#2979FF"/>
+              <stop offset="100%" stop-color="#651FFF"/>
+            </linearGradient>
+            <filter id="glow2">
+              <feGaussianBlur stdDeviation="3" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <!-- Orbiting rings -->
+          <ellipse cx="100" cy="100" rx="70" ry="22" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1" transform="rotate(-15,100,100)"/>
+          <ellipse cx="100" cy="100" rx="70" ry="22" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1" transform="rotate(45,100,100)"/>
+          <ellipse cx="100" cy="100" rx="55" ry="17" fill="none" stroke="rgba(0,229,255,0.15)" stroke-width="1.5" transform="rotate(-15,100,100)"/>
+          <!-- Data nodes -->
+          <circle cx="100" cy="62" r="5" fill="url(#g2)" filter="url(#glow2)"/>
+          <circle cx="100" cy="138" r="4" fill="url(#g2)" filter="url(#glow2)" opacity="0.6"/>
+          <circle cx="55" cy="90" r="3.5" fill="#2979FF" filter="url(#glow2)" opacity="0.5"/>
+          <circle cx="145" cy="90" r="4.5" fill="#00E5FF" filter="url(#glow2)" opacity="0.7"/>
+          <circle cx="72" cy="115" r="3" fill="#651FFF" filter="url(#glow2)" opacity="0.4"/>
+          <circle cx="128" cy="115" r="3" fill="#2979FF" filter="url(#glow2)" opacity="0.5"/>
+          <!-- Connecting lines -->
+          <line x1="100" y1="62" x2="145" y2="90" stroke="rgba(0,229,255,0.2)" stroke-width="1"/>
+          <line x1="100" y1="62" x2="55" y2="90" stroke="rgba(41,121,255,0.2)" stroke-width="1"/>
+          <line x1="145" y1="90" x2="128" y2="115" stroke="rgba(0,229,255,0.12)" stroke-width="0.8"/>
+          <line x1="55" y1="90" x2="72" y2="115" stroke="rgba(41,121,255,0.12)" stroke-width="0.8"/>
+          <line x1="128" y1="115" x2="100" y2="138" stroke="rgba(101,31,255,0.12)" stroke-width="0.8"/>
+          <line x1="72" y1="115" x2="100" y2="138" stroke="rgba(101,31,255,0.12)" stroke-width="0.8"/>
+        </svg>
+      </div>
+      <div class="card-info">
+        <div class="card-name">数据星轨 · 数</div>
+        <div class="card-desc">灵感来自"数"字——节点与轨道交织成数据星座图谱。发光节点代表数据洞察，环形轨道暗示科技生态的互联互通。</div>
+        <div class="card-tags">
+          <span class="card-tag">网络拓扑</span><span class="card-tag">霓虹科技</span><span class="card-tag">数据流动</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== LOGO 3: 六边形科技 ====== -->
+    <div class="logo-card" onclick="openModal(this)">
+      <div class="logo-preview dark">
+        <span class="card-number">03</span>
+        <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00B8D4"/>
+              <stop offset="100%" stop-color="#1565C0"/>
+            </linearGradient>
+            <linearGradient id="g3inner" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#0091EA"/>
+              <stop offset="100%" stop-color="#0D47A1"/>
+            </linearGradient>
+          </defs>
+          <!-- Outer hexagon ring -->
+          <polygon points="100,30 160.6,65 160.6,135 100,170 39.4,135 39.4,65"
+                   fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+          <!-- Inner hexagon -->
+          <polygon points="100,45 150,74 150,126 100,155 50,126 50,74"
+                   fill="none" stroke="url(#g3)" stroke-width="2"/>
+          <!-- Core hexagon -->
+          <polygon points="100,60 140,83 140,117 100,140 60,117 60,83"
+                   fill="url(#g3inner)" opacity="0.9"/>
+          <!-- G letterform inside -->
+          <text x="100" y="112" text-anchor="middle" font-family="'Inter',sans-serif" font-size="40" font-weight="700" fill="#FFFFFF" letter-spacing="-1">G</text>
+        </svg>
+      </div>
+      <div class="card-info">
+        <div class="card-name">六边形 · 蜂巢科技</div>
+        <div class="card-desc">六边形代表科技产业的精密与效率，三层嵌套结构暗喻数据→信息→智慧的递进。中心 G 字母强化品牌识别，简洁有力。</div>
+        <div class="card-tags">
+          <span class="card-tag">蜂巢结构</span><span class="card-tag">字母标识</span><span class="card-tag">精密科技</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== LOGO 4: 抽象 G 流线 ====== -->
+    <div class="logo-card" onclick="openModal(this)">
+      <div class="logo-preview dark">
+        <span class="card-number">04</span>
+        <span class="recommend">★ 推荐</span>
+        <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00E5FF"/>
+              <stop offset="50%" stop-color="#2979FF"/>
+              <stop offset="100%" stop-color="#651FFF"/>
+            </linearGradient>
+            <linearGradient id="g4b" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#00B8D4"/>
+              <stop offset="100%" stop-color="#1565C0"/>
+            </linearGradient>
+          </defs>
+          <!-- Stylized G - two overlapping dynamic arcs -->
+          <!-- Outer sweeping arc -->
+          <path d="M 50 55 C 50 28, 80 20, 110 25 C 150 30, 170 60, 168 100 C 165 145, 130 170, 90 165 C 58 160, 42 138, 42 115"
+                fill="none" stroke="url(#g4)" stroke-width="5" stroke-linecap="round"/>
+          <!-- Inner accent stroke -->
+          <path d="M 50 65 C 50 42, 78 36, 105 40 C 140 44, 158 70, 156 105 C 154 138, 126 158, 92 154 C 66 150, 52 132, 52 113"
+                fill="none" stroke="url(#g4b)" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+          <!-- Accent dot -->
+          <circle cx="148" cy="42" r="4" fill="#00E5FF" opacity="0.8"/>
+        </svg>
+      </div>
+      <div class="card-info">
+        <div class="card-name">抽象 G · 流动弧线</div>
+        <div class="card-desc">将字母 G 解构为优雅的流动弧线，双线交错营造速度感与科技感。紫蓝渐变传递创新与前瞻，适合国际化品牌表达。</div>
+        <div class="card-tags">
+          <span class="card-tag">抽象符号</span><span class="card-tag">渐变流体</span><span class="card-tag">国际感</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== LOGO 5: 网格矩阵 ====== -->
+    <div class="logo-card" onclick="openModal(this)">
+      <div class="logo-preview dark">
+        <span class="card-number">05</span>
+        <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g5a" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#00E5FF"/>
+              <stop offset="100%" stop-color="#0066CC"/>
+            </linearGradient>
+          </defs>
+          <!-- Grid dots matrix forming a pattern -->
+          <g fill="rgba(255,255,255,0.08)">
+            <!-- Row 1-7 fill dots -->
+            <circle cx="45" cy="50" r="2"/><circle cx="65" cy="50" r="2"/><circle cx="85" cy="50" r="2"/><circle cx="105" cy="50" r="2"/><circle cx="125" cy="50" r="2"/><circle cx="145" cy="50" r="2"/>
+            <circle cx="45" cy="70" r="2"/><circle cx="65" cy="70" r="2"/><circle cx="85" cy="70" r="2"/><circle cx="105" cy="70" r="2"/><circle cx="125" cy="70" r="2"/><circle cx="145" cy="70" r="2"/>
+            <circle cx="45" cy="90" r="2"/><circle cx="65" cy="90" r="2"/><circle cx="85" cy="90" r="2"/><circle cx="105" cy="90" r="2"/><circle cx="125" cy="90" r="2"/><circle cx="145" cy="90" r="2"/>
+            <circle cx="45" cy="110" r="2"/><circle cx="65" cy="110" r="2"/><circle cx="85" cy="110" r="2"/><circle cx="105" cy="110" r="2"/><circle cx="125" cy="110" r="2"/><circle cx="145" cy="110" r="2"/>
+            <circle cx="45" cy="130" r="2"/><circle cx="65" cy="130" r="2"/><circle cx="85" cy="130" r="2"/><circle cx="105" cy="130" r="2"/><circle cx="125" cy="130" r="2"/><circle cx="145" cy="130" r="2"/>
+            <circle cx="45" cy="150" r="2"/><circle cx="65" cy="150" r="2"/><circle cx="85" cy="150" r="2"/><circle cx="105" cy="150" r="2"/><circle cx="125" cy="150" r="2"/><circle cx="145" cy="150" r="2"/>
+          </g>
+          <!-- Highlight diagonal active nodes -->
+          <g filter="url(#glow2)">
+            <circle cx="45" cy="50" r="3.5" fill="#00E5FF" opacity="0.9"/>
+            <circle cx="65" cy="70" r="3" fill="#00B8D4" opacity="0.7"/>
+            <circle cx="85" cy="90" r="4" fill="#2979FF" opacity="0.9"/>
+            <circle cx="105" cy="110" r="3.5" fill="#448AFF" opacity="0.8"/>
+            <circle cx="125" cy="130" r="3" fill="#1565C0" opacity="0.7"/>
+            <circle cx="145" cy="150" r="2.5" fill="#0D47A1" opacity="0.5"/>
+          </g>
+          <!-- Secondary highlight -->
+          <circle cx="65" cy="50" r="2.5" fill="rgba(0,229,255,0.3)"/>
+          <circle cx="105" cy="70" r="2.5" fill="rgba(0,229,255,0.25)"/>
+          <circle cx="125" cy="90" r="3" fill="rgba(0,229,255,0.3)"/>
+          <circle cx="85" cy="110" r="2.5" fill="rgba(0,229,255,0.2)"/>
+          <circle cx="65" cy="130" r="2" fill="rgba(0,229,255,0.15)"/>
+          <circle cx="105" cy="150" r="2" fill="rgba(0,229,255,0.1)"/>
+        </svg>
+      </div>
+      <div class="card-info">
+        <div class="card-name">网格矩阵 · 数据点阵</div>
+        <div class="card-desc">以点阵网格构建科技意象，对角线高亮形成动态视觉焦点，暗喻数据从采集到洞察的升维过程。极简、冷静、专业。</div>
+        <div class="card-tags">
+          <span class="card-tag">点阵矩阵</span><span class="card-tag">极简冷静</span><span class="card-tag">数据科技</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== LOGO 6: 极简竖线 ====== -->
+    <div class="logo-card" onclick="openModal(this)">
+      <div class="logo-preview dark">
+        <span class="card-number">06</span>
+        <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g6a" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#40C8FF"/>
+              <stop offset="100%" stop-color="#0D47A1"/>
+            </linearGradient>
+            <linearGradient id="g6b" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#00E5FF"/>
+              <stop offset="100%" stop-color="#1565C0"/>
+            </linearGradient>
+          </defs>
+          <!-- Vertical bars forming G abstract -->
+          <rect x="42" y="50" width="12" height="100" rx="6" fill="url(#g6a)" opacity="0.35"/>
+          <rect x="60" y="42" width="12" height="116" rx="6" fill="url(#g6a)" opacity="0.45"/>
+          <rect x="78" y="34" width="14" height="132" rx="7" fill="url(#g6b)" opacity="0.6"/>
+          <rect x="96" y="28" width="16" height="144" rx="8" fill="url(#g6b)" opacity="0.8"/>
+          <rect x="114" y="34" width="14" height="132" rx="7" fill="url(#g6b)" opacity="0.6"/>
+          <rect x="132" y="42" width="12" height="116" rx="6" fill="url(#g6a)" opacity="0.45"/>
+          <rect x="150" y="50" width="12" height="100" rx="6" fill="url(#g6a)" opacity="0.35"/>
+          <!-- Horizontal connector line -->
+          <line x1="48" y1="100" x2="156" y2="100" stroke="rgba(0,229,255,0.2)" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="card-info">
+        <div class="card-name">极简竖线 · 信号频谱</div>
+        <div class="card-desc">七条竖线形成信号频谱图，中央最高两侧递减，暗喻数据信号处理与科技企业特征。极简对称中蕴含力量。</div>
+        <div class="card-tags">
+          <span class="card-tag">信号频谱</span><span class="card-tag">极简对称</span><span class="card-tag">现代商务</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== LOGO 7: 双环互联 ====== -->
+    <div class="logo-card" onclick="openModal(this)">
+      <div class="logo-preview dark">
+        <span class="card-number">07</span>
+        <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g7a" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00E5FF"/>
+              <stop offset="100%" stop-color="#1565C0"/>
+            </linearGradient>
+            <linearGradient id="g7b" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#651FFF"/>
+              <stop offset="100%" stop-color="#00B8D4"/>
+            </linearGradient>
+          </defs>
+          <!-- Left ring -->
+          <circle cx="78" cy="100" r="42" fill="none" stroke="url(#g7a)" stroke-width="5" opacity="0.9"/>
+          <circle cx="78" cy="100" r="42" fill="none" stroke="rgba(0,229,255,0.15)" stroke-width="1" stroke-dasharray="8 4" transform="rotate(30,78,100)"/>
+          <!-- Right ring -->
+          <circle cx="122" cy="100" r="42" fill="none" stroke="url(#g7b)" stroke-width="5" opacity="0.9"/>
+          <circle cx="122" cy="100" r="42" fill="none" stroke="rgba(101,31,255,0.12)" stroke-width="1" stroke-dasharray="8 4" transform="rotate(-30,122,100)"/>
+          <!-- Intersection highlight -->
+          <circle cx="100" cy="100" r="6" fill="#00E5FF" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="card-info">
+        <div class="card-name">双环互联 · 生态</div>
+        <div class="card-desc">交错双环象征数据与业务的互联互通，蓝紫双色分别代表理性与创新，环环相扣传达格数集团的生态愿景。</div>
+        <div class="card-tags">
+          <span class="card-tag">双环交错</span><span class="card-tag">蓝紫混搭</span><span class="card-tag">生态互联</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== LOGO 8: 三角晶体 ====== -->
+    <div class="logo-card" onclick="openModal(this)">
+      <div class="logo-preview dark">
+        <span class="card-number">08</span>
+        <span class="recommend">★ 推荐</span>
+        <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g8a" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#0D47A1"/>
+              <stop offset="50%" stop-color="#2979FF"/>
+              <stop offset="100%" stop-color="#00E5FF"/>
+            </linearGradient>
+            <linearGradient id="g8b" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="rgba(0,229,255,0.3)"/>
+              <stop offset="100%" stop-color="rgba(0,229,255,0)"/>
+            </linearGradient>
+          </defs>
+          <!-- Crystal triangle body -->
+          <polygon points="100,28 170,140 30,140" fill="url(#g8a)" opacity="0.9"/>
+          <!-- Facet lines -->
+          <line x1="100" y1="28" x2="100" y2="140" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+          <line x1="60" y1="84" x2="140" y2="84" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+          <line x1="80" y1="56" x2="120" y2="112" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
+          <!-- Glow highlight top -->
+          <polygon points="100,28 140,140 100,140" fill="url(#g8b)"/>
+        </svg>
+      </div>
+      <div class="card-info">
+        <div class="card-name">三角晶体 · 锋芒</div>
+        <div class="card-desc">锐利三角晶体造型传达精准与突破，内部分割线强化科技质感。向上的三角形暗喻企业持续攀登，低调而锐利。</div>
+        <div class="card-tags">
+          <span class="card-tag">晶体结构</span><span class="card-tag">锐利进取</span><span class="card-tag">高端商务</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== LOGO 9: 莫比乌斯环 ====== -->
+    <div class="logo-card" onclick="openModal(this)">
+      <div class="logo-preview dark">
+        <span class="card-number">09</span>
+        <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g9" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00D4FF"/>
+              <stop offset="50%" stop-color="#2979FF"/>
+              <stop offset="100%" stop-color="#651FFF"/>
+            </linearGradient>
+          </defs>
+          <!-- Möbius strip shape -->
+          <path d="M 100 50 C 140 50, 155 70, 155 100 C 155 130, 140 150, 100 150 C 55 150, 42 130, 42 100 C 42 70, 55 50, 100 50"
+                fill="none" stroke="url(#g9)" stroke-width="6" stroke-linecap="round"/>
+          <!-- Twist illusion - overlapping segment -->
+          <path d="M 100 50 C 130 50, 145 65, 148 88 C 145 65, 125 55, 100 55 C 70 55, 52 75, 52 100 C 52 125, 70 145, 100 145 C 130 145, 148 125, 148 100"
+                fill="none" stroke="#0D47A1" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+          <!-- Center accent dot -->
+          <circle cx="100" cy="98" r="4" fill="#00E5FF" opacity="0.7"/>
+        </svg>
+      </div>
+      <div class="card-info">
+        <div class="card-name">无限环 · 莫比乌斯</div>
+        <div class="card-desc">莫比乌斯环隐喻数据的无限循环与持续增值，单一曲面暗合"格数"的数理本质。优雅流畅，辨识度极高。</div>
+        <div class="card-tags">
+          <span class="card-tag">莫比乌斯</span><span class="card-tag">数学之美</span><span class="card-tag">无限意象</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== LOGO 10: 像素方块 ====== -->
+    <div class="logo-card" onclick="openModal(this)">
+      <div class="logo-preview dark">
+        <span class="card-number">10</span>
+        <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g10a" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00E5FF"/>
+              <stop offset="100%" stop-color="#1565C0"/>
+            </linearGradient>
+            <linearGradient id="g10b" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#40C8FF"/>
+              <stop offset="100%" stop-color="#0D47A1"/>
+            </linearGradient>
+          </defs>
+          <!-- Pixel blocks forming abstract G shape -->
+          <rect x="52" y="40" width="24" height="24" rx="5" fill="url(#g10a)" opacity="1"/>
+          <rect x="80" y="40" width="24" height="24" rx="5" fill="url(#g10a)" opacity="0.9"/>
+          <rect x="108" y="40" width="24" height="24" rx="5" fill="url(#g10a)" opacity="0.8"/>
+          <rect x="132" y="40" width="24" height="24" rx="5" fill="url(#g10a)" opacity="0.6"/>
+          <rect x="52" y="68" width="24" height="24" rx="5" fill="url(#g10b)" opacity="0.95"/>
+          <rect x="132" y="68" width="24" height="24" rx="5" fill="url(#g10b)" opacity="0.65"/>
+          <rect x="52" y="96" width="24" height="24" rx="5" fill="url(#g10b)" opacity="0.9"/>
+          <rect x="80" y="96" width="24" height="24" rx="5" fill="url(#g10b)" opacity="0.75"/>
+          <rect x="108" y="96" width="24" height="24" rx="5" fill="url(#g10b)" opacity="0.65"/>
+          <rect x="52" y="124" width="24" height="24" rx="5" fill="url(#g10a)" opacity="0.7"/>
+          <rect x="132" y="124" width="24" height="24" rx="5" fill="url(#g10a)" opacity="0.5"/>
+          <rect x="52" y="152" width="24" height="24" rx="5" fill="url(#g10b)" opacity="0.55"/>
+          <rect x="80" y="152" width="24" height="24" rx="5" fill="url(#g10b)" opacity="0.5"/>
+          <rect x="108" y="152" width="24" height="24" rx="5" fill="url(#g10b)" opacity="0.45"/>
+          <rect x="132" y="152" width="24" height="24" rx="5" fill="url(#g10b)" opacity="0.4"/>
+        </svg>
+      </div>
+      <div class="card-info">
+        <div class="card-name">像素方块 · 构建</div>
+        <div class="card-desc">以像素化方块构建抽象字母造型，每个方块代表数据的基础单元。渐变深度传达从底层数据到上层应用的构建逻辑。</div>
+        <div class="card-tags">
+          <span class="card-tag">像素块</span><span class="card-tag">模块化</span><span class="card-tag">数据构建</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /logo-grid -->
+
+  <!-- ========== WITH TEXT VERSIONS ========== -->
+  <div class="section-title" style="margin-top: 80px;">━━━━ 横版组合（图标 + 文字）━━━━</div>
+
+  <div class="logo-grid">
+
+    <!-- Horizontal Logo 1: 几何立方 + text -->
+    <div class="logo-card">
+      <div class="logo-preview mid" style="min-height: 160px; padding: 48px 40px;">
+        <svg width="360" height="64" viewBox="0 0 360 64" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="hg1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00D4FF"/><stop offset="100%" stop-color="#1565C0"/>
+            </linearGradient>
+            <linearGradient id="hg1b" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#40C8FF"/><stop offset="100%" stop-color="#0D47A1"/>
+            </linearGradient>
+          </defs>
+          <!-- Cube icon -->
+          <g transform="translate(8,6)">
+            <polygon points="20,0 40,10 20,20 0,10" fill="url(#hg1)" opacity="0.9"/>
+            <polygon points="0,10 20,20 20,40 0,30" fill="url(#hg1b)" opacity="0.7"/>
+            <polygon points="20,20 40,10 40,30 20,40" fill="#0D47A1" opacity="0.5"/>
+          </g>
+          <!-- Text -->
+          <text x="66" y="36" font-family="'Noto Sans SC','Inter',sans-serif" font-size="24" font-weight="700" fill="#FFFFFF" letter-spacing="4">格数集团</text>
+          <text x="66" y="54" font-family="'Inter',sans-serif" font-size="11" font-weight="400" fill="rgba(255,255,255,0.35)" letter-spacing="3">GESHU GROUP</text>
+        </svg>
+      </div>
+      <div class="card-info">
+        <div class="card-name">方案 A：几何立方 + 中英文字</div>
+        <div class="card-desc">立方图标与品牌名水平排列，简洁稳重的商务组合形式。</div>
+      </div>
+    </div>
+
+    <!-- Horizontal Logo 2: 抽象G + text -->
+    <div class="logo-card">
+      <div class="logo-preview mid" style="min-height: 160px; padding: 48px 40px;">
+        <svg width="360" height="64" viewBox="0 0 360 64" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="hg2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00E5FF"/><stop offset="50%" stop-color="#2979FF"/><stop offset="100%" stop-color="#651FFF"/>
+            </linearGradient>
+          </defs>
+          <!-- G icon -->
+          <g transform="translate(10,8)">
+            <path d="M 30 0 C 48 0 52 20 48 32 C 44 44 30 48 20 44 C 10 40 4 28 6 18 C 8 8 18 2 30 2"
+                  fill="none" stroke="url(#hg2)" stroke-width="4" stroke-linecap="round"/>
+          </g>
+          <!-- Text -->
+          <text x="74" y="36" font-family="'Noto Sans SC','Inter',sans-serif" font-size="24" font-weight="700" fill="#FFFFFF" letter-spacing="4">格数集团</text>
+          <text x="74" y="54" font-family="'Inter',sans-serif" font-size="11" font-weight="400" fill="rgba(255,255,255,0.35)" letter-spacing="3">GESHU GROUP</text>
+        </svg>
+      </div>
+      <div class="card-info">
+        <div class="card-name">方案 B：抽象 G + 中英文字</div>
+        <div class="card-desc">流动 G 形图标配品牌名，更具国际感与设计感。</div>
+      </div>
+    </div>
+
+    <!-- Horizontal Logo 3: 六边形 + text -->
+    <div class="logo-card">
+      <div class="logo-preview mid" style="min-height: 160px; padding: 48px 40px;">
+        <svg width="360" height="64" viewBox="0 0 360 64" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="hg3" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00B8D4"/><stop offset="100%" stop-color="#1565C0"/>
+            </linearGradient>
+            <linearGradient id="hg3b" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#0091EA"/><stop offset="100%" stop-color="#0D47A1"/>
+            </linearGradient>
+          </defs>
+          <!-- Hexagon icon -->
+          <g transform="translate(8,4)">
+            <polygon points="28,2 52,16 52,42 28,56 4,42 4,16" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+            <polygon points="28,10 46,20 46,38 28,48 10,38 10,20" fill="url(#hg3b)" opacity="0.85"/>
+            <text x="28" y="36" text-anchor="middle" font-family="'Inter',sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">G</text>
+          </g>
+          <!-- Text -->
+          <text x="74" y="36" font-family="'Noto Sans SC','Inter',sans-serif" font-size="24" font-weight="700" fill="#FFFFFF" letter-spacing="4">格数集团</text>
+          <text x="74" y="54" font-family="'Inter',sans-serif" font-size="11" font-weight="400" fill="rgba(255,255,255,0.35)" letter-spacing="3">GESHU GROUP</text>
+        </svg>
+      </div>
+      <div class="card-info">
+        <div class="card-name">方案 C：六边形 G + 中英文字</div>
+        <div class="card-desc">六边形 G 图标配品牌名，精密科技感与品牌专业度兼具。</div>
+      </div>
+    </div>
+
+  </div><!-- /horizontal logos -->
+
+  <!-- ========== COLOR PALETTES ========== -->
+  <div class="palette-section">
+    <div class="section-title">━━━━ 配色方案 ━━━━</div>
+
+    <div style="text-align:center;margin-bottom:16px;">
+      <span style="color:rgba(255,255,255,0.35);font-size:13px;">方案 1：深海科技蓝</span>
+    </div>
+    <div class="palette-row">
+      <div class="palette-swatch" style="background:#060B14;" data-hex="#060B14"></div>
+      <div class="palette-swatch" style="background:#0D47A1;" data-hex="#0D47A1"></div>
+      <div class="palette-swatch" style="background:#1565C0;" data-hex="#1565C0"></div>
+      <div class="palette-swatch" style="background:#00D4FF;" data-hex="#00D4FF"></div>
+      <div class="palette-swatch" style="background:#40C8FF;" data-hex="#40C8FF"></div>
+      <div class="palette-swatch" style="background:#FFFFFF;" data-hex="#FFFFFF" ></div>
+    </div>
+
+    <div style="text-align:center;margin:32px 0 16px;">
+      <span style="color:rgba(255,255,255,0.35);font-size:13px;">方案 2：紫蓝渐变（更前卫）</span>
+    </div>
+    <div class="palette-row">
+      <div class="palette-swatch" style="background:#0A0E1A;" data-hex="#0A0E1A"></div>
+      <div class="palette-swatch" style="background:#651FFF;" data-hex="#651FFF"></div>
+      <div class="palette-swatch" style="background:#2979FF;" data-hex="#2979FF"></div>
+      <div class="palette-swatch" style="background:#00E5FF;" data-hex="#00E5FF"></div>
+      <div class="palette-swatch" style="background:#448AFF;" data-hex="#448AFF"></div>
+      <div class="palette-swatch" style="background:#E8EAED;" data-hex="#E8EAED" ></div>
+    </div>
+
+    <div style="text-align:center;margin:32px 0 16px;">
+      <span style="color:rgba(255,255,255,0.35);font-size:13px;">方案 3：经典商务蓝金</span>
+    </div>
+    <div class="palette-row">
+      <div class="palette-swatch" style="background:#FFFFFF;" data-hex="#FFFFFF"></div>
+      <div class="palette-swatch" style="background:#003366;" data-hex="#003366"></div>
+      <div class="palette-swatch" style="background:#0055A4;" data-hex="#0055A4"></div>
+      <div class="palette-swatch" style="background:#0EA5E9;" data-hex="#0EA5E9"></div>
+      <div class="palette-swatch" style="background:#FFD700;" data-hex="#FFD700"></div>
+      <div class="palette-swatch" style="background:#1A1A1A;" data-hex="#1A1A1A" ></div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" onclick="closeModal()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modal-preview"></div>
+  </div>
+</div>
+
+<div class="footer">
+  格数集团 Logo 设计方案 · 2026 · 科技感 × 高级感
+</div>
+
+<script>
+function openModal(card) {
+  const preview = card.querySelector('.logo-preview').cloneNode(true);
+  preview.style.minHeight = '400px';
+  preview.style.padding = '80px';
+  const svg = preview.querySelector('svg');
+  if (svg) { svg.setAttribute('width','320'); svg.setAttribute('height','320'); }
+  document.getElementById('modal-preview').innerHTML = '';
+  document.getElementById('modal-preview').appendChild(preview);
+  document.getElementById('modal').classList.add('active');
+}
+function closeModal() {
+  document.getElementById('modal').classList.remove('active');
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+
+</body>
+</html>
