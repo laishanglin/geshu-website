@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { ArrowRight } from 'lucide-react'
 import navData from '@/data/navigation.json'
 import siteData from '@/data/site.json'
 
@@ -84,9 +85,7 @@ export default function Navbar() {
           className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-brand-500 to-accent-500 text-white text-sm font-semibold hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] transition-all duration-300 hover:scale-105"
         >
           项目咨询
-          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
+          <ArrowRight className="w-3.5 h-3.5 text-white" />
         </a>
       </div>
     </motion.nav>

@@ -1,9 +1,26 @@
 import { motion } from 'framer-motion'
+import { Building2, Handshake, Plane, Sparkles } from 'lucide-react'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import BorderGlow from '@/components/ui/BorderGlow'
 
+const areaIcons = {
+  strategy: Building2,
+  platform: Handshake,
+  governance: Plane,
+  ai: Sparkles,
+}
+
+const areaColors = {
+  strategy: 'text-blue-400',
+  platform: 'text-purple-400',
+  governance: 'text-cyan-400',
+  ai: 'text-yellow-400',
+}
+
 export default function BusinessAreaCard({ area, index }) {
   const reduceMotion = useReducedMotion()
+  const Icon = areaIcons[area.id]
+  const color = areaColors[area.id]
 
   return (
     <motion.div
@@ -28,7 +45,9 @@ export default function BusinessAreaCard({ area, index }) {
         <div className="p-8 lg:p-10 h-full flex flex-col min-h-0">
           {/* Icon */}
           <div className="mb-6 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 shrink-0">
-            <img src={area.icon} alt={area.title} className="w-12 h-12" />
+            <div className="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center">
+              <Icon className={`w-6 h-6 ${color}`} strokeWidth={1.5} />
+            </div>
           </div>
 
           {/* Title */}
