@@ -588,7 +588,7 @@ import * as THREE from 'three';
           vec3 lineCol = getLineColor(t);
           float angle = bottomWavePosition.z * log(length(baseUv) + 1.0);
           vec2 ruv = baseUv * rotate(angle);
-          col += lineCol * wave(ruv + vec2(bottomLineDistance * fi + bottomWavePosition.x, bottomWavePosition.y), 1.5 + 0.2 * fi, baseUv, mouseUv, interactive) * 0.2;
+          col += lineCol * wave(ruv + vec2(bottomLineDistance * fi + bottomWavePosition.x, bottomWavePosition.y), 1.5 + 0.2 * fi, baseUv, mouseUv, interactive) * 0.4;
         }
       }
       if (enableMiddle) {
@@ -609,7 +609,7 @@ import * as THREE from 'three';
           float angle = topWavePosition.z * log(length(baseUv) + 1.0);
           vec2 ruv = baseUv * rotate(angle);
           ruv.x *= -1.0;
-          col += lineCol * wave(ruv + vec2(topLineDistance * fi + topWavePosition.x, topWavePosition.y), 1.0 + 0.2 * fi, baseUv, mouseUv, interactive) * 0.1;
+          col += lineCol * wave(ruv + vec2(topLineDistance * fi + topWavePosition.x, topWavePosition.y), 1.0 + 0.2 * fi, baseUv, mouseUv, interactive) * 0.25;
         }
       }
       fragColor = vec4(col * 0.55, 1.0);
