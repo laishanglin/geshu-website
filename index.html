@@ -69,10 +69,6 @@ body{background:#060B14;color:#F1F5F9;font-family:'Inter','PingFang SC','Microso
 .btn-primary:hover{box-shadow:0 0 30px rgba(59,130,246,.4);transform:scale(1.05)}
 .btn-outline{border:1px solid rgba(59,130,246,.35);color:#93C5FD}
 .btn-outline:hover{background:rgba(59,130,246,.1);border-color:#60A5FA;color:#BFDBFE}
-.scroll-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:10;display:flex;flex-direction:column;align-items:center;gap:.5rem;cursor:pointer;color:#64748B;font-size:.75rem;letter-spacing:.15em;opacity:0;animation:heroBtns .8s 1s cubic-bezier(.25,.1,.25,1) forwards}
-.scroll-mouse{width:1.25rem;height:2rem;border-radius:9999px;border:1.5px solid #475569;display:flex;justify-content:center;padding-top:.3rem}
-.scroll-dot{width:.25rem;height:.5rem;border-radius:9999px;background:#60A5FA;animation:scrollB 2s ease-in-out infinite}
-@keyframes scrollB{0%,100%{transform:translateY(0);opacity:.6}50%{transform:translateY(6px);opacity:1}}
 
 /* Section Titles */
 .sec-label{display:inline-block;font-size:.75rem;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:#60A5FA;margin-bottom:1rem}
@@ -269,10 +265,6 @@ body{background:#060B14;color:#F1F5F9;font-family:'Inter','PingFang SC','Microso
     <div class="hero-btns">
       <a href="#business" class="btn btn-primary">查看业务产品</a>
     </div>
-  </div>
-  <div class="scroll-hint" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
-    <span>SCROLL</span>
-    <div class="scroll-mouse"><div class="scroll-dot"></div></div>
   </div>
 </section>
 
