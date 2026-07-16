@@ -60,7 +60,7 @@ body{background:#060B14;color:#F1F5F9;font-family:'Inter','PingFang SC','Microso
 .hero h1{font-size:clamp(2.2rem,5.5vw,4.25rem);font-weight:900;line-height:1.15;margin-bottom:1.5rem;color:#fff;opacity:0;transform:translateY(40px);filter:blur(12px);animation:heroIn .9s .2s cubic-bezier(.25,.1,.25,1) forwards}
 @keyframes heroIn{to{opacity:1;transform:translateY(0);filter:blur(0)}}
 .hero .hl{background:linear-gradient(135deg,#3B82F6,#06B6D4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{font-size:1.15rem;color:rgba(148,163,184,.75);max-width:36rem;margin:0 auto 3rem;font-weight:300;letter-spacing:.025em;opacity:0;filter:blur(10px);animation:heroSub .8s .5s cubic-bezier(.25,.1,.25,1) forwards}
+.hero-sub{font-size:1.15rem;color:rgba(203,213,225,.9);max-width:36rem;margin:0 auto 3rem;font-weight:400;letter-spacing:.05em;opacity:0;filter:blur(10px);animation:heroSub .8s .5s cubic-bezier(.25,.1,.25,1) forwards}
 @keyframes heroSub{to{opacity:1;filter:blur(0)}}
 .hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;opacity:0;transform:translateY(20px);animation:heroBtns .8s .8s cubic-bezier(.25,.1,.25,1) forwards}
 @keyframes heroBtns{to{opacity:1;transform:translateY(0)}}
@@ -266,7 +266,6 @@ body{background:#060B14;color:#F1F5F9;font-family:'Inter','PingFang SC','Microso
     <p class="hero-sub">格力集团AI原生数字化平台</p>
     <div class="hero-btns">
       <a href="#business" class="btn btn-primary">查看业务产品</a>
-      <a href="#contact" class="btn btn-outline">标杆案例</a>
     </div>
   </div>
   <div class="scroll-hint" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
@@ -349,7 +348,7 @@ body{background:#060B14;color:#F1F5F9;font-family:'Inter','PingFang SC','Microso
         <div><span class="tag">航展数字化</span><span class="tag">智慧酒店</span><span class="tag">文旅AI服务</span><span class="tag">客流大数据</span><span class="tag">会展系统保障</span></div>
       </div></div>
       <div class="border-glow-card" data-glow><span class="edge-light"></span><div class="border-glow-inner">
-        <div class="biz-icon-wrap amber"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a4 4 0 014 4c0 1.1-.4 2.1-1.2 2.8l2.9 2.9c.4.4.4 1 0 1.4-.4.4-1 .4-1.4 0l-2.9-2.9c-.3.1-.6.2-.9.3"/><circle cx="12" cy="6" r="2"/><path d="M20 12a8 8 0 11-16 0 8 8 0 0116 0z"/><path d="M12 10v4M10 12h4"/></svg></div>
+        <div class="biz-icon-wrap amber"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"/></svg></div>
         <h3 class="biz-title">AI研发创新平台</h3>
         <p class="biz-desc">自研Supa企业AI原生平台，内置AI协作工作台、多智能Agent、DAG工作流、企业知识大脑、安全管控底座；落地Ontology认知平台、UniAPI大模型调度平台，开放MCP适配器对接财务、法务、文旅业务系统，三大市级数据实验室持续孵化数据产品。</p>
         <div><span class="tag">企业AI平台</span><span class="tag">多Agent智能体</span><span class="tag">数据实验室</span><span class="tag">大模型调度</span><span class="tag">行业AI场景落地</span></div>
@@ -373,7 +372,7 @@ body{background:#060B14;color:#F1F5F9;font-family:'Inter','PingFang SC','Microso
         <p>以自研AI与数据技术赋能集团转型升级，以数字化产品服务珠海产业发展，依托横琴政策探索跨境数据创新，以科技创造产业与社会双重价值。</p>
       </div>
       <div class="mission-card">
-        <div class="mission-icon-wrap" style="color:#60A5FA"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="24" cy="24" r="12"/><circle cx="24" cy="24" r="2" fill="currentColor"/><path d="M24 6l2.5 7.5M24 34.5l2.5 7.5M6 24l7.5 2.5M34.5 24l7.5 2.5" stroke-width="1" stroke-linecap="round"/><circle cx="24" cy="24" r="6" fill="none" stroke-width=".6" stroke-dasharray="3 3"/></svg></div>
+        <div class="mission-icon-wrap" style="color:#60A5FA"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="24" cy="24" r="5"/><circle cx="24" cy="24" r="2" fill="currentColor"/><path d="M24 14c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10c0-2-.6-3.9-1.6-5.5" stroke-width="1.5" stroke-linecap="round"/><line x1="24" y1="8" x2="24" y2="4" stroke-width="1.5" stroke-linecap="round"/><line x1="24" y1="44" x2="24" y2="40" stroke-width="1.5" stroke-linecap="round"/><line x1="8" y1="24" x2="4" y2="24" stroke-width="1.5" stroke-linecap="round"/><line x1="44" y1="24" x2="40" y2="24" stroke-width="1.5" stroke-linecap="round"/></svg></div>
         <h3>愿景</h3><p class="mission-en">VISION</p><div class="mission-divider"></div>
         <p>稳步成为格力集团可信赖的AI Adoption发动机，打造湾区国资数科创新标杆，建成横琴领先的数据智能与跨境数据服务商。</p>
       </div>
