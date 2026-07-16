@@ -55,7 +55,7 @@ body{background:#060B14;color:#F1F5F9;font-family:'Inter','PingFang SC','Microso
 .hero{height:100vh;min-height:700px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
 .hero canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;display:block}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,11,20,.55),transparent 30%,transparent 70%,rgba(6,11,20,.92));z-index:1;pointer-events:none}
-.hero-content{position:relative;z-index:10;text-align:center;padding:0 1.5rem;pointer-events:none}
+.hero-content{position:relative;z-index:10;text-align:center;padding:0 1.5rem 5rem;pointer-events:none;max-width:90vw}
 .hero-content>*{pointer-events:auto}
 .hero h1{font-size:clamp(2.2rem,5.5vw,4.25rem);font-weight:900;line-height:1.15;margin-bottom:1.5rem;color:#fff;opacity:0;transform:translateY(40px);filter:blur(12px);animation:heroIn .9s .2s cubic-bezier(.25,.1,.25,1) forwards;text-shadow:0 0 60px rgba(59,130,246,.4),0 0 30px rgba(6,182,212,.2)}
 @keyframes heroIn{to{opacity:1;transform:translateY(0);filter:blur(0)}}
@@ -269,10 +269,10 @@ body{background:#060B14;color:#F1F5F9;font-family:'Inter','PingFang SC','Microso
     <div class="hero-btns">
       <a href="#business" class="btn btn-primary">查看业务产品</a>
     </div>
-    <div class="scroll-hint" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
-      <span>SCROLL</span>
-      <div class="scroll-mouse"><div class="scroll-dot"></div></div>
-    </div>
+  </div>
+  <div class="scroll-hint" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+    <span>SCROLL</span>
+    <div class="scroll-mouse"><div class="scroll-dot"></div></div>
   </div>
 </section>
 
