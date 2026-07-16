@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8"><title>分享卡片 1200x630</title>
+<meta charset="UTF-8"><title>微信分享卡片</title>
 <style>
 body{margin:0;display:flex;flex-direction:column;align-items:center;background:#111;color:#fff;font-family:'PingFang SC','Microsoft YaHei',sans-serif}
 canvas{border:1px solid #333;margin:20px}
-button{padding:14px 40px;font-size:18px;background:linear-gradient(135deg,#3B82F6,#06B6D4);color:#fff;border:none;border-radius:50px;cursor:pointer;font-weight:700;margin:10px}
-.info{color:#94A3B8;font-size:14px;margin-bottom:20px}
+button{padding:16px 50px;font-size:18px;background:linear-gradient(135deg,#3B82F6,#06B6D4);color:#fff;border:none;border-radius:50px;cursor:pointer;font-weight:700;margin:10px}
+.info{color:#F87171;margin:10px}
 </style>
 </head>
 <body>
-<h2 style="margin-top:30px">1200 × 630 分享卡片</h2>
-<p class="info">JPEG 质量 45%，预计 &lt; 250KB</p>
-<canvas id="c" width="1200" height="630" style="width:600px;height:315px"></canvas>
+<h2 style="margin-top:30px">600×600 正方形 · 预计 50-80KB</h2>
+<p class="info">符合微信要求：正方形、&lt;100KB、JPG格式</p>
+<canvas id="c" width="600" height="600" style="width:400px;height:400px"></canvas>
 <button onclick="download()">下载 share-card.jpg</button>
 
 <script>
@@ -22,54 +22,54 @@ logo.src='logo.png';
 logo.onload=draw;
 
 function draw(){
-const W=1200,H=630;
+const W=600,H=600;
 const bg=ctx.createLinearGradient(0,0,W,H);
-bg.addColorStop(0,'#0A1628');bg.addColorStop(0.5,'#0F1D35');bg.addColorStop(1,'#060B14');
+bg.addColorStop(0,'#0A1628');bg.addColorStop(0.6,'#0F1D35');bg.addColorStop(1,'#060B14');
 ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
 
-const g1=ctx.createRadialGradient(200,150,0,200,150,300);
+const g1=ctx.createRadialGradient(150,100,0,200,200,320);
 g1.addColorStop(0,'rgba(59,130,246,0.12)');g1.addColorStop(1,'transparent');
 ctx.fillStyle=g1;ctx.fillRect(0,0,W,H);
 
-const g2=ctx.createRadialGradient(1000,480,0,1000,480,250);
-g2.addColorStop(0,'rgba(139,92,246,0.08)');g2.addColorStop(1,'transparent');
-ctx.fillStyle=g2;ctx.fillRect(0,0,W,H);
-
 ctx.strokeStyle='rgba(96,165,250,0.03)';ctx.lineWidth=0.5;
-[157,315,472].forEach(y=>{ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke()});
-[300,600,900].forEach(x=>{ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()});
+[150,300,450].forEach(y=>{ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke()});
+[150,300,450].forEach(x=>{ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()});
 
-if(logo.complete&&logo.naturalWidth>0)ctx.drawImage(logo,100,170,160,102);
-
-ctx.fillStyle='#FFFFFF';ctx.font='900 64px "PingFang SC","Microsoft YaHei",sans-serif';ctx.fillText('格数科技',290,245);
-ctx.fillStyle='#60A5FA';ctx.font='400 22px "Inter","PingFang SC",sans-serif';ctx.fillText('GREE Digital Technology',290,295);
-
-const dg=ctx.createLinearGradient(290,330,490,330);
-dg.addColorStop(0,'#3B82F6');dg.addColorStop(1,'#06B6D4');
-ctx.strokeStyle=dg;ctx.lineWidth=3;
-ctx.beginPath();ctx.moveTo(290,330);ctx.lineTo(490,330);ctx.stroke();
-
-ctx.fillStyle='#CBD5E1';ctx.font='600 30px "PingFang SC","Microsoft YaHei",sans-serif';ctx.fillText('格力集团AI原生数字化平台',140,430);
-
-function tag(x,y,w,t,bc,tc){
-ctx.beginPath();ctx.moveTo(x+18,y);ctx.lineTo(x+w-18,y);
-ctx.quadraticCurveTo(x+w,y,x+w,y+18);ctx.lineTo(x+w,y+36-18);ctx.quadraticCurveTo(x+w,y+36,x+w-18,y+36);
-ctx.lineTo(x+18,y+36);ctx.quadraticCurveTo(x,y+36,x,y+36-18);ctx.lineTo(x,y+18);ctx.quadraticCurveTo(x,y,x+18,y);
-ctx.closePath();ctx.fillStyle=bc;ctx.fill();ctx.strokeStyle=bc.replace('0.1','0.2');ctx.lineWidth=1;ctx.stroke();
-ctx.fillStyle=tc;ctx.font='500 15px "PingFang SC","Microsoft YaHei",sans-serif';ctx.textAlign='center';ctx.fillText(t,x+w/2,y+25);ctx.textAlign='start';
+// Logo centered large
+if(logo.complete&&logo.naturalWidth>0){
+  const lw=240,lh=154,lx=(W-lw)/2,ly=110;
+  ctx.drawImage(logo,lx,ly,lw,lh);
 }
-tag(140,468,150,'企业AI平台','rgba(59,130,246,0.1)','#93C5FD');
-tag(306,468,150,'数据智能','rgba(139,92,246,0.1)','#A78BFA');
-tag(472,468,150,'数字金融','rgba(6,182,212,0.1)','#22D3EE');
 
-ctx.fillStyle='#030812';ctx.fillRect(0,590,W,40);
-ctx.fillStyle='#475569';ctx.font='400 12px "PingFang SC","Microsoft YaHei",sans-serif';ctx.textAlign='end';ctx.fillText('珠海横琴 · 粤澳深度合作区',1060,615);ctx.textAlign='start';
+// Company name
+ctx.fillStyle='#FFFFFF';
+ctx.font='900 52px "PingFang SC","Microsoft YaHei",sans-serif';
+ctx.textAlign='center';
+ctx.fillText('格数科技',W/2,320);
+
+ctx.fillStyle='#60A5FA';
+ctx.font='400 18px "Inter","PingFang SC",sans-serif';
+ctx.fillText('GREE Digital Technology',W/2,358);
+
+const dg=ctx.createLinearGradient(W/2-80,380,W/2+80,380);
+dg.addColorStop(0,'#3B82F6');dg.addColorStop(1,'#06B6D4');
+ctx.strokeStyle=dg;ctx.lineWidth=2;
+ctx.beginPath();ctx.moveTo(W/2-80,380);ctx.lineTo(W/2+80,380);ctx.stroke();
+
+ctx.fillStyle='#CBD5E1';
+ctx.font='500 22px "PingFang SC","Microsoft YaHei",sans-serif';
+ctx.fillText('格力集团AI原生数字化平台',W/2,430);
+
+ctx.fillStyle='#475569';
+ctx.font='400 13px "PingFang SC","Microsoft YaHei",sans-serif';
+ctx.fillText('珠海横琴 · 粤澳深度合作区',W/2,470);
+ctx.textAlign='start';
 }
 
 function download(){
 const a=document.createElement('a');
 a.download='share-card.jpg';
-a.href=c.toDataURL('image/jpeg',0.45);
+a.href=c.toDataURL('image/jpeg',0.35);
 a.click();
 }
 </script>
