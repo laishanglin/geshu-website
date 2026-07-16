@@ -1,26 +1,876 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="格数科技为格力集团全资数科平台，自研Supa企业AI底座，运营珠海市「百千万工程」金融服务平台，承接中国航展数字化，拥有三大市级数据实验室。提供集团数字化、数字产业金融、文商旅展数字化、横琴跨境数据全链路解决方案。" />
-    <meta name="keywords" content="格数科技,格力数字化,企业AI平台,Supa,百千万工程金融平台,横琴跨境数据,航展数字化,国企数科,数据智能,数字金融" />
-    <meta property="og:title" content="格数科技 | 格力集团AI原生数字化平台" />
-    <meta property="og:description" content="格数科技为格力集团全资数科平台，自研Supa企业AI底座，运营珠海市「百千万工程」金融服务平台，承接中国航展数字化，拥有三大市级数据实验室。" />
-    <meta property="og:type" content="website" />
-    <title>格数科技 | 格力集团AI原生数字化平台</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="./assets/index-BJhAeoh0.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/rolldown-runtime-CNC7AqOf.js">
-    <link rel="modulepreload" crossorigin href="./assets/motion-04PfWwN9.js">
-    <link rel="modulepreload" crossorigin href="./assets/react-vendor-ib1aspPX.js">
-    <link rel="modulepreload" crossorigin href="./assets/router-CsClY0Xi.js">
-    <link rel="stylesheet" crossorigin href="./assets/index-kb1mCHKL.css">
-  </head>
-  <body class="bg-[#060B14] text-[#F1F5F9] antialiased">
-    <div id="root"></div>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>格数科技 | 格力集团AI原生数字化平台</title>
+<meta name="description" content="格数科技为格力集团全资数科平台，自研Supa企业AI底座，运营珠海市「百千万工程」金融服务平台，承接中国航展数字化，拥有三大市级数据实验室。">
+<meta name="keywords" content="格数科技,格力数字化,企业AI平台,Supa,百千万工程金融平台,横琴跨境数据,航展数字化,国企数科,数据智能,数字金融">
+<meta property="og:title" content="格数科技 | 格力集团AI原生数字化平台">
+<meta property="og:description" content="格数科技为格力集团全资数科平台，自研Supa企业AI底座，运营珠海市「百千万工程」金融服务平台，承接中国航展数字化，拥有三大市级数据实验室。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://laishanglin.github.io/geshu-website/">
+<meta property="og:image" content="https://laishanglin.github.io/geshu-website/images/share-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="格数科技">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="格数科技 | 格力集团AI原生数字化平台">
+<meta name="twitter:description" content="格数科技为格力集团全资数科平台，自研Supa企业AI底座，运营珠海市「百千万工程」金融服务平台，承接中国航展数字化，拥有三大市级数据实验室。">
+<meta name="twitter:image" content="https://laishanglin.github.io/geshu-website/images/share-card.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%233B82F6'/%3E%3Cstop offset='100%25' stop-color='%2306B6D4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Cpolygon points='16,5 28,13 28,27 16,35 4,27 4,13' fill='none' stroke='white' stroke-width='1.5'/%3E%3Cpath d='M20 16l-8-4v8l8-4z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#060B14;color:#F1F5F9;font-family:'Inter','PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:#060B14}
+::-webkit-scrollbar-thumb{background:rgba(59,130,246,.25);border-radius:3px}
+::selection{background:rgba(59,130,246,.35);color:#fff}
+.page-container{max-width:1700px;margin:0 auto;padding:0 5rem}
+.section-padding{padding:7rem 0}
+.bg-alt{background:#0A1628}
+
+/* Navbar */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:all .5s;height:5rem;display:flex;align-items:center}
+.nav.scrolled{background:rgba(6,11,20,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(59,130,246,.06)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%}
+.nav-links{display:flex;gap:.25rem;list-style:none}
+.nav-links a{color:#94A3B8;text-decoration:none;padding:.5rem 1rem;border-radius:.5rem;font-size:.875rem;font-weight:500;transition:color .3s;position:relative}
+.nav-links a:hover{color:#fff}
+.nav-links a.active{color:#fff;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}
+.nav-cta{background:linear-gradient(135deg,#3B82F6,#06B6D4);color:#fff!important;padding:.625rem 1.5rem!important;border-radius:9999px!important;font-size:.875rem;font-weight:600;text-decoration:none;transition:all .3s;display:inline-flex;align-items:center;gap:.375rem}
+.nav-cta:hover{box-shadow:0 0 30px rgba(59,130,246,.4);transform:scale(1.05)}
+.logo-link{display:flex;align-items:center;gap:.75rem;text-decoration:none;flex-shrink:0}
+.logo-svg{height:3.25rem;width:auto}
+
+/* Hero */
+.hero{height:100vh;min-height:700px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.hero canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;display:block}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,11,20,.55),transparent 30%,transparent 70%,rgba(6,11,20,.92));z-index:1;pointer-events:none}
+.hero-content{position:relative;z-index:10;text-align:center;padding:0 1.5rem;pointer-events:none}
+.hero-content>*{pointer-events:auto}
+.hero h1{font-size:clamp(2.2rem,5.5vw,4.25rem);font-weight:900;line-height:1.15;margin-bottom:1.5rem;color:#fff;opacity:0;transform:translateY(40px);filter:blur(12px);animation:heroIn .9s .2s cubic-bezier(.25,.1,.25,1) forwards}
+@keyframes heroIn{to{opacity:1;transform:translateY(0);filter:blur(0)}}
+.hero .hl{background:linear-gradient(135deg,#3B82F6,#06B6D4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:1.15rem;color:rgba(148,163,184,.75);max-width:36rem;margin:0 auto 3rem;font-weight:300;letter-spacing:.025em;opacity:0;filter:blur(10px);animation:heroSub .8s .5s cubic-bezier(.25,.1,.25,1) forwards}
+@keyframes heroSub{to{opacity:1;filter:blur(0)}}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;opacity:0;transform:translateY(20px);animation:heroBtns .8s .8s cubic-bezier(.25,.1,.25,1) forwards}
+@keyframes heroBtns{to{opacity:1;transform:translateY(0)}}
+.btn{padding:.875rem 2rem;border-radius:9999px;font-size:.875rem;font-weight:600;text-decoration:none;transition:all .3s;display:inline-flex;align-items:center;gap:.5rem;cursor:pointer}
+.btn-primary{background:linear-gradient(135deg,#3B82F6,#06B6D4);color:#fff;border:none}
+.btn-primary:hover{box-shadow:0 0 30px rgba(59,130,246,.4);transform:scale(1.05)}
+.btn-outline{border:1px solid rgba(59,130,246,.35);color:#93C5FD}
+.btn-outline:hover{background:rgba(59,130,246,.1);border-color:#60A5FA;color:#BFDBFE}
+.scroll-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:10;display:flex;flex-direction:column;align-items:center;gap:.5rem;cursor:pointer;color:#64748B;font-size:.75rem;letter-spacing:.15em;opacity:0;animation:heroBtns .8s 1s cubic-bezier(.25,.1,.25,1) forwards}
+.scroll-mouse{width:1.25rem;height:2rem;border-radius:9999px;border:1.5px solid #475569;display:flex;justify-content:center;padding-top:.3rem}
+.scroll-dot{width:.25rem;height:.5rem;border-radius:9999px;background:#60A5FA;animation:scrollB 2s ease-in-out infinite}
+@keyframes scrollB{0%,100%{transform:translateY(0);opacity:.6}50%{transform:translateY(6px);opacity:1}}
+
+/* Section Titles */
+.sec-label{display:inline-block;font-size:.75rem;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:#60A5FA;margin-bottom:1rem}
+.sec-title{font-size:clamp(1.75rem,4vw,3rem);font-weight:700;color:#fff}
+.sec-divider{width:4rem;height:.125rem;border-radius:9999px;background:linear-gradient(to right,#3B82F6,#06B6D4);margin-top:1.25rem}
+.sec-divider.center{margin-left:auto;margin-right:auto}
+.text-center{text-align:center}
+.mb-section{margin-bottom:4rem}
+
+/* Company Overview */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.intro-text{font-size:1.1rem;line-height:1.85;color:rgba(203,213,225,.78);margin-bottom:2.5rem;font-weight:300}
+.highlight-item{display:flex;align-items:flex-start;gap:1rem;padding:1.25rem 1.5rem;border-radius:.875rem;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04);margin-bottom:.75rem;transition:all .3s}
+.highlight-item:hover{background:rgba(255,255,255,.04);border-color:rgba(59,130,246,.1)}
+.hl-icon-wrap{width:2.25rem;height:2.25rem;border-radius:.625rem;background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.125rem}
+.hl-icon-wrap svg{width:1.25rem;height:1.25rem}
+.hl-title{font-weight:600;color:#fff;margin-bottom:.2rem;font-size:.95rem}
+.hl-desc{font-size:.85rem;color:#94A3B8;line-height:1.6}
+.stack-area{display:flex;flex-direction:column;gap:1rem}
+.stack-card{position:relative;border-radius:1.25rem;background:rgba(10,22,40,.75);border:1px solid rgba(59,130,246,.07);padding:2.2rem 2.5rem;display:flex;flex-direction:row;gap:1.5rem;align-items:center;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:all .3s}
+.stack-card:hover{background:rgba(10,22,40,.9);border-color:rgba(59,130,246,.12)}
+.sc-icon{width:3.5rem;height:3.5rem;border-radius:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sc-icon.blue{background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.15);color:#60A5FA}
+.sc-icon.purple{background:rgba(139,92,246,.08);border:1px solid rgba(139,92,246,.15);color:#A78BFA}
+.sc-icon.emerald{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.15);color:#34D399}
+.stack-card h4{font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:.25rem}
+.stack-card p{font-size:.875rem;color:#94A3B8;line-height:1.65;font-weight:300}
+.stack-desc{text-align:center;font-size:.875rem;font-weight:500;color:rgba(147,197,253,.7);margin-top:1.5rem;letter-spacing:.025em}
+
+/* BorderGlow (business cards) */
+.biz-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.border-glow-card{
+  --ep:0;--ca:45deg;--es:35;--cs:55;--br:16px;--gp:24px;--cs2:20;
+  position:relative;border-radius:var(--br);isolation:isolate;display:grid;
+  border:1px solid rgba(255,255,255,.08);background:#0A1628;overflow:visible;
+  box-shadow:rgba(0,0,0,.1) 0px 1px 2px,rgba(0,0,0,.1) 0px 2px 4px,rgba(0,0,0,.1) 0px 4px 8px,rgba(0,0,0,.1) 0px 8px 16px;
+  transition:transform .3s;
+}
+.border-glow-card:hover{transform:translateY(-2px)}
+.border-glow-card::before,.border-glow-card::after,.border-glow-card>.edge-light{content:"";position:absolute;inset:0;border-radius:inherit;transition:opacity .25s ease-out;z-index:-1}
+.border-glow-card:not(:hover):not(.sweep-active)::before,.border-glow-card:not(:hover):not(.sweep-active)::after,.border-glow-card:not(:hover):not(.sweep-active)>.edge-light{opacity:0;transition:opacity .75s ease-in-out}
+.border-glow-card::before{border:1px solid transparent;
+  background:linear-gradient(#0A1628 0 100%) padding-box,linear-gradient(rgba(255,255,255,0) 0% 100%) border-box,
+  radial-gradient(at 80% 55%,#3B82F6 0px,transparent 50%) border-box,
+  radial-gradient(at 69% 34%,#06B6D4 0px,transparent 50%) border-box,
+  radial-gradient(at 8% 6%,#8B5CF6 0px,transparent 50%) border-box,
+  radial-gradient(at 41% 38%,#3B82F6 0px,transparent 50%) border-box,
+  radial-gradient(at 86% 85%,#06B6D4 0px,transparent 50%) border-box,
+  radial-gradient(at 82% 18%,#8B5CF6 0px,transparent 50%) border-box,
+  radial-gradient(at 51% 4%,#3B82F6 0px,transparent 50%) border-box;
+  opacity:calc((var(--ep)*100 - var(--cs))/(100 - var(--cs)));
+  mask-image:conic-gradient(from var(--ca) at center,black calc(var(--cs2)*1%),transparent calc((var(--cs2)+15)*1%),transparent calc((100 - var(--cs2) - 15)*1%),black calc((100 - var(--cs2))*1%));
+}
+.border-glow-card::after{border:1px solid transparent;
+  background:radial-gradient(at 80% 55%,#3B82F6 0px,transparent 50%),
+  radial-gradient(at 69% 34%,#06B6D4 0px,transparent 50%),
+  radial-gradient(at 8% 6%,#8B5CF6 0px,transparent 50%),
+  radial-gradient(at 41% 38%,#3B82F6 0px,transparent 50%),
+  radial-gradient(at 86% 85%,#06B6D4 0px,transparent 50%),
+  radial-gradient(at 82% 18%,#8B5CF6 0px,transparent 50%),
+  radial-gradient(at 51% 4%,#3B82F6 0px,transparent 50%);
+  opacity:calc(.4*(var(--ep)*100 - var(--cs))/(100 - var(--cs)));
+  mix-blend-mode:soft-light;
+}
+.border-glow-card>.edge-light{inset:calc(var(--gp)*-1);pointer-events:none;z-index:1;
+  mask-image:conic-gradient(from var(--ca) at center,black 2.5%,transparent 10%,transparent 90%,black 97.5%);
+  opacity:calc((var(--ep)*100 - var(--es))/(100 - var(--es)));
+  mix-blend-mode:plus-lighter;
+}
+.border-glow-card>.edge-light::before{content:"";position:absolute;inset:var(--gp);border-radius:inherit;
+  box-shadow:inset 0 0 0 1px hsl(210deg 80% 65%/100%),inset 0 0 1px 0 hsl(210deg 80% 65%/60%),inset 0 0 3px 0 hsl(210deg 80% 65%/50%),inset 0 0 6px 0 hsl(210deg 80% 65%/40%),inset 0 0 15px 0 hsl(210deg 80% 65%/30%),inset 0 0 25px 2px hsl(210deg 80% 65%/20%),inset 0 0 50px 2px hsl(210deg 80% 65%/10%),0 0 1px 0 hsl(210deg 80% 65%/60%),0 0 3px 0 hsl(210deg 80% 65%/50%),0 0 6px 0 hsl(210deg 80% 65%/40%),0 0 15px 0 hsl(210deg 80% 65%/30%),0 0 25px 2px hsl(210deg 80% 65%/20%),0 0 50px 2px hsl(210deg 80% 65%/10%);
+}
+.border-glow-inner{display:flex;flex-direction:column;position:relative;z-index:1;padding:2.5rem;height:100%}
+.biz-icon-wrap{width:3rem;height:3rem;border-radius:.75rem;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;transition:all .5s}
+.border-glow-card:hover .biz-icon-wrap{transform:scale(1.08) rotate(2deg)}
+.biz-icon-wrap.blue{background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);color:#60A5FA}
+.biz-icon-wrap.purple{background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.2);color:#A78BFA}
+.biz-icon-wrap.cyan{background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.2);color:#22D3EE}
+.biz-icon-wrap.amber{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.2);color:#FBBF24}
+.biz-icon-wrap.emerald{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);color:#34D399}
+.biz-title{font-size:1.4rem;font-weight:700;color:#fff;margin-bottom:.75rem}
+.biz-desc{font-size:.9rem;color:#94A3B8;line-height:1.7;margin-bottom:1.5rem;font-weight:300;flex:1}
+.tag{display:inline-block;padding:.25rem .75rem;font-size:.75rem;font-weight:500;border-radius:9999px;background:rgba(59,130,246,.05);color:rgba(147,197,253,.75);border:1px solid rgba(59,130,246,.07);margin-right:.4rem;margin-bottom:.4rem}
+
+/* Mission */
+.mission-section{position:relative;overflow:hidden;background:#060B14}
+.mission-section canvas{position:absolute;inset:0;display:block}
+.mission-content{position:relative;z-index:10}
+.mission-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:64rem;margin:0 auto}
+.mission-card{display:flex;flex-direction:column;align-items:center;text-align:center;padding:2.5rem 2rem;border-radius:1.25rem;background:rgba(0,0,0,.5);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.05);transition:all .5s}
+.mission-card:hover{border-color:rgba(255,255,255,.1);background:rgba(0,0,0,.4)}
+.mission-icon-wrap{width:4rem;height:4rem;border-radius:1rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;transition:all .5s}
+.mission-card:hover .mission-icon-wrap{background:rgba(255,255,255,.06);border-color:rgba(59,130,246,.15)}
+.mission-card h3{font-size:1.75rem;font-weight:700;color:rgba(255,255,255,.9);margin-bottom:.25rem}
+.mission-en{font-size:.7rem;text-transform:uppercase;letter-spacing:.25em;color:rgba(96,165,250,.5);font-weight:500;margin-bottom:1.5rem}
+.mission-divider{width:2.5rem;height:.125rem;border-radius:9999px;background:linear-gradient(to right,#3B82F6,#06B6D4);margin-bottom:1.5rem;transition:width .5s}
+.mission-card:hover .mission-divider{width:3.5rem}
+.mission-card p{font-size:.9rem;color:#64748B;line-height:1.75;font-weight:300;transition:color .5s}
+.mission-card:hover p{color:#94A3B8}
+
+/* News */
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.news-card{padding:2rem;border-radius:1.25rem;background:rgba(10,22,40,.35);border:1px solid rgba(59,130,246,.04);text-decoration:none;display:flex;flex-direction:column;transition:all .4s;position:relative;overflow:hidden}
+.news-card::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .5s;pointer-events:none;background:linear-gradient(135deg,rgba(59,130,246,.03),transparent,rgba(6,182,212,.03))}
+.news-card:hover::before{opacity:1}
+.news-card:hover{background:rgba(10,22,40,.6);border-color:rgba(59,130,246,.08);transform:translateY(-2px)}
+.news-date{font-family:'SF Mono','Fira Code','Consolas',monospace;font-size:.75rem;color:rgba(96,165,250,.7);margin-bottom:.75rem;letter-spacing:.05em}
+.news-title{font-size:1.05rem;font-weight:600;color:#fff;margin-bottom:.75rem;line-height:1.5;transition:color .3s}
+.news-card:hover .news-title{color:#BFDBFE}
+.news-summary{font-size:.85rem;color:#64748B;line-height:1.65;margin-bottom:1rem;font-weight:300;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+.news-link{font-size:.875rem;color:rgba(96,165,250,.6);display:inline-flex;align-items:center;gap:.25rem;transition:all .3s}
+.news-card:hover .news-link{gap:.5rem;color:#60A5FA}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.contact-desc{font-size:1.1rem;color:rgba(203,213,225,.75);line-height:1.85;margin-bottom:2.5rem;font-weight:300}
+.contact-item{display:flex;align-items:flex-start;gap:1rem;padding:1rem;border-radius:.75rem;margin-bottom:.5rem;transition:all .3s}
+.contact-item:hover{background:rgba(255,255,255,.02)}
+.contact-icon-wrap{width:2.5rem;height:2.5rem;border-radius:.625rem;background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#60A5FA}
+.contact-icon-wrap svg{width:1.25rem;height:1.25rem}
+.contact-label{font-size:.75rem;color:#64748B;margin-bottom:.15rem}
+.contact-value{font-size:.875rem;color:#CBD5E1}
+.quick-links{padding:2.5rem;border-radius:1.25rem;background:rgba(10,22,40,.5);border:1px solid rgba(59,130,246,.06)}
+.quick-links h3{font-size:1.125rem;font-weight:600;color:#fff;margin-bottom:1.5rem}
+.quick-link{display:flex;justify-content:space-between;align-items:center;padding:.75rem .5rem;border-radius:.5rem;color:#94A3B8;text-decoration:none;transition:all .3s}
+.quick-link:hover{color:#fff;background:rgba(255,255,255,.03)}
+.quick-link span{transition:all .3s;color:#475569}
+.quick-link:hover span{color:#60A5FA;transform:translateX(4px)}
+
+/* Footer */
+.footer{background:#030812;border-top:1px solid rgba(59,130,246,.03);padding:3rem 0}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
+.footer-links{display:flex;gap:2rem}
+.footer-links a{color:#64748B;text-decoration:none;font-size:.875rem;transition:color .3s}
+.footer-links a:hover{color:#93C5FD}
+.footer-copy{font-size:.8rem;color:#475569}
+
+/* Scroll Reveal */
+.scroll-reveal,.sr-left,.sr-right{opacity:0;filter:blur(8px);transition:opacity .7s cubic-bezier(.25,.1,.25,1),transform .7s cubic-bezier(.25,.1,.25,1),filter .7s cubic-bezier(.25,.1,.25,1)}
+.scroll-reveal{transform:translateY(30px)}
+.sr-left{transform:translateX(40px)}
+.sr-right{transform:translateX(-40px)}
+.scroll-reveal.visible,.sr-left.visible,.sr-right.visible{opacity:1;filter:blur(0);transform:translate(0)}
+
+/* Responsive */
+@media(max-width:1200px){.page-container{padding:0 3rem}}
+@media(max-width:1024px){
+  .page-container{padding:0 2rem}
+  .grid-2,.contact-grid,.mission-grid{grid-template-columns:1fr;gap:2.5rem}
+  .biz-grid{grid-template-columns:1fr}
+  .news-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-inner{flex-direction:column;text-align:center}
+  .footer-links{justify-content:center}
+}
+@media(max-width:768px){
+  .section-padding{padding:4.5rem 0}
+  .hero h1{font-size:clamp(1.8rem,7vw,2.5rem)}
+  .hero-sub{font-size:1rem}
+  .nav-links{display:none}
+  .news-grid{grid-template-columns:1fr}
+  .page-container{padding:0 1.25rem}
+  .border-glow-inner{padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="nav" id="navbar">
+  <div class="page-container nav-inner">
+    <a href="#hero" class="logo-link">
+      <img src="images/logo.png" alt="格数科技" class="logo-svg" />
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero" class="active">首页</a></li>
+      <li><a href="#about">公司简介</a></li>
+      <li><a href="#business">业务与产品</a></li>
+      <li><a href="#mission">企业文化</a></li>
+      <li><a href="#news">新闻与案例</a></li>
+      <li><a href="#contact">联系我们</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">项目咨询<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>夯基垒台，以场景破局<br><span class="hl">谋篇布局，向AI原生迈进</span></h1>
+    <p class="hero-sub">格力集团AI原生数字化平台</p>
+    <div class="hero-btns">
+      <a href="#business" class="btn btn-primary">查看业务产品</a>
+      <a href="#contact" class="btn btn-outline">标杆案例</a>
+    </div>
+  </div>
+  <div class="scroll-hint" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+    <span>SCROLL</span>
+    <div class="scroll-mouse"><div class="scroll-dot"></div></div>
+  </div>
+</section>
+
+<!-- Company Overview -->
+<section class="section-padding" id="about">
+  <div class="page-container">
+    <div class="mb-section">
+      <span class="sec-label">ABOUT GREE DIGITAL</span>
+      <h2 class="sec-title">公司简介</h2>
+      <div class="sec-divider"></div>
+    </div>
+    <div class="grid-2">
+      <div class="sr-left">
+        <p class="intro-text">格数科技2026年5月完成工商更名设立，为格力集团全资科技子公司。团队平均年龄30岁，汇聚数字化规划、AI研发、数据治理复合型人才。公司坚持自研技术底座，搭建Supa企业AI平台、ITAMPLUS固定资产管理系统；已获批珠海市首批三大数据创新应用实验室，运营百千万工程金融服务平台，承接中国航展数字化保障，兼顾集团内部数字化建设与外部市场化业务拓展。</p>
+        <div class="highlight-item">
+          <div class="hl-icon-wrap" style="color:#60A5FA"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 1v3M15 1v3M9 21v3M15 21v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg></div>
+          <div><h4 class="hl-title">AI原生架构</h4><p class="hl-desc">自主研发Supa企业AI平台、ITAMPLUS资产系统、Ontology认知平台，拒绝纯外包集成，构建AI协作、多智能Agent、数据治理全栈自主可控技术体系。</p></div>
+        </div>
+        <div class="highlight-item">
+          <div class="hl-icon-wrap" style="color:#A78BFA"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+          <div><h4 class="hl-title">业务+技术双栖</h4><p class="hl-desc">团队平均年龄30岁，做「业务里最懂技术、技术里最懂业务」的转化链接者。核心成员来自头部科技企业与咨询机构。</p></div>
+        </div>
+        <div class="highlight-item">
+          <div class="hl-icon-wrap" style="color:#22D3EE"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/></svg></div>
+          <div><h4 class="hl-title">政企双轨+横琴区位</h4><p class="hl-desc">对内统筹格力集团全域数字化建设，对外服务政府、金融、文旅客户；立足横琴粤澳深度合作区，探索布局跨境数据流通。</p></div>
+        </div>
+      </div>
+      <div class="sr-right">
+        <div class="stack-area">
+          <div class="stack-card">
+            <div class="sc-icon blue"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><circle cx="6" cy="6" r="1" fill="currentColor"/><circle cx="6" cy="18" r="1" fill="currentColor"/></svg></div>
+            <div><h4>数据底座</h4><p>打通企业内部数据孤岛，搭建集团统一数据中台与治理标准，实现数据可管、可用、可运营，支撑国资数字化转型战略。</p></div>
+          </div>
+          <div class="stack-card">
+            <div class="sc-icon purple"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+            <div><h4>AI场景落地</h4><p>以法务风控、文旅智能客服、金融授信为核心场景，落地多Agent智能协作，将大模型能力转化为业务降本增效工具。</p></div>
+          </div>
+          <div class="stack-card">
+            <div class="sc-icon emerald"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div>
+            <div><h4>产业生态共建</h4><p>联动政府委办、银行保险、头部互联网、高校实验室，打造金融、知识产权、文旅数据融合创新平台。</p></div>
+          </div>
+        </div>
+        <p class="stack-desc">格力集团AI Adoption发动机</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Business Areas -->
+<section class="section-padding bg-alt" id="business">
+  <div class="page-container">
+    <div class="mb-section text-center">
+      <span class="sec-label">OUR BUSINESS</span>
+      <h2 class="sec-title">五大业务板块</h2>
+      <div class="sec-divider center"></div>
+      <p style="color:#94A3B8;margin-top:1rem;max-width:42rem;margin-left:auto;margin-right:auto;font-size:.95rem">集团数字化 · 数字产业金融 · 文商旅展数字化 · AI自研 · 跨境数据服务</p>
+    </div>
+    <div class="biz-grid">
+      <div class="border-glow-card" data-glow><span class="edge-light"></span><div class="border-glow-inner">
+        <div class="biz-icon-wrap blue"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+        <h3 class="biz-title">集团数字化建设</h3>
+        <p class="biz-desc">统筹格力集团全域数字化转型，落地司库、财务、人力、固投、资产管理全系列自研/共建系统，搭建统一基础设施与运维合规体系，建立项目全生命周期管控机制，实现集团从分散建设到全域统筹管控转型。</p>
+        <div><span class="tag">集团全域数字化</span><span class="tag">财务司库系统</span><span class="tag">固定资产管理</span><span class="tag">项目全流程管控</span><span class="tag">等保合规运维</span></div>
+      </div></div>
+      <div class="border-glow-card" data-glow><span class="edge-light"></span><div class="border-glow-inner">
+        <div class="biz-icon-wrap purple"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path d="M12 6v12M8 12h8"/></svg></div>
+        <h3 class="biz-title">数字产业金融 ·「百千万工程」金融服务平台</h3>
+        <p class="biz-desc">运营珠海市「百千万工程」金融服务平台，上线知识产权融资、农业金融、保险服务三大特色专区；搭建智能数字风控平台、光伏资产动态监控系统，迭代租赁、保理供应链金融系统，联动政企、金融机构赋能中小微企业融资。</p>
+        <div><span class="tag">百千万工程</span><span class="tag">知识产权质押融资</span><span class="tag">供应链金融</span><span class="tag">智能风控</span><span class="tag">产业金融生态</span></div>
+      </div></div>
+      <div class="border-glow-card" data-glow><span class="edge-light"></span><div class="border-glow-inner">
+        <div class="biz-icon-wrap cyan"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.5 19H9a7 7 0 116.71-9h1.79a4.5 4.5 0 110 9z"/></svg></div>
+        <h3 class="biz-title">文商旅展数字化</h3>
+        <p class="biz-desc">覆盖集团文旅、酒店、港航、航展全场景数字化，统一搭建酒店PMS、票务管理系统；承担中国航展全流程数字化保障，研发AI伴游、会员数据沉淀、客流监测产品，依托文旅数据实验室实现文旅场景数据决策。</p>
+        <div><span class="tag">航展数字化</span><span class="tag">智慧酒店</span><span class="tag">文旅AI服务</span><span class="tag">客流大数据</span><span class="tag">会展系统保障</span></div>
+      </div></div>
+      <div class="border-glow-card" data-glow><span class="edge-light"></span><div class="border-glow-inner">
+        <div class="biz-icon-wrap amber"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a4 4 0 014 4c0 1.1-.4 2.1-1.2 2.8l2.9 2.9c.4.4.4 1 0 1.4-.4.4-1 .4-1.4 0l-2.9-2.9c-.3.1-.6.2-.9.3"/><circle cx="12" cy="6" r="2"/><path d="M20 12a8 8 0 11-16 0 8 8 0 0116 0z"/><path d="M12 10v4M10 12h4"/></svg></div>
+        <h3 class="biz-title">AI研发创新平台</h3>
+        <p class="biz-desc">自研Supa企业AI原生平台，内置AI协作工作台、多智能Agent、DAG工作流、企业知识大脑、安全管控底座；落地Ontology认知平台、UniAPI大模型调度平台，开放MCP适配器对接财务、法务、文旅业务系统，三大市级数据实验室持续孵化数据产品。</p>
+        <div><span class="tag">企业AI平台</span><span class="tag">多Agent智能体</span><span class="tag">数据实验室</span><span class="tag">大模型调度</span><span class="tag">行业AI场景落地</span></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Mission / Vision / Values -->
+<section class="section-padding mission-section" id="mission">
+  <div class="mission-content page-container">
+    <div class="mb-section text-center">
+      <span class="sec-label">MISSION & VISION & VALUES</span>
+      <h2 class="sec-title">使命 · 愿景 · 价值观</h2>
+      <div class="sec-divider center"></div>
+    </div>
+    <div class="mission-grid">
+      <div class="mission-card">
+        <div class="mission-icon-wrap" style="color:#34D399"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="24" cy="24" r="16"/><circle cx="24" cy="24" r="9"/><circle cx="24" cy="24" r="2.5" fill="currentColor"/><line x1="24" y1="3" x2="24" y2="15" stroke-width="1.8" stroke-linecap="round"/><line x1="24" y1="33" x2="24" y2="45" stroke-width="1.8" stroke-linecap="round"/><line x1="3" y1="24" x2="15" y2="24" stroke-width="1.8" stroke-linecap="round"/><line x1="33" y1="24" x2="45" y2="24" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <h3>使命</h3><p class="mission-en">MISSION</p><div class="mission-divider"></div>
+        <p>以自研AI与数据技术赋能集团转型升级，以数字化产品服务珠海产业发展，依托横琴政策探索跨境数据创新，以科技创造产业与社会双重价值。</p>
+      </div>
+      <div class="mission-card">
+        <div class="mission-icon-wrap" style="color:#60A5FA"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="24" cy="24" r="12"/><circle cx="24" cy="24" r="2" fill="currentColor"/><path d="M24 6l2.5 7.5M24 34.5l2.5 7.5M6 24l7.5 2.5M34.5 24l7.5 2.5" stroke-width="1" stroke-linecap="round"/><circle cx="24" cy="24" r="6" fill="none" stroke-width=".6" stroke-dasharray="3 3"/></svg></div>
+        <h3>愿景</h3><p class="mission-en">VISION</p><div class="mission-divider"></div>
+        <p>稳步成为格力集团可信赖的AI Adoption发动机，打造湾区国资数科创新标杆，建成横琴领先的数据智能与跨境数据服务商。</p>
+      </div>
+      <div class="mission-card">
+        <div class="mission-icon-wrap" style="color:#F87171"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M24 4l10 14-10 26L14 18l10-14z" stroke-linejoin="round"/><path d="M14 18l10 12M34 18l-10 12" stroke-width=".8" opacity=".3"/><circle cx="24" cy="16" r="2.5" fill="currentColor"/><circle cx="24" cy="24" r="1.5" fill="currentColor" opacity=".5"/></svg></div>
+        <h3>价值观</h3><p class="mission-en">VALUES</p><div class="mission-divider"></div>
+        <p>自主自研：坚持核心技术自主可控，打造自主AI与数据底座。<br>场景为先：技术落地真实业务场景，以降本增效检验价值，不画饼不忽悠。<br>敏捷创新：扁平化敏捷组织，拥抱变化快速试错，持续迭代持续进化。<br>协同共生：联动集团、政府、产业伙伴共建数字生态，成就客户才能成就格数。<br>科技向善：坚守数据安全合规底线，承担国企社会责任，个人优于工作。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- News -->
+<section class="section-padding" id="news">
+  <div class="page-container">
+    <div class="mb-section text-center">
+      <span class="sec-label">NEWS</span>
+      <h2 class="sec-title">新闻动态</h2>
+      <div class="sec-divider center"></div>
+    </div>
+    <div class="news-grid">
+      <a href="#" class="news-card scroll-reveal"><span class="news-date">2026.07</span><h4 class="news-title">格数科技举办「智融百千万·科创新引擎」平台焕新发布仪式</h4><p class="news-summary">珠海市百千万工程金融服务平台全新升级，知识产权融资专区正式上线。市委副秘书长、市国资委副主任等领导出席。平台服务万家企业、入驻70余家金融机构，累计授信374亿元。</p><span class="news-link">了解更多 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></a>
+      <a href="#" class="news-card scroll-reveal"><span class="news-date">2026.06</span><h4 class="news-title">格数科技获批珠海市首批三大数据创新应用实验室</h4><p class="news-summary">联合华润银行、横琴国际知识产权交易中心、中山大学等单位，落地数字金融、知识产权、文旅公共数据三大市级实验室，构建湾区数据创新载体。</p><span class="news-link">了解更多 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></a>
+      <a href="#" class="news-card scroll-reveal"><span class="news-date">2026.07</span><h4 class="news-title">格数科技成功举办首次务虚会</h4><p class="news-summary">公司全员围绕「我是谁、去哪、怎么去」展开深入研讨，凝聚形成三大共识：明确「国企数科不走老路」的战略定位；确立金融科技→文商旅展→AI原生三条曲线梯度推进框架；凝练五项核心价值观及「个人优于工作」的团队文化。</p><span class="news-link">了解更多 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section-padding bg-alt" id="contact">
+  <div class="page-container">
+    <div class="mb-section">
+      <span class="sec-label">CONTACT</span>
+      <h2 class="sec-title">联系我们</h2>
+      <div class="sec-divider"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="sr-left">
+        <p class="contact-desc">格数科技立足珠海横琴，面向集团内部、政企、金融、文旅行业提供数字化、AI平台、数据服务全流程解决方案。欢迎业务合作、项目咨询、实验室共建洽谈。</p>
+        <div class="contact-item"><div class="contact-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l8.5 6a2 2 0 002.5 0L22 7"/></svg></div><div><div class="contact-label">电子邮箱</div><div class="contact-value">geshu@gree.com</div></div></div>
+        <div class="contact-item"><div class="contact-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="10" r="7"/><path d="M12 3v4M12 18v3M4.2 7.8l3.5 2M16.3 16.3l3.5 2M3 15h3M18 15h3"/></svg></div><div><div class="contact-label">公司地址</div><div class="contact-value">珠海横琴粤澳深度合作区</div></div></div>
+        <a href="mailto:geshu@gree.com" class="btn btn-primary" style="margin-top:.75rem">发送邮件咨询</a>
+      </div>
+      <div class="sr-right">
+        <div class="quick-links">
+          <h3>快速导航</h3>
+          <a href="#about" class="quick-link">关于我们 <span>→</span></a>
+          <a href="#business" class="quick-link">核心业务 <span>→</span></a>
+          <a href="#mission" class="quick-link">企业文化 <span>→</span></a>
+          <a href="#news" class="quick-link">新闻动态 <span>→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="page-container footer-inner">
+    <div style="display:flex;align-items:center;gap:.75rem">
+      <img src="images/logo.png" alt="格数科技" style="height:3.25rem;width:auto;opacity:.6" />
+      <span class="footer-copy">&copy; 2026 GREE Digital Technology 珠海横琴格数科技有限公司</span>
+    </div>
+    <div class="footer-links">
+      <a href="#about">关于我们</a><a href="#business">核心业务</a><a href="#mission">企业文化</a><a href="#contact">联系我们</a>
+    </div>
+    <span class="footer-copy">格力集团全资数字化AI平台</span>
+  </div>
+</footer>
+
+<script type="module">
+import * as THREE from 'three';
+
+// 1. Hero FloatingLines — wave shader background with mouse interaction
+{
+  const section = document.getElementById('hero');
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.domElement.style.position = 'absolute';
+  renderer.domElement.style.top = '0';
+  renderer.domElement.style.left = '0';
+  renderer.domElement.style.width = '100%';
+  renderer.domElement.style.height = '100%';
+  section.prepend(renderer.domElement);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+  camera.position.z = 1;
+
+  function hexToVec3(hex) {
+    let v = hex.trim();
+    if (v.startsWith('#')) v = v.slice(1);
+    let r = 255, g = 255, b = 255;
+    if (v.length === 3) {
+      r = parseInt(v[0] + v[0], 16);
+      g = parseInt(v[1] + v[1], 16);
+      b = parseInt(v[2] + v[2], 16);
+    } else if (v.length === 6) {
+      r = parseInt(v.slice(0, 2), 16);
+      g = parseInt(v.slice(2, 4), 16);
+      b = parseInt(v.slice(4, 6), 16);
+    }
+    return new THREE.Vector3(r / 255, g / 255, b / 255);
+  }
+
+  const GRAD_COLORS = ['#3B82F6', '#06B6D4', '#8B5CF6'];
+  const MAX_STOPS = 8;
+  const gradStops = GRAD_COLORS.slice(0, MAX_STOPS);
+
+  const uniforms = {
+    iTime: { value: 0 },
+    iResolution: { value: new THREE.Vector3(1, 1, 1) },
+    animationSpeed: { value: 1.0 },
+
+    enableTop: { value: true },
+    enableMiddle: { value: true },
+    enableBottom: { value: true },
+
+    topLineCount: { value: 10 },
+    middleLineCount: { value: 15 },
+    bottomLineCount: { value: 20 },
+
+    topLineDistance: { value: 0.05 },
+    middleLineDistance: { value: 0.05 },
+    bottomLineDistance: { value: 0.05 },
+
+    topWavePosition: { value: new THREE.Vector3(10.0, 0.5, -0.4) },
+    middleWavePosition: { value: new THREE.Vector3(5.0, 0.0, 0.2) },
+    bottomWavePosition: { value: new THREE.Vector3(2.0, -0.7, -1.0) },
+
+    iMouse: { value: new THREE.Vector2(-1000, -1000) },
+    interactive: { value: true },
+    bendRadius: { value: 60.0 },
+    bendStrength: { value: -5.0 },
+    bendInfluence: { value: 0 },
+
+    parallax: { value: true },
+    parallaxStrength: { value: 0.2 },
+    parallaxOffset: { value: new THREE.Vector2(0, 0) },
+
+    lineGradient: { value: Array.from({ length: MAX_STOPS }, () => new THREE.Vector3(1, 1, 1)) },
+    lineGradientCount: { value: gradStops.length },
+  };
+
+  gradStops.forEach((hex, i) => {
+    const c = hexToVec3(hex);
+    uniforms.lineGradient.value[i].set(c.x, c.y, c.z);
+  });
+
+  const vertShader = `precision highp float;
+    void main() { gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`;
+
+  const fragShader = `precision highp float;
+    uniform float iTime;
+    uniform vec3 iResolution;
+    uniform float animationSpeed;
+    uniform bool enableTop, enableMiddle, enableBottom;
+    uniform int topLineCount, middleLineCount, bottomLineCount;
+    uniform float topLineDistance, middleLineDistance, bottomLineDistance;
+    uniform vec3 topWavePosition, middleWavePosition, bottomWavePosition;
+    uniform vec2 iMouse;
+    uniform bool interactive;
+    uniform float bendRadius, bendStrength, bendInfluence;
+    uniform bool parallax;
+    uniform float parallaxStrength;
+    uniform vec2 parallaxOffset;
+    uniform vec3 lineGradient[8];
+    uniform int lineGradientCount;
+
+    mat2 rotate(float r) { return mat2(cos(r), sin(r), -sin(r), cos(r)); }
+
+    vec3 getLineColor(float t) {
+      if (lineGradientCount <= 0) return vec3(0.23, 0.5, 0.95);
+      if (lineGradientCount == 1) return lineGradient[0] * 0.5;
+      float clampedT = clamp(t, 0.0, 0.9999);
+      float scaled = clampedT * float(lineGradientCount - 1);
+      int idx = int(floor(scaled));
+      float f = fract(scaled);
+      int idx2 = min(idx + 1, lineGradientCount - 1);
+      vec3 c1 = lineGradient[idx], c2 = lineGradient[idx2];
+      return mix(c1, c2, f) * 0.5;
+    }
+
+    float wave(vec2 uv, float offset, vec2 screenUv, vec2 mouseUv, bool shouldBend) {
+      float time = iTime * animationSpeed;
+      float x_offset = offset;
+      float x_movement = time * 0.1;
+      float amp = sin(offset + time * 0.2) * 0.3;
+      float y = sin(uv.x + x_offset + x_movement) * amp;
+      if (shouldBend) {
+        vec2 d = screenUv - mouseUv;
+        float influence = exp(-dot(d, d) * bendRadius);
+        float bendOffset = (mouseUv.y - screenUv.y) * influence * bendStrength * bendInfluence;
+        y += bendOffset;
+      }
+      float m = uv.y - y;
+      return 0.0175 / max(abs(m) + 0.01, 1e-3) + 0.01;
+    }
+
+    void mainImage(out vec4 fragColor, in vec2 fragCoord) {
+      vec2 baseUv = (2.0 * fragCoord - iResolution.xy) / iResolution.y;
+      baseUv.y *= -1.0;
+      if (parallax) baseUv += parallaxOffset;
+      vec3 col = vec3(0.0);
+      vec2 mouseUv = vec2(0.0);
+      if (interactive) { mouseUv = (2.0 * iMouse - iResolution.xy) / iResolution.y; mouseUv.y *= -1.0; }
+
+      if (enableBottom) {
+        for (int i = 0; i < bottomLineCount; ++i) {
+          float fi = float(i);
+          float t = fi / max(float(bottomLineCount - 1), 1.0);
+          vec3 lineCol = getLineColor(t);
+          float angle = bottomWavePosition.z * log(length(baseUv) + 1.0);
+          vec2 ruv = baseUv * rotate(angle);
+          col += lineCol * wave(ruv + vec2(bottomLineDistance * fi + bottomWavePosition.x, bottomWavePosition.y), 1.5 + 0.2 * fi, baseUv, mouseUv, interactive) * 0.2;
+        }
+      }
+      if (enableMiddle) {
+        for (int i = 0; i < middleLineCount; ++i) {
+          float fi = float(i);
+          float t = fi / max(float(middleLineCount - 1), 1.0);
+          vec3 lineCol = getLineColor(t);
+          float angle = middleWavePosition.z * log(length(baseUv) + 1.0);
+          vec2 ruv = baseUv * rotate(angle);
+          col += lineCol * wave(ruv + vec2(middleLineDistance * fi + middleWavePosition.x, middleWavePosition.y), 2.0 + 0.15 * fi, baseUv, mouseUv, interactive) * 0.5;
+        }
+      }
+      if (enableTop) {
+        for (int i = 0; i < topLineCount; ++i) {
+          float fi = float(i);
+          float t = fi / max(float(topLineCount - 1), 1.0);
+          vec3 lineCol = getLineColor(t);
+          float angle = topWavePosition.z * log(length(baseUv) + 1.0);
+          vec2 ruv = baseUv * rotate(angle);
+          ruv.x *= -1.0;
+          col += lineCol * wave(ruv + vec2(topLineDistance * fi + topWavePosition.x, topWavePosition.y), 1.0 + 0.2 * fi, baseUv, mouseUv, interactive) * 0.1;
+        }
+      }
+      fragColor = vec4(col, 1.0);
+    }
+
+    void main() { vec4 color; mainImage(color, gl_FragCoord.xy); gl_FragColor = color; }`;
+
+  const material = new THREE.ShaderMaterial({
+    uniforms,
+    vertexShader: vertShader,
+    fragmentShader: fragShader,
+  });
+  const geometry = new THREE.PlaneGeometry(2, 2);
+  const mesh = new THREE.Mesh(geometry, material);
+  scene.add(mesh);
+
+  const clock = new THREE.Clock();
+
+  const tMouse = new THREE.Vector2(-1000, -1000);
+  const cMouse = new THREE.Vector2(-1000, -1000);
+  let tInfluence = 0, cInfluence = 0;
+  const tParallax = new THREE.Vector2(0, 0);
+  const cParallax = new THREE.Vector2(0, 0);
+  const damping = 0.06;
+
+  const resize = () => {
+    const r = section.getBoundingClientRect();
+    const w = r.width || 1, h = r.height || 1;
+    renderer.setSize(w, h, false);
+    uniforms.iResolution.value.set(renderer.domElement.width, renderer.domElement.height, 1);
+  };
+  resize();
+  window.addEventListener('resize', resize);
+
+  section.addEventListener('pointermove', e => {
+    const rect = renderer.domElement.getBoundingClientRect();
+    const dpr = renderer.getPixelRatio();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    tMouse.set(x * dpr, (rect.height - y) * dpr);
+    tInfluence = 1.0;
+    const cx = rect.width / 2, cy = rect.height / 2;
+    tParallax.set((x - cx) / rect.width * 0.15, -(y - cy) / rect.height * 0.15);
+  });
+  section.addEventListener('pointerleave', () => { tInfluence = 0.0; });
+
+  function loop() {
+    requestAnimationFrame(loop);
+    uniforms.iTime.value = clock.getElapsedTime();
+
+    cMouse.lerp(tMouse, damping);
+    uniforms.iMouse.value.copy(cMouse);
+    cInfluence += (tInfluence - cInfluence) * damping;
+    uniforms.bendInfluence.value = cInfluence;
+
+    cParallax.lerp(tParallax, damping);
+    uniforms.parallaxOffset.value.copy(cParallax);
+
+    renderer.render(scene, camera);
+  }
+  requestAnimationFrame(loop);
+}
+
+// 2. Mission — Galaxy starfield (WebGL shader)
+{
+  const section = document.getElementById('mission');
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false });
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  section.prepend(renderer.domElement);
+  renderer.domElement.style.position = 'absolute';
+  renderer.domElement.style.top = '0';
+  renderer.domElement.style.left = '0';
+  renderer.domElement.style.width = '100%';
+  renderer.domElement.style.height = '100%';
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 10);
+  camera.position.z = 1;
+
+  const vertShader = `
+    varying vec2 vUv;
+    void main() { vUv = uv; gl_Position = vec4(position, 1.0); }
+  `;
+
+  const fragShader = `
+    precision highp float;
+    uniform float uTime;
+    uniform vec2 uResolution;
+    uniform vec2 uMouse;
+    uniform float uMouseActive;
+    varying vec2 vUv;
+    #define NUM_LAYER 4.0
+    #define MAT45 mat2(0.7071, -0.7071, 0.7071, 0.7071)
+    float Hash21(vec2 p) { p = fract(p * vec2(123.34, 456.21)); p += dot(p, p + 45.32); return fract(p.x * p.y); }
+    float tris(float x) { return 1.0 - smoothstep(0.0, 1.0, abs(2.0 * fract(x) - 1.0)); }
+    float trisn(float x) { return 2.0 * tris(x) - 1.0; }
+    float Star(vec2 uv, float flare) {
+      float d = length(uv);
+      float m = 0.04 / d;
+      float rays = smoothstep(0.0, 1.0, 1.0 - abs(uv.x * uv.y * 1000.0));
+      m += rays * flare * 1.0;
+      uv *= MAT45;
+      rays = smoothstep(0.0, 1.0, 1.0 - abs(uv.x * uv.y * 1000.0));
+      m += rays * 0.3 * flare * 1.0;
+      m *= smoothstep(1.0, 0.2, d);
+      return m;
+    }
+    vec3 StarLayer(vec2 uv) {
+      vec3 col = vec3(0.0);
+      vec2 gv = fract(uv) - 0.5;
+      vec2 id = floor(uv);
+      for (int y = -1; y <= 1; y++) {
+        for (int x = -1; x <= 1; x++) {
+          vec2 offset = vec2(float(x), float(y));
+          vec2 si = id + offset;
+          float seed = Hash21(si);
+          float size = fract(seed * 345.32);
+          float gloss = tris(uTime * 0.05 / (3.0 * seed + 1.0));
+          float flareSize = smoothstep(0.9, 1.0, size) * gloss;
+          // Use fixed blue/cyan palette instead of hue from hash
+          vec3 base = vec3(0.25, 0.55, 0.95); // blue
+          if (seed > 0.5) base = vec3(0.2, 0.7, 0.9); // cyan variant
+          if (seed > 0.75) base = vec3(0.35, 0.5, 0.85); // lighter blue
+          vec2 pad = vec2(tris(seed * 34.0 + uTime * 0.1), tris(seed * 38.0 + uTime * 0.03)) - 0.5;
+          float star = Star(gv - offset - pad, flareSize);
+          float twinkle = trisn(uTime * 1.0 + seed * 6.2831) * 0.5 + 1.0;
+          star *= mix(1.0, twinkle, 0.4);
+          col += star * size * base;
+        }
+      }
+      return col;
+    }
+    void main() {
+      vec2 uv = (vUv - 0.5) * vec2(uResolution.x / uResolution.y, 1.0);
+      vec2 mouseOff = (uMouse - 0.5) * 0.15 * uMouseActive;
+      uv += mouseOff;
+      float angle = uTime * 0.05;
+      mat2 rot = mat2(cos(angle), -sin(angle), sin(angle), cos(angle));
+      uv = rot * uv;
+      vec3 col = vec3(0.0);
+      for (float i = 0.0; i < 1.0; i += 1.0 / NUM_LAYER) {
+        float depth = fract(i + uTime * 0.05);
+        float scale = mix(20.0, 0.5, depth);
+        float fade = depth * smoothstep(1.0, 0.9, depth);
+        col += StarLayer(uv * scale + i * 453.32) * fade;
+      }
+      // Brighten and soften
+      float alpha = length(col);
+      alpha = smoothstep(0.0, 0.3, alpha);
+      gl_FragColor = vec4(col * 1.5, min(alpha, 0.85));
+    }
+  `;
+
+  const uniforms = {
+    uTime: { value: 0 },
+    uResolution: { value: new THREE.Vector2(1, 1) },
+    uMouse: { value: new THREE.Vector2(0.5, 0.5) },
+    uMouseActive: { value: 0 },
+  };
+
+  const mat = new THREE.ShaderMaterial({
+    vertexShader: vertShader, fragmentShader: fragShader,
+    uniforms, transparent: true, depthWrite: false,
+  });
+  const mesh = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), mat);
+  scene.add(mesh);
+
+  const resize = () => {
+    const r = section.getBoundingClientRect();
+    renderer.setSize(r.width, r.height, false);
+    uniforms.uResolution.value.set(r.width, r.height);
+  };
+  resize();
+  window.addEventListener('resize', resize);
+
+  let tMouseX = 0.5, tMouseY = 0.5, mActive = 0;
+  window.addEventListener('mousemove', e => {
+    tMouseX = e.clientX / window.innerWidth;
+    tMouseY = 1 - e.clientY / window.innerHeight;
+    mActive = 1;
+  });
+  section.addEventListener('mouseleave', () => { mActive = 0; });
+
+  function loop(time) {
+    requestAnimationFrame(loop);
+    uniforms.uTime.value = time * 0.001;
+    const mx = uniforms.uMouse.value.x + (tMouseX - uniforms.uMouse.value.x) * 0.05;
+    const my = uniforms.uMouse.value.y + (tMouseY - uniforms.uMouse.value.y) * 0.05;
+    uniforms.uMouse.value.set(mx, my);
+    uniforms.uMouseActive.value += (mActive - uniforms.uMouseActive.value) * 0.05;
+    renderer.render(scene, camera);
+  }
+  requestAnimationFrame(loop);
+}
+
+// 3. BorderGlow cursor tracking
+document.querySelectorAll('[data-glow]').forEach(card => {
+  card.addEventListener('pointermove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left, y = e.clientY - rect.top;
+    const cx = rect.width / 2, cy = rect.height / 2;
+    const dx = x - cx, dy = y - cy;
+    const kx = dx !== 0 ? cx / Math.abs(dx) : 999;
+    const ky = dy !== 0 ? cy / Math.abs(dy) : 999;
+    const edge = Math.min(Math.max(1 / Math.min(kx, ky), 0), 1);
+    const angle = ((Math.atan2(dy, dx) * 180 / Math.PI) + 90 + 360) % 360;
+    card.style.setProperty('--ep', edge.toFixed(3));
+    card.style.setProperty('--ca', angle.toFixed(1) + 'deg');
+  });
+  card.addEventListener('pointerleave', () => { card.style.setProperty('--ep', '0'); });
+});
+
+// 4. Scroll Reveal
+{
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.2, rootMargin: '-40px' });
+  document.querySelectorAll('.scroll-reveal,.sr-left,.sr-right').forEach(el => obs.observe(el));
+
+  const gridObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll(':scope > *').forEach((child, i) => {
+          child.style.opacity = '0'; child.style.transform = 'translateY(25px)'; child.style.filter = 'blur(4px)';
+          child.style.transition = `opacity .6s ${i*.08}s cubic-bezier(.25,.1,.25,1), transform .6s ${i*.08}s cubic-bezier(.25,.1,.25,1), filter .6s ${i*.08}s cubic-bezier(.25,.1,.25,1)`;
+          requestAnimationFrame(() => { child.style.opacity = '1'; child.style.transform = ''; child.style.filter = ''; });
+        });
+        gridObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.biz-grid,.news-grid,.mission-grid,.stack-area').forEach(el => gridObs.observe(el));
+}
+
+// 5. Navigation
+{
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', scrollY > 80); }, { passive: true });
+
+  const links = document.querySelectorAll('#navLinks a');
+  const secs = [];
+  links.forEach(a => {
+    const el = document.getElementById(a.getAttribute('href').substring(1));
+    if (el) secs.push({ el, link: a });
+  });
+  window.addEventListener('scroll', () => {
+    const pos = scrollY + innerHeight * 0.4;
+    let cur = secs[0];
+    secs.forEach(s => { if (s.el.offsetTop <= pos) cur = s; });
+    links.forEach(a => a.classList.remove('active'));
+    if (cur) cur.link.classList.add('active');
+  }, { passive: true });
+}
+
+// Smooth scroll for all # links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    document.getElementById(a.getAttribute('href').substring(1))?.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
 </html>
